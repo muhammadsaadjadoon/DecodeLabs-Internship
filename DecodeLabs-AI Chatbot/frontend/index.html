@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Oryn · Zorex AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar" aria-label="Chats sidebar">
+      <div class="side-top">
+        <div class="brand-row">
+          <div class="brand-lockup">
+            <img class="brand-logo" src="assets/zorex-oryn-logo.svg" alt="Zorex AI" />
+            <div>
+              <b>Zorex AI</b>
+              <span>Oryn Workspace</span>
+            </div>
+          </div>
+          <button class="icon-btn sidebar-close" id="closeSidebarBtn" type="button" aria-label="Toggle sidebar">
+            <svg class="panel-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="4"></rect><path d="M10 5v14"></path></svg>
+            <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
+        </div>
+
+        <button class="new-chat-btn" id="newChatBtn" type="button">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path><path d="M7 19h10"></path></svg></span>
+          <b>New chat</b>
+        </button>
+
+        <label class="search-box" for="chatSearch">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.4-3.4"/></svg>
+          <input id="chatSearch" type="search" placeholder="Search chats" autocomplete="off" />
+        </label>
+      </div>
+
+      <div class="chat-zone">
+        <div class="chat-zone-head">
+          <span>Chats</span>
+          <div class="chat-zone-actions">
+            <button class="mini-link" id="collapsePinsBtn" type="button">All</button>
+            <button class="mini-link danger-link" id="deleteAllChatsBtn" type="button">Delete all</button>
+          </div>
+        </div>
+        <div class="chat-list" id="chatList" role="list"></div>
+      </div>
+
+      <div class="side-bottom">
+        <div class="health-strip" id="statusCard" title="Backend status">
+          <span class="status-dot" id="statusDot"></span>
+          <div>
+            <b id="statusTitle">Checking</b>
+            <small id="statusText">Connecting...</small>
+          </div>
+        </div>
+
+        <div class="account-row">
+          <button class="profile-pill" id="profileBtn" type="button" aria-label="Open profile">
+            <img id="profileAvatar" alt="" />
+            <span>
+              <b id="profileNameSmall">Your profile</b>
+              <small id="profileRoleSmall">Customize workspace</small>
+            </span>
+          </button>
+          <button class="icon-btn settings-icon" id="settingsBtn" type="button" aria-label="Settings">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .58V20a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.58-1H4a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.58V4a2 2 0 1 1 4 0v.09c.29.12.62.32 1 .51a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.19.38.39.71.51 1H20a2 2 0 1 1 0 4h-.09c-.12.29-.32.62-.51 1Z"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="top-left">
+          <button class="icon-btn menu-btn" id="openSidebarBtn" type="button" aria-label="Open sidebar">
+            <svg class="panel-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="4"></rect><path d="M10 5v14"></path></svg>
+            <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
+          <div class="title-block">
+            <span>Zorex AI · Oryn</span>
+            <h1 id="activeTitle">New chat</h1>
+          </div>
+        </div>
+        <div class="top-right">
+          <button class="chip-btn ghost" id="pinBtn" type="button" title="Pin chat">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4 20 10 17 13 18 20 12 14 7 19 5 17 10 12 4 6 11 7 14 4Z"/></svg><span>Pin</span>
+          </button>
+          <button class="chip-btn ghost" id="renameBtn" type="button">Rename</button>
+          <button class="chip-btn ghost" id="exportBtn" type="button">Export</button>
+          <button class="chip-btn danger" id="clearBtn" type="button">Clear</button>
+        </div>
+      </header>
+
+      <section class="chat-canvas">
+        <section class="welcome" id="welcomeHero" aria-label="Oryn start screen">
+          <div class="welcome-inner">
+            <div class="welcome-mark"><img src="assets/zorex-oryn-logo.svg" alt="" /></div>
+            <p class="welcome-kicker">Oryn by Zorex AI</p>
+            <h2>How can I help you today?</h2>
+            <p class="welcome-sub">Ask for writing, coding, planning, study help, summaries, ideas, or anything you want to understand clearly.</p>
+            <div class="prompt-grid" id="promptGrid">
+              <button data-prompt="Create a clean business plan for my new AI chatbot app." type="button"><span>Plan</span><b>Create a launch plan</b></button>
+              <button data-prompt="Explain machine learning basics in simple words with examples." type="button"><span>Learn</span><b>Explain a topic</b></button>
+              <button data-prompt="Write professional homepage copy for Zorex AI assistant Oryn." type="button"><span>Write</span><b>Draft content</b></button>
+              <button data-prompt="Review this code and suggest improvements." type="button"><span>Code</span><b>Improve code</b></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="messages" id="messages" aria-live="polite"></section>
+      </section>
+
+      <section class="composer-wrap">
+        <form class="composer" id="composerForm">
+          <div class="composer-field">
+            <textarea id="messageInput" rows="1" placeholder="Message Oryn…" autocomplete="off"></textarea>
+            <button class="send-btn" id="sendBtn" type="submit" aria-label="Send message">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+          <div class="composer-footer">
+            <div class="tool-row">
+              <button type="button" data-tool="focus">Focus</button>
+              <button type="button" data-tool="draft">Draft</button>
+              <button type="button" data-tool="code">Code</button>
+              <button type="button" data-tool="explain">Explain</button>
+            </div>
+            <div class="composer-meta">
+              <span id="tokenGauge">Ready</span>
+              <span class="desktop-hint">Enter to send · Shift+Enter new line</span>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="settingsModal" aria-hidden="true">
+    <div class="modal-card settings-card" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-head">
+        <div><span class="modal-kicker">Workspace</span><h2 id="settingsTitle">Settings</h2></div>
+        <button class="icon-btn" id="closeSettingsBtn" type="button" aria-label="Close settings"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="settings-list">
+        <div class="setting-row">
+          <div><b>Theme</b><span>Switch between dark and light interface.</span></div>
+          <button class="chip-btn" id="themeBtn" type="button">Toggle</button>
+        </div>
+        <div class="setting-row">
+          <div><b>Backend</b><span id="settingsBackendText">Checking status…</span></div>
+          <button class="chip-btn" id="refreshHealthBtn" type="button">Refresh</button>
+        </div>
+        <div class="setting-row full settings-info-card">
+          <div><b>Keyboard shortcuts</b><span>Quick actions for faster work inside Oryn.</span></div>
+          <div class="settings-mini-grid" aria-label="Keyboard shortcuts">
+            <span><kbd>Ctrl</kbd><kbd>K</kbd> Search chats</span>
+            <span><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>O</kbd> New chat</span>
+            <span><kbd>Enter</kbd> Send message</span>
+            <span><kbd>Esc</kbd> Close panels</span>
+          </div>
+        </div>
+        <div class="setting-row full settings-info-card">
+          <div><b>Workspace privacy</b><span>Your profile image, theme, and UI preferences stay saved in this browser. Chat history is handled by your local backend workspace.</span></div>
+          <div class="settings-note-pills" aria-label="Workspace privacy details">
+            <span>Local profile</span>
+            <span>Saved chats</span>
+            <span>No frontend API key</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="profileModal" aria-hidden="true">
+    <div class="modal-card profile-card" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+      <div class="modal-head">
+        <div><span class="modal-kicker">Account</span><h2 id="profileTitle">Profile</h2></div>
+        <button class="icon-btn" id="closeProfileBtn" type="button" aria-label="Close profile"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="profile-editor">
+        <div class="profile-preview">
+          <img id="profileAvatarLarge" alt="" />
+          <button class="chip-btn" id="uploadAvatarBtn" type="button">Upload image</button>
+          <input id="avatarFileInput" type="file" accept="image/*" hidden />
+        </div>
+        <div class="profile-fields">
+          <label>Name<input id="profileNameInput" type="text" placeholder="Your name" /></label>
+          <label>Role / detail<input id="profileRoleInput" type="text" placeholder="AI Engineer, Student, Creator..." /></label>
+          <label>Short note<textarea id="profileNoteInput" rows="3" placeholder="Small detail to show in your workspace profile"></textarea></label>
+          <div class="profile-actions">
+            <button class="chip-btn primary" id="saveProfileBtn" type="button">Save profile</button>
+            <button class="chip-btn ghost" id="resetProfileBtn" type="button">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+  <script src="script.js"></script>
+</body>
+</html>
