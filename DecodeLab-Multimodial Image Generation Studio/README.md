@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="./docs/assets/prismora-readme-cover.png" alt="Prismora — AI Visual Studio" width="100%" />
+  <img src="./backend/static/assets/prismora-logo.png" alt="Prismora logo" width="82" />
 </p>
+<h1 align="center">Prismora</h1>
 
 <p align="center">
   <a href="#quick-start"><img src="https://img.shields.io/badge/Quick%20Start-Open%20Studio-2AC7F7?style=for-the-badge" alt="Quick Start" /></a>
@@ -18,10 +19,14 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-7C3AED" alt="MIT License" /></a>
 </p>
 
-<h1 align="center">Prismora</h1>
 
 <p align="center">
   <strong>A private, product-grade AI visual studio for prompt intelligence, image generation, precision refinement, safety validation, automated visual quality assurance, and creative asset organization.</strong>
+
+  <p align="center">
+  <img src="./docs/assets/prismora-readme-cover.png" alt="Prismora — AI Visual Studio" width="100%" />
+</p>
+
 </p>
 
 <p align="center">
