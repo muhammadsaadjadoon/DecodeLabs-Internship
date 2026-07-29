@@ -1,54 +1,56 @@
 <div align="center">
   <img src="./backend/static/assets/prismora-logo.png" alt="Prismora logo" width="100" height="100" />
 
-  # Prismora
-  
-<p align="center">
-  <a href="#quick-start"><img src="https://img.shields.io/badge/Quick%20Start-Open%20Studio-2AC7F7?style=for-the-badge" alt="Quick Start" /></a>
-  <a href="#product-tour"><img src="https://img.shields.io/badge/Product%20Tour-17%20Screens-6957FF?style=for-the-badge" alt="Product Tour" /></a>
-  <a href="#system-architecture"><img src="https://img.shields.io/badge/Architecture-Full%20Stack-111827?style=for-the-badge" alt="Architecture" /></a>
-</p>
+  <h1>Prismora</h1>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.13%2B-3776AB?logo=python&logoColor=white" alt="Python 3.13+" />
-  <img src="https://img.shields.io/badge/FastAPI-0.121%2B-009688?logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/Gemini-Prompt%20%26%20Vision%20QA-8E75B2?logo=googlegemini&logoColor=white" alt="Gemini" />
-  <img src="https://img.shields.io/badge/Cloudflare%20Workers%20AI-FLUX.1%20Schnell-F38020?logo=cloudflare&logoColor=white" alt="Cloudflare Workers AI" />
-  <img src="https://img.shields.io/badge/SQLite-Private%20Persistence-003B57?logo=sqlite&logoColor=white" alt="SQLite" />
-  <img src="https://img.shields.io/badge/Tests-8%2F8%20Passing-2EA44F?logo=pytest&logoColor=white" alt="Tests passing" />
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-7C3AED" alt="MIT License" /></a>
-</p>
+  <p><strong>AI Visual Studio</strong></p>
 
+  <p>
+    A private visual workspace for prompt development, image generation, controlled refinement,
+    safety checks, visual quality review, and creative asset management.
+  </p>
 
-<p align="center">
-  <strong>A private, product-grade AI visual studio for prompt intelligence, image generation, precision refinement, safety validation, automated visual quality assurance, and creative asset organization.</strong>
+  <p>
+    <a href="#quick-start"><img src="https://img.shields.io/badge/Run%20Locally-Quick%20Start-2AC7F7?style=for-the-badge" alt="Run Prismora locally" /></a>
+    <a href="#product-tour"><img src="https://img.shields.io/badge/Product%20Tour-17%20Screens-6957FF?style=for-the-badge" alt="View the product tour" /></a>
+    <a href="#system-architecture"><img src="https://img.shields.io/badge/Architecture-Full%20Stack-111827?style=for-the-badge" alt="View the system architecture" /></a>
+  </p>
 
-  <p align="center">
-  <img src="./docs/assets/prismora-readme-cover.png" alt="Prismora — AI Visual Studio" width="100%" />
-</p>
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.13%2B-3776AB?logo=python&logoColor=white" alt="Python 3.13+" />
+    <img src="https://img.shields.io/badge/FastAPI-0.121%2B-009688?logo=fastapi&logoColor=white" alt="FastAPI" />
+    <img src="https://img.shields.io/badge/Gemini-Prompt%20%26%20Vision%20QA-8E75B2?logo=googlegemini&logoColor=white" alt="Gemini prompt and vision QA" />
+    <img src="https://img.shields.io/badge/Cloudflare%20Workers%20AI-FLUX.1%20Schnell-F38020?logo=cloudflare&logoColor=white" alt="Cloudflare Workers AI" />
+    <img src="https://img.shields.io/badge/SQLite-Private%20Persistence-003B57?logo=sqlite&logoColor=white" alt="SQLite persistence" />
+    <img src="https://img.shields.io/badge/Tests-8%2F8%20Passing-2EA44F?logo=pytest&logoColor=white" alt="8 of 8 tests passing" />
+    <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-7C3AED" alt="MIT License" /></a>
+  </p>
 
-</p>
+  <a href="./docs/assets/prismora-readme-cover.png">
+    <img src="./docs/assets/prismora-readme-cover.png" alt="Prismora AI Visual Studio" width="100%" />
+  </a>
 
-<p align="center">
-  <a href="#overview">Overview</a> ·
-  <a href="#product-tour">Product Tour</a> ·
-  <a href="#creation-pipeline">Pipeline</a> ·
-  <a href="#system-architecture">Architecture</a> ·
-  <a href="#api-reference">API</a> ·
-  <a href="#quick-start">Installation</a>
-</p>
+  <p>
+    <a href="#overview">Overview</a> ·
+    <a href="#product-tour">Product Tour</a> ·
+    <a href="#creation-pipeline">Pipeline</a> ·
+    <a href="#system-architecture">Architecture</a> ·
+    <a href="#api-reference">API</a> ·
+    <a href="#quick-start">Installation</a>
+  </p>
+</div>
 
 ---
 
 ## Overview
 
-Prismora began as an internship image-generation project and was expanded into a complete visual-production environment rather than a single prompt box connected to an API.
+Prismora started as my internship image-generation project. I chose to develop it into a full visual workspace instead of stopping at a prompt field connected to an image API.
 
-A user can create a private account, develop a rough concept in **Prompt Studio**, transform it into a structured production prompt, select a visual direction and canvas, generate one or more images, refine an existing result while preserving its identity, review quality and safety metadata, organize creations into a visual library, curate favorites, revisit complete creation threads, and download validated assets.
+The application covers the full creative flow. A user can create a private account, shape an early idea in **Prompt Studio**, review the enhanced production prompt, choose a visual direction and canvas, generate multiple results, refine an existing image without losing the original scene, inspect quality and safety information, organize assets, revisit earlier creation threads, and download finished work.
 
-The system combines a responsive browser application with a FastAPI backend, Gemini-based prompt and vision intelligence, Cloudflare Workers AI image generation, local persistence, disk-first provider processing, user-scoped asset delivery, and automated tests.
+The project combines a responsive browser interface, a FastAPI backend, Gemini prompt and vision support, Cloudflare Workers AI image generation, SQLite persistence, user-scoped file delivery, disk-based provider processing, and automated tests.
 
-> **Prismora is designed as a workflow:** idea → structured direction → safety gate → generation → binary validation → visual QA → private library → refinement.
+> **Workflow:** idea → structured prompt → safety check → generation → file validation → visual review → private library → refinement.
 
 ### Project at a glance
 
@@ -57,7 +59,7 @@ The system combines a responsive browser application with a FastAPI backend, Gem
     <td align="center"><strong>8</strong><br />Visual modes</td>
     <td align="center"><strong>6</strong><br />Creative finishes</td>
     <td align="center"><strong>8</strong><br />Canvas formats</td>
-    <td align="center"><strong>1–4</strong><br />Variations per request</td>
+    <td align="center"><strong>1 to 4</strong><br />Variations per request</td>
   </tr>
   <tr>
     <td align="center"><strong>2</strong><br />Interface themes</td>
@@ -69,30 +71,30 @@ The system combines a responsive browser application with a FastAPI backend, Gem
 
 ---
 
-## Why Prismora is more than an API wrapper
+## What I built beyond image generation
 
-| Engineering area | Prismora implementation |
+| Area | Implementation |
 |---|---|
-| **Prompt intelligence** | Understands concepts written in English, Urdu, Roman Urdu, or Hindi and compiles them into focused natural-English production prompts. |
-| **Intent preservation** | Protects subject identity, subject count, relationships, action, clothing, colors, objects, environment, and unspecified details during refinement. |
-| **Deterministic fallback** | Builds a structured prompt locally when Gemini prompt enhancement is unavailable. |
+| **Prompt intelligence** | Accepts ideas written in English, Urdu, Roman Urdu, or Hindi and turns them into focused English production prompts. |
+| **Intent preservation** | Carries forward subject identity, count, relationships, action, clothing, colors, objects, environment, and details that were not requested to change. |
+| **Deterministic fallback** | Uses a local structured prompt builder when Gemini enhancement is unavailable. |
 | **Generation reliability** | Streams provider responses to temporary files, handles both direct-image and JSON/base64 responses, and avoids joining large payloads in memory. |
-| **Asset validation** | Fully decodes generated files, applies EXIF orientation, normalizes dimensions, converts to PNG, calculates SHA-256, and records file metadata. |
+| **Asset validation** | Decodes each generated file, applies EXIF orientation, normalizes dimensions, converts the result to PNG, calculates SHA-256, and stores file metadata. |
 | **Automated visual QA** | Combines image heuristics with Gemini vision review for aesthetics, semantic alignment, and output safety. |
-| **Automatic recovery** | Can regenerate low-quality output according to a configurable retry policy before returning a failure. |
+| **Automatic recovery** | Can retry a generation when verified quality checks fail, based on a configurable policy. |
 | **Private organization** | Stores user-scoped threads, messages, generations, images, settings, sessions, favorites, profile data, and history. |
-| **Product experience** | Includes responsive dark/light themes, prompt auto-growth, scroll preservation, inline enhancement, refinement dialogs, feedback toasts, downloads, and synchronized collections. |
-| **Honest quality states** | Distinguishes a verified pass from a review-unavailable fallback instead of displaying unsupported quality claims. |
+| **Interface** | Includes dark and light themes, an auto-growing prompt composer, scroll preservation, inline enhancement, refinement dialogs, clear feedback, downloads, and synchronized collections. |
+| **QA status handling** | Separates verified review results from fallback states, so an unavailable reviewer is never shown as a successful quality check. |
 
 ---
 
 ## Product tour
 
-All previews below preserve the complete frame. Click any image to open the original full-resolution PNG.
+Each preview shows the full interface frame. Click an image to open the original PNG at full resolution.
 
-### 1. Premium private-studio access
+### 1. Private account access
 
-Prismora presents authentication as the entrance to a private creative workspace, with dedicated sign-in and account-creation states.
+Authentication is the entry point to each user's private workspace, with separate sign-in and account-creation views.
 
 <a href="./docs/screenshots/01-authentication-overview.png">
   <img src="./docs/screenshots/web/01-authentication-overview.webp" alt="Prismora authentication overview" width="100%" />
@@ -104,13 +106,13 @@ Prismora presents authentication as the entrance to a private creative workspace
       <a href="./docs/screenshots/02-sign-in-panel.png">
         <img src="./docs/screenshots/web/02-sign-in-panel.webp" alt="Prismora sign-in panel" width="100%" />
       </a>
-      <br /><strong>Returning-user sign in</strong>
+      <br /><strong>Returning user sign-in</strong>
     </td>
     <td width="50%" align="center" valign="top">
       <a href="./docs/screenshots/03-create-account-panel.png">
         <img src="./docs/screenshots/web/03-create-account-panel.webp" alt="Prismora account creation panel" width="100%" />
       </a>
-      <br /><strong>Private studio registration</strong>
+      <br /><strong>Account creation</strong>
     </td>
   </tr>
 </table>
@@ -123,9 +125,9 @@ Prompt Studio separates ideation from generation. Users can define an initial co
   <img src="./docs/screenshots/web/04-prompt-studio.webp" alt="Prismora Prompt Studio" width="100%" />
 </a>
 
-### 3. Visual Library and curated favorites
+### 3. Visual Library and Favorites
 
-The library displays generated work as a visual collection, while Favorites provides a focused curation layer for selected assets.
+The Visual Library keeps generated work in one place. Favorites provides a smaller curated view for selected assets.
 
 <table>
   <tr>
@@ -144,9 +146,9 @@ The library displays generated work as a visual collection, while Favorites prov
   </tr>
 </table>
 
-### 4. Personal Studio and persistent preferences
+### 4. Account and studio preferences
 
-Account identity, avatar management, email updates, password changes, theme selection, prompt-intelligence behavior, and creative defaults are managed inside the same product language.
+Account details, avatar management, email and password updates, theme selection, prompt behavior, and creative defaults are managed from the same settings area.
 
 <table>
   <tr>
@@ -165,9 +167,9 @@ Account identity, avatar management, email updates, password changes, theme sele
   </tr>
 </table>
 
-### 5. Full creation workspace
+### 5. Creation workspace
 
-The main workspace brings together the generation timeline, output cards, prompt composer, prompt enhancement, visual controls, refinement actions, download actions, quality feedback, and responsive theme behavior.
+The main workspace brings the generation timeline, output cards, prompt composer, visual controls, refinement, downloads, and quality feedback into one screen.
 
 <a href="./docs/screenshots/09-create-studio-light-theme.png">
   <img src="./docs/screenshots/web/09-create-studio-light-theme.webp" alt="Prismora creation workspace in Light Prism theme" width="100%" />
@@ -181,9 +183,9 @@ Every result remains connected to its prompt, mode, canvas, timestamp, status, p
   <img src="./docs/screenshots/web/10-creation-history.webp" alt="Prismora creation history" width="100%" />
 </a>
 
-### 7. Precision creative controls
+### 7. Creative controls
 
-The inspector provides substantial control without crowding the central canvas. The latest interface exposes eight visual directions, six finishes, eight canvas ratios, automatic or fixed seed behavior, variation count, prompt refinement, and exclusions.
+The inspector keeps detailed controls beside the main canvas without taking over the workspace. It includes eight visual directions, six finishes, eight canvas ratios, automatic or fixed seeds, variation count, prompt refinement, and exclusions.
 
 <table>
   <tr>
@@ -228,9 +230,9 @@ The composer supports a concise manual direction and a reviewable enhanced promp
   <img src="./docs/screenshots/web/16-enhanced-prompt-review.webp" alt="Prismora enhanced prompt review" width="100%" />
 </a>
 
-### 9. Validated generation result
+### 9. Reviewed generation result
 
-A completed result presents the production prompt, generated visual, dimensions, file size, aesthetic score, semantic prompt-match score, quality status, safety status, and direct actions.
+Each completed result shows the final production prompt, generated image, dimensions, file size, aesthetic score, prompt-alignment score, quality status, safety status, and available actions.
 
 <p align="center">
   <a href="./docs/screenshots/17-quality-verified-generation.png">
@@ -240,7 +242,7 @@ A completed result presents the production prompt, generated visual, dimensions,
 
 ---
 
-## Core capabilities
+## Capabilities
 
 ### Prompt intelligence
 
@@ -255,16 +257,16 @@ A completed result presents the production prompt, generated visual, dimensions,
 ### Generation and refinement
 
 - Generates through Cloudflare Workers AI using the configurable FLUX.1 Schnell endpoint.
-- Supports 1–4 variations in a single request.
+- Supports 1 to 4 variations in a single request.
 - Supports automatic or explicit seed values.
 - Enforces ratio-compatible output resolution through strict Pydantic validation.
 - Creates refinement requests from an earlier generation.
 - Locks the previous prompt as context and applies only the requested changes.
-- Keeps unspecified subject and scene details consistent in the refinement prompt.
+- Keeps unspecified subject and scene details consistent unless the refinement request changes them.
 
 ### Creative organization
 
-- Private creation threads with user and assistant messages.
+- Private creation threads containing prompts, system responses, and generated results.
 - Visual Library with full result cards.
 - Curated Favorites collection.
 - Creation History with reopen and download actions.
@@ -272,44 +274,44 @@ A completed result presents the production prompt, generated visual, dimensions,
 - Profile identity, avatar upload, email update, and password update.
 - Deletion that removes both database records and stored generated files.
 
-### Product experience
+### Interface and workflow
 
 - Dark Prism and Light Prism themes.
-- Responsive sidebar and workspace layout.
+- Responsive sidebar and workspace layouts.
 - Hash-based client routing with browser navigation support.
 - Preserved workspace scroll position.
-- Automatic movement to a pending/new generation without jumping back to the top.
+- Automatic focus on a pending or newly completed generation without forcing the page back to the top.
 - Auto-growing prompt input with a controlled internal scrollbar.
 - Friendly safety, quality, provider, timeout, and authentication messages.
 - Toast confirmations for refinement, settings, and collection actions.
 
 ---
 
-## Creative control system
+## Creative controls
 
 ### Visual directions
 
-| Mode | Production intent |
+| Mode | Intended result |
 |---|---|
 | `realistic` | Real-camera appearance, natural textures, believable depth, no artificial look. |
 | `natural` | Organic daylight, authentic surroundings, subtle contrast, realistic imperfections. |
 | `cinematic` | Filmic light, dimensional composition, controlled shadows, atmospheric depth. |
-| `product` | Premium campaign imagery, clean commercial set, refined edges and reflections. |
-| `portrait` | Expressive face, realistic eyes, polished separation, professional portrait light. |
-| `fantasy` | Elevated concept artistry, intricate detail, luminous atmosphere, imaginative scale. |
+| `product` | Clean campaign imagery with controlled lighting, surfaces, edges, and reflections. |
+| `portrait` | Expressive facial detail, realistic eyes, clean subject separation, and professional portrait lighting. |
+| `fantasy` | Concept-driven artwork with detailed environments, atmosphere, and imaginative scale. |
 | `minimal` | Disciplined composition, elegant negative space, restrained presentation. |
-| `illustration` | Art-directed forms, stylized storytelling, polished illustrative detail. |
+| `illustration` | Art-directed forms, stylized storytelling, and controlled illustrative detail. |
 
 ### Creative finishes
 
 | Finish | Direction |
 |---|---|
-| `premium` | Luxury finish, precise detail, and balanced composition. |
-| `editorial` | Sophisticated magazine-style visual direction. |
-| `commercial` | Polished, campaign-ready brand presentation. |
-| `film` | Cinematic grade, lens character, and atmospheric depth. |
-| `studio` | Controlled professional light and a polished studio output. |
-| `raw` | Faithful rendering with minimal added styling. |
+| `premium` | Refined detail, controlled contrast, and a balanced composition. |
+| `editorial` | Magazine-style composition and art direction. |
+| `commercial` | Clean commercial presentation suitable for campaign assets. |
+| `film` | Filmic color, lens character, and atmospheric depth. |
+| `studio` | Controlled studio lighting and a clean final image. |
+| `raw` | A direct rendering with minimal added styling. |
 
 ### Canvas formats
 
@@ -354,20 +356,20 @@ flowchart LR
     Q --> S[Private thread, library, history and download]
 ```
 
-### Pipeline guarantees
+### Validation and recovery rules
 
 1. **Prompt safety is evaluated before provider generation.**
 2. **Provider payloads are written to disk in chunks** instead of being concatenated into one large in-memory response.
 3. **Direct images and JSON responses are both supported.** JSON can contain a URL or a base64 image payload.
 4. **The returned image must decode completely.** Truncated or unidentified image streams are rejected.
-5. **The final asset always matches the selected canvas.** Mismatched provider dimensions are normalized with high-quality resampling and recorded as adjusted.
+5. **The stored asset matches the selected canvas.** If the provider returns different dimensions, Prismora normalizes the image with high-quality resampling and records the adjustment.
 6. **Every stored image receives a SHA-256 digest and file-size metadata.**
-7. **Vision QA can score aesthetics and semantic alignment.** When it is unavailable, Prismora records that limitation instead of inventing scores.
-8. **Quality enforcement is configurable.** Failed verified reviews can trigger automatic regeneration before a final error is returned.
+7. **Vision QA can score aesthetics and prompt alignment.** If the reviewer is unavailable, Prismora records that state instead of showing an unverified score.
+8. **Quality enforcement is configurable.** A verified failure can trigger another generation attempt before the request is marked unsuccessful.
 
 ---
 
-## Quality assurance and safety
+## Safety and quality review
 
 ### Input safety gate
 
@@ -402,8 +404,8 @@ When Gemini vision review is configured, Prismora evaluates:
 
 | Signal | Range | Default pass threshold |
 |---|---:|---:|
-| Aesthetic score | `0.0–10.0` | `7.0` |
-| Semantic prompt alignment | `0.0–1.0` | `0.58` |
+| Aesthetic score | `0.0 to 10.0` | `7.0` |
+| Semantic prompt alignment | `0.0 to 1.0` | `0.58` |
 | Output safety | Boolean | Must be safe |
 
 Aesthetic review considers composition, lighting, coherence, anatomy/material quality, detail, and polish. Semantic review considers subject, count, action, relationships, colors, objects, and setting.
@@ -414,7 +416,7 @@ The threshold values, review enforcement, output moderation, file limits, and re
 
 ## System architecture
 
-Prismora uses a deliberately compact single-service architecture. FastAPI serves both the static frontend and the JSON API, which keeps local setup simple and eliminates the need for a separate development frontend server.
+Prismora uses a single-service architecture. FastAPI serves both the static frontend and the JSON API, which keeps local setup straightforward and avoids a separate frontend development server.
 
 ```mermaid
 flowchart TB
@@ -467,12 +469,12 @@ flowchart TB
     FILES --> IMG
 ```
 
-### Architectural characteristics
+### Key architecture choices
 
 - **Same-origin application:** frontend and API are served from one FastAPI process.
 - **No frontend build step:** the interface is delivered as static HTML, CSS, and JavaScript.
-- **SQLite WAL mode:** appropriate for local development and demonstration workloads.
-- **Disk-first provider handling:** better memory behavior for large JSON/base64 responses.
+- **SQLite WAL mode:** suited to local development and single-instance demonstration workloads.
+- **Disk-first provider handling:** lower peak memory usage for large JSON and base64 responses.
 - **Provider abstraction points:** prompt enhancement, image generation, and vision QA are separated into clear functions.
 - **Runtime storage isolation:** generated data is excluded from source control.
 - **Strict schema validation:** supported modes, finishes, ratios, resolutions, variation counts, and seed limits are enforced at the API boundary.
@@ -481,7 +483,7 @@ flowchart TB
 
 ## Authentication and data protection
 
-### Implemented controls
+### Security controls
 
 - Passwords are hashed using **PBKDF2-HMAC-SHA256 with 250,000 iterations** and a random 16-byte salt.
 - Password verification uses `hmac.compare_digest()` to avoid simple timing comparisons.
@@ -782,7 +784,7 @@ All protected routes require the `prismora_session` cookie created during regist
 - Python **3.13 or newer**
 - `pip`
 - A Cloudflare account with Workers AI access for live generation
-- A Gemini API key for AI prompt enhancement and vision QA
+- A Gemini API key for prompt enhancement and visual review
 
 > Prismora can still compile prompts locally without Gemini. Live generated images require the Cloudflare credentials unless `ALLOW_DEV_PLACEHOLDER=true` is enabled for development previews.
 
@@ -906,7 +908,7 @@ MAX_IMAGE_BYTES=41943040
 
 ## Testing and continuous integration
 
-The current suite passes completely:
+At the time of this README update, the included test suite passes:
 
 ```text
 ........                                                                 [100%]
@@ -974,23 +976,23 @@ The API refuses a fixed resolution that does not correspond to the selected rati
 
 Provider output dimensions are treated as untrusted. Every accepted asset is normalized to the requested canvas and the source dimensions are retained in metadata.
 
-### Graceful intelligence fallback
+### Fallback behavior
 
-Prompt compilation continues without Gemini through a deterministic local direction builder. Vision QA unavailability is recorded as a fallback state rather than represented as a verified pass.
+Prompt compilation can continue without Gemini by using a deterministic local direction builder. When vision QA is unavailable, the result is marked as a fallback state instead of a verified pass.
 
 ### User-scoped assets
 
 The image route verifies database ownership before returning a generated file, even when a filename is known.
 
-### Friendly error translation
+### Clear error handling
 
-Provider errors, unsafe-content errors, quality failures, and session failures are translated into messages that make sense inside a creative product instead of exposing raw infrastructure output.
+The API maps provider failures, safety rejections, quality failures, and session errors to clear messages without exposing raw infrastructure details.
 
 ---
 
-## Current scope and production hardening
+## Production considerations
 
-Prismora is complete as an advanced internship project and strong local demonstration platform. A public multi-user deployment should add the following infrastructure controls.
+The current build is intended for internship evaluation and local demonstration. A public multi-user deployment should add the following infrastructure controls.
 
 | Current implementation | Production recommendation |
 |---|---|
@@ -1024,7 +1026,7 @@ Prismora is complete as an advanced internship project and strong local demonstr
 
 ---
 
-## Repository presentation assets
+## Repository presentation
 
 `docs/assets/prismora-social-preview.png` is included as a GitHub social-preview image. Upload it through the repository settings so Prismora has a consistent branded appearance when the repository is shared.
 
@@ -1037,7 +1039,7 @@ The README uses optimized WebP previews for performance while every preview link
 **Muhammad Saad Jadoon**  
 Creator and developer of Prismora.
 
-Prismora was developed from an internship brief into a complete AI visual-studio product spanning interface design, frontend engineering, backend APIs, database modeling, authentication, provider integration, prompt intelligence, image processing, safety, visual quality assurance, persistence, and automated testing.
+I developed Prismora from an internship brief into a working AI visual studio. The project covers interface design, frontend behavior, backend APIs, database modeling, authentication, provider integration, prompt enhancement, image processing, safety checks, visual review, persistence, and automated testing.
 
 ---
 
@@ -1054,5 +1056,5 @@ Distributed under the [MIT License](./LICENSE).
 <h3 align="center">Develop precise creative direction. Generate with confidence. Preserve every result.</h3>
 
 <p align="center">
-  Built with a focus on <strong>intent fidelity</strong>, <strong>visual quality</strong>, <strong>private organization</strong>, and a <strong>premium product experience</strong>.
+  Built around <strong>intent preservation</strong>, <strong>visual quality</strong>, <strong>private organization</strong>, and a <strong>carefully designed workflow</strong>.
 </p>
