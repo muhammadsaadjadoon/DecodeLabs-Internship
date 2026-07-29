@@ -35,6 +35,7 @@
 
 - [Project Overview](#project-overview)
 - [Why CodeFix AI Stands Out](#why-codefix-ai-stands-out)
+- [Version 4.0 Engineering Upgrade](#version-40-engineering-upgrade)
 - [Product Experience](#product-experience)
 - [Core Capabilities](#core-capabilities)
 - [Supported Languages](#supported-languages)
@@ -87,6 +88,27 @@ The platform is intentionally designed as a **code intelligence studio**, not a 
 | **Session isolation** | Anonymous HTTP-only workspace cookie; no review content stored in browser local storage |
 | **UI** | React 18, Vite, responsive sidebar, premium selectors, dark/light themes |
 | **Scale** | Compact review path for normal submissions and dedicated large-source review path |
+
+---
+
+## Version 4.0 Engineering Upgrade
+
+The current release moves CodeFix AI beyond a polished AI interface into an **auditable engineering review platform**. Every new review now produces a traceable quality profile rather than only a model-generated answer.
+
+| Production capability | What it adds |
+|---|---|
+| **Evidence quality gate** | A confidence score derived from language detection, deterministic source validation, correction validation, verification status, and repeat-source stability |
+| **Risk classification** | Verified, low, medium, high, or critical risk classification based on confirmed issue severity and parser/compiler evidence |
+| **Unified change intelligence** | A dedicated diff workspace with additions, removals, change blocks, and a readable original-versus-corrected view |
+| **Auditable review metadata** | Source hash, integrity signature, validation engines, diagnostics, issue breakdown, processing time, line count, character count, and verification state |
+| **Professional report export** | Downloadable Markdown or JSON engineering reports containing findings, quality-gate evidence, corrected code, diff, and explanation |
+| **Repeat-review integrity** | SHA-256 indexed source fingerprints make byte-identical verified code stable and efficiently reusable |
+| **Production observability** | Request IDs, processing-time headers, structured server logs, and detailed health reporting |
+| **Security baseline** | Browser security headers, privacy-preserving logging, strict file handling, and server-side workspace isolation |
+| **Continuous integration** | GitHub Actions validates Python compilation, deterministic tests, Ruff checks, and the production frontend build |
+| **Container delivery** | Dockerfiles, Nginx production serving, persistent backend storage, and one-command Docker Compose startup |
+
+This quality layer is intentionally visible in the product. Reviewers can inspect **why** a result is trusted, which engines validated it, what changed, and how the corrected output passed the final gate.
 
 ---
 
@@ -513,7 +535,9 @@ CodeFix AI uses a backend-managed workspace model.
 | `POST` | `/api/profile/avatar` | Upload a profile image |
 | `GET` | `/api/profile/avatar` | Read the workspace profile image |
 | `DELETE` | `/api/reviews` | Clear review history for the current workspace |
-| `POST` | `/api/review` | Review pasted code or an uploaded source file |
+| `POST` | `/api/review` | Review pasted code or an uploaded source file and return quality-gate metadata plus a unified diff |
+| `GET` | `/api/reviews/{review_id}/report?format=markdown` | Export a complete engineering review report as Markdown |
+| `GET` | `/api/reviews/{review_id}/report?format=json` | Export the auditable review session as JSON |
 | `POST` | `/api/explain` | Generate and optionally persist a structured code walkthrough |
 
 ### Example Review Request
@@ -578,12 +602,15 @@ erDiagram
       boolean has_issues
       string model_used
       text explanation
+      string source_hash
+      json metadata_json
+      text diff_text
       datetime created_at
       datetime updated_at
     }
 ```
 
-The workspace endpoint returns the latest **60** review sessions ordered by most recent update.
+The workspace endpoint returns a configurable history window (default **100** review sessions) ordered by most recent update.
 
 ---
 
@@ -599,7 +626,11 @@ DecodeLab-Intelligent Code Reviewer and Explainer/
 │   │   ├── schemas.py             # Pydantic request and response contracts
 │   │   └── __init__.py
 │   ├── main.py                    # FastAPI routes, SQLite, language detection, validators
+│   ├── tests/
+│   │   └── test_review_quality.py # Language, diff, metadata, and report tests
+│   ├── Dockerfile
 │   ├── requirements.txt
+│   ├── requirements-dev.txt
 │   └── .env.example
 ├── frontend/
 │   ├── public/
@@ -611,7 +642,9 @@ DecodeLab-Intelligent Code Reviewer and Explainer/
 │   │   │   ├── AnalysisLoading.jsx
 │   │   │   ├── BugReport.jsx
 │   │   │   ├── CodeBlock.jsx
+│   │   │   ├── DiffViewer.jsx
 │   │   │   ├── PremiumSelect.jsx
+│   │   │   ├── QualityGatePanel.jsx
 │   │   │   ├── ReviewComposer.jsx
 │   │   │   ├── ReviewWorkspace.jsx
 │   │   │   ├── SettingsModal.jsx
@@ -623,11 +656,21 @@ DecodeLab-Intelligent Code Reviewer and Explainer/
 │   │   ├── App.jsx
 │   │   ├── index.css
 │   │   └── main.jsx
+│   ├── Dockerfile
+│   ├── nginx.conf
 │   ├── package.json
 │   ├── vite.config.js
 │   └── .env.example
+├── .github/workflows/ci.yml       # Backend and frontend continuous integration
 ├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── REVIEW_GUARANTEES.md
 │   └── screenshots/               # Repository-relative README visuals
+├── docker-compose.yml
+├── Makefile
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── SECURITY.md
 ├── .gitignore
 ├── IMPLEMENTATION_NOTES.md
 └── README.md
@@ -637,7 +680,31 @@ DecodeLab-Intelligent Code Reviewer and Explainer/
 
 ## Getting Started
 
-### Prerequisites
+### Fastest Production-Style Start — Docker Compose
+
+```bash
+# 1. Clone the repository
+git clone <your-repository-url>
+cd <repository-directory>
+
+# 2. Provide the model key
+export GEMINI_API_KEY=your_real_key
+
+# 3. Build and launch the complete stack
+docker compose up --build
+```
+
+Open:
+
+- Frontend: `http://localhost:8080`
+- Backend API: `http://localhost:8000`
+- Interactive API documentation: `http://localhost:8000/docs`
+
+The SQLite workspace database is stored in the named Docker volume `codefix_storage`, so review history survives container restarts.
+
+### Local Development
+
+#### Prerequisites
 
 - Python 3.10 or newer recommended
 - Node.js 18 or newer recommended
@@ -899,7 +966,7 @@ This project demonstrates work across multiple software-engineering and AI disci
 - Test generation and regression validation.
 - Static-analysis integrations such as ESLint, Ruff, Bandit, Semgrep, and language-specific linters.
 - Streaming review progress through Server-Sent Events or WebSockets.
-- Containerized deployment with Docker and automated CI/CD.
+- Organization accounts, authenticated cross-device workspace synchronization, and team review sharing.
 - Review analytics, quality trends, and team workspaces.
 
 ---
