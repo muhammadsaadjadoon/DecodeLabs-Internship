@@ -3,12 +3,12 @@
 <div align="center">
   <img src="frontend/src/assets/lexora-logo.png" alt="Lexora logo" width="108" />
 
-# Lexora — AI Tone Studio
+# Lexora | AI Tone Studio
 
-### Controlled AI copywriting, tone transformation, and campaign automation in one private workspace
+### A full-stack workspace for controlled copy generation, tone transformation, and CSV campaign automation
 
 <p>
-  Lexora turns raw product facts or existing text into polished, platform-ready copy through a deeply controlled creative brief, structured Gemini output, editable variations, secure account workspaces, and scalable CSV automation.
+  I built Lexora to turn product facts and existing copy into clear, platform-ready content without hiding the important decisions inside one prompt box. The product combines a structured creative brief, Gemini-powered generation, editable variations, account-based workspaces, and bulk CSV processing in one consistent workflow.
 </p>
 
 <p>
@@ -31,7 +31,7 @@
 
 <p>
   <a href="#product-tour"><strong>Product Tour</strong></a>
-  · <a href="#feature-system"><strong>Feature System</strong></a>
+  · <a href="#feature-system"><strong>Features</strong></a>
   · <a href="#architecture"><strong>Architecture</strong></a>
   · <a href="#quick-start"><strong>Quick Start</strong></a>
   · <a href="#api-reference"><strong>API</strong></a>
@@ -42,22 +42,22 @@
 ---
 
 <a href="docs/screenshots/01-home.png">
-  <img src="docs/screenshots/01-home.png" alt="Lexora premium home screen" width="100%" />
+  <img src="docs/screenshots/01-home.png" alt="Lexora home screen" width="100%" />
 </a>
 
-<p align="center"><sub>Lexora home experience — a premium entry point into Studio, Bulk, Workspace, and Profile.</sub></p>
+<p align="center"><sub>Lexora home screen with direct access to Studio, Bulk, Workspace, and Profile.</sub></p>
 
 ---
 
 ## Executive Overview
 
-**Lexora** is a full-stack AI copywriting and tone-transformation platform developed for the DecodeLabs internship project **Automated Copywriting Tone Transformer**.
+**Lexora** started as the DecodeLabs internship task **Automated Copywriting Tone Transformer**. I expanded the original brief into a working full-stack product that supports both one-off copy generation and repeatable campaign workflows.
 
-Instead of wrapping a language model in a single prompt box, Lexora treats copy generation as a complete product workflow: a user defines the audience, objective, language, length, platform, tone, formality, CTA, keywords, brand voice, variation count, temperature, and top-p; the backend compiles those controls into a server-owned instruction template; Gemini returns structured JSON; Pydantic validates it; and the interface presents editable **Safe**, **Creative**, and **Bold** variations with platform-budget feedback.
+A user can define the audience, objective, language, length, platform, tone, formality, CTA, keywords, brand voice, variation count, temperature, and top-p. The backend then builds a server-owned instruction, sends it to Gemini, validates the structured response with Pydantic, and returns editable **Safe**, **Creative**, and **Bold** variations with platform-specific character feedback.
 
-The same controlled generation pipeline is reused across the interactive Studio, authenticated Workspace, CSV batch processor, and standalone command-line interface.
+The interactive Studio, authenticated Workspace, CSV bulk processor, and command-line interface all use the same generation pipeline. This keeps the behaviour consistent and avoids maintaining separate prompt logic for each entry point.
 
-> **Product principle:** creative freedom should remain controlled, measurable, reusable, platform-aware, and safe enough for real marketing workflows.
+> **Design principle:** give users meaningful creative control, keep the generation contract predictable, and make the result easy to review, edit, reuse, and export.
 
 ### Project at a Glance
 
@@ -78,32 +78,32 @@ The same controlled generation pipeline is reused across the interactive Studio,
 
 ---
 
-## From Internship Brief to Complete Product
+## How the Internship Brief Evolved
 
-| Core challenge | Lexora’s extended implementation |
+| Internship requirement | What I implemented in Lexora |
 |---|---|
 | Transform copy into a selected tone | A 13-mode transformation suite supporting generation, rewrite, shortening, expansion, improvement, simplification, humanization, grammar correction, professionalization, tone change, headlines, hashtags, and translation. |
 | Produce useful marketing text | Platform-specific character budgets, content structures, hashtag policies, CTA controls, formality, emoji level, audience, objective, language, keywords, and copy length. |
 | Integrate an AI model | Async Gemini integration with schema-constrained JSON, Pydantic validation, output normalization, concurrency control, and retry classification. |
-| Present results | A premium editable output studio with variation switching, counts, compliance feedback, copy, save, favourite, regenerate, download, and clear actions. |
+| Present results | An editable output studio with variation switching, live counts, compliance feedback, copy and download actions, favourites, regeneration, and result clearing. |
 | Handle one request at a time | A CSV bulk system with preview, required-column checks, typed backend validation, row-level results, counters, client-side cancellation, and export. |
-| Build a demonstration interface | A complete responsive product with authentication, profile management, history, favourites, reusable templates, private persistence, tests, CI, CLI access, and deployment guidance. |
+| Build a demonstration interface | A responsive product with authentication, profile management, history, favourites, reusable templates, backend persistence, tests, CI, CLI access, and deployment guidance. |
 
 ---
 
-## Why Lexora Stands Out
+## Core Engineering Decisions
 
 | Engineering area | What is implemented |
 |---|---|
-| **Controlled generation** | The creative brief exposes model, copy, audience, platform, brand, and business controls as first-class product inputs rather than hiding everything inside one free-form prompt. |
-| **Structured AI contract** | Gemini is instructed to return a strict JSON object; the backend validates and normalizes the payload before the frontend receives it. |
-| **Three-level creative strategy** | Safe, Creative, and Bold variations give users deliberate creative positions instead of one unpredictable output. |
+| **Explicit generation controls** | Model, copy, audience, platform, brand, and business settings are represented as product inputs instead of being buried in one free-form prompt. |
+| **Structured response contract** | Gemini returns a defined JSON shape, which the backend validates and normalizes before sending it to the frontend. |
+| **Three creative positions** | Safe, Creative, and Bold variations let the user compare different levels of expression without relying on one unpredictable result. |
 | **Platform intelligence** | Each supported platform carries a character budget, formatting instruction, and hashtag policy. |
-| **Private workspace** | Authenticated history, favourites, templates, profile data, and profile images are persisted on the backend rather than permanently stored in the browser. |
-| **Bulk automation** | The same generation engine scales to UTF-8 CSV uploads of up to 200 usable rows, preserving validation and row-level error reporting. |
-| **Reliability layer** | Request-size guards, rate limits, login throttling, Gemini concurrency control, transient/permanent error classification, exponential retry, and friendly API errors. |
-| **Developer readiness** | Typed models, environment templates, OpenAPI docs, a standalone CLI, backend tests, and GitHub Actions for tests and production-build verification. |
-| **Production awareness** | The repository documents cookie hardening, distributed rate limiting, PostgreSQL migration, durable job queues, email reset delivery, observability, and AI evaluation. |
+| **Account-owned workspace** | History, favourites, templates, profile data, and profile images are persisted on the backend and scoped to the authenticated account. |
+| **Bulk automation** | The same generation engine handles UTF-8 CSV uploads of up to 200 usable rows while preserving typed validation and row-level error reporting. |
+| **Reliability controls** | Request-size guards, rate limits, login throttling, Gemini concurrency control, error classification, exponential retry, and user-friendly API responses. |
+| **Developer workflow** | Typed models, environment templates, OpenAPI documentation, a standalone CLI, backend tests, and GitHub Actions for test and build verification. |
+| **Documented next steps** | The repository records the work still needed for a public multi-user deployment, including secure cookies, distributed limits, PostgreSQL, durable jobs, reset-email delivery, observability, and AI evaluation. |
 
 ---
 
@@ -113,9 +113,9 @@ The same controlled generation pipeline is reused across the interactive Studio,
 
 > Every screenshot below uses a repository-relative path and is clickable for full-resolution viewing on GitHub.
 
-### 1. Studio — Brief, Control, Generate
+### 1. Studio: Brief, Control, Generate
 
-The Studio converts a marketing task into a structured creative brief. Users can select an operation mode, define product facts and audience intent, choose a platform and tone, control formality and CTA behavior, save a brand voice, and tune temperature/top-p before generation.
+The Studio turns a marketing task into a structured creative brief. Users can select an operation mode, define product facts and audience intent, choose a platform and tone, control formality and CTA behaviour, save a brand voice, and tune temperature and top-p before generation.
 
 <table>
   <tr>
@@ -130,9 +130,9 @@ The Studio converts a marketing task into a structured creative brief. Users can
   </tr>
 </table>
 
-### 2. Output Lifecycle — Empty, Processing, Editable
+### 2. Output Lifecycle: Empty, Processing, Editable
 
-Lexora communicates generation state clearly: a focused empty state, a live compilation sequence, and an editable result editor rather than a static response card.
+The output panel has a clear empty state, a visible processing state, and an editable result view. Generated copy is treated as working content, not as a static chat response.
 
 <table>
   <tr>
@@ -142,14 +142,14 @@ Lexora communicates generation state clearly: a focused empty state, a live comp
     </td>
     <td width="50%" valign="top">
       <a href="docs/screenshots/13-generation-progress.png"><img src="docs/screenshots/13-generation-progress.png" alt="Lexora generation progress console" width="100%" /></a>
-      <br/><sub><strong>Generation Progress:</strong> a transparent, staged processing experience.</sub>
+      <br/><sub><strong>Generation Progress:</strong> staged feedback while the request is being processed.</sub>
     </td>
   </tr>
 </table>
 
-### 3. Controlled Variations — Safe, Creative, Bold
+### 3. Controlled Variations: Safe, Creative, Bold
 
-Each variation remains editable and shows its word count, character count, platform budget, compliance status, hashtags, CTA, sampling controls, and output actions.
+Each variation can be edited directly and includes word count, character count, platform budget, compliance status, hashtags, CTA, sampling settings, and output actions.
 
 <table>
   <tr>
@@ -168,9 +168,9 @@ Each variation remains editable and shows its word count, character count, platf
   </tr>
 </table>
 
-### 4. Workspace — History, Favourites, Templates
+### 4. Workspace: History, Favourites, Templates
 
-Signed-in users can search and filter generation history, duplicate previous briefs, save templates, reuse favourite outputs, and independently manage each workspace collection.
+Signed-in users can search and filter generation history, duplicate earlier briefs, save templates, reuse favourite outputs, and manage each workspace collection separately.
 
 <table>
   <tr>
@@ -185,9 +185,9 @@ Signed-in users can search and filter generation history, duplicate previous bri
   </tr>
 </table>
 
-### 5. Bulk CSV — Upload, Validate, Run, Export
+### 5. Bulk CSV: Upload, Validate, Run, Export
 
-Bulk mode reuses Lexora’s typed generation pipeline for campaign-scale work. It supports a downloadable template, drag-and-drop upload, client-side preview, required-field checks, backend validation, progress feedback, row-level outcomes, and results export.
+Bulk mode uses the same typed generation pipeline as the Studio. It includes a downloadable template, drag-and-drop upload, client-side preview, required-field checks, backend validation, progress feedback, row-level results, and CSV export.
 
 <table>
   <tr>
@@ -207,9 +207,9 @@ Bulk mode reuses Lexora’s typed generation pipeline for campaign-scale work. I
 </a>
 <p align="center"><sub><strong>Exported CSV:</strong> row ID, product, platform, tone, status, headline, body, CTA, and error fields.</sub></p>
 
-### 6. Account Experience — Sign In, Recovery, Profile
+### 6. Account Experience: Sign In, Recovery, Profile
 
-Lexora includes account creation and sign-in, remembered sessions, local-development password recovery, profile editing, profile image management, password updates, sign-out, and permanent account deletion.
+Lexora includes account creation and sign-in, remembered sessions, a local-development password reset flow, profile editing, profile image management, password updates, sign-out, and permanent account deletion.
 
 <table>
   <tr>
@@ -219,7 +219,7 @@ Lexora includes account creation and sign-in, remembered sessions, local-develop
     </td>
     <td width="50%" valign="top">
       <a href="docs/screenshots/11-password-reset.png"><img src="docs/screenshots/11-password-reset.png" alt="Lexora password reset screen" width="100%" /></a>
-      <br/><sub><strong>Password Recovery:</strong> local-development reset preparation flow.</sub>
+      <br/><sub><strong>Password Recovery:</strong> development-only password reset flow.</sub>
     </td>
   </tr>
 </table>
@@ -239,7 +239,7 @@ Lexora includes account creation and sign-in, remembered sessions, local-develop
 
 ### Advanced AI Studio
 
-Lexora exposes a deep brief instead of depending on one free-form prompt.
+The Studio uses a structured brief so that the user can control the parts of the task that materially affect the result.
 
 - **13 operation modes:** Generate, Rewrite, Shorten, Expand, Improve, Simplify, Humanize, Grammar Fix, Professional, Change Tone, Headlines, Hashtags, and Translate.
 - **8 platform presets:** LinkedIn, Instagram, Facebook, Email, X/Twitter, Google Ads, YouTube, and TikTok.
@@ -261,7 +261,7 @@ A structured brand profile can guide every generated variation:
 - CTA style
 - Example copy to emulate
 
-The complete creative brief can be reused through saved templates and generation history.
+The full brief can be reused from saved templates or restored from generation history.
 
 ### Safe · Creative · Bold Strategy
 
@@ -271,7 +271,7 @@ The complete creative brief can be reused through saved templates and generation
 | **Creative** | More memorable and differentiated while remaining factual and platform-appropriate. |
 | **Bold** | Stronger, punchier, and more confident without inventing claims or guarantees. |
 
-The output editor supports direct headline/body/CTA editing, variation switching, word and character counts, platform compliance, clipboard copy, save, favourite, regenerate, `.txt` download, and clear.
+The output editor supports direct headline, body, and CTA editing; variation switching; word and character counts; platform compliance feedback; clipboard copy; saving; favourites; regeneration; `.txt` download; and clearing the current result.
 
 ### Platform-Aware Rules
 
@@ -331,7 +331,7 @@ Authenticated users receive server-persisted collections for:
 
 ### Standalone CLI
 
-The backend can be used without the React interface. The CLI validates platform/tone arguments, exposes temperature and top-p, supports compiled-prompt inspection, prints JSON, and can write results to a file.
+The backend can also be used without the React interface. The CLI validates platform and tone arguments, exposes temperature and top-p, supports compiled-prompt inspection, prints JSON, and can write results to a file.
 
 ---
 
@@ -417,7 +417,7 @@ The core instruction stays on the backend and combines:
 - Audience and objective
 - Language and copy length
 - Keywords and emoji level
-- Formality and CTA behavior
+- Formality and CTA behaviour
 - Brand voice profile
 - Tone-specific writing guidance
 - Platform-specific formatting rules
@@ -425,7 +425,7 @@ The core instruction stays on the backend and combines:
 - Brand-safety constraints
 - Exact JSON schema requirements
 
-This design reduces prompt drift and keeps behavior consistent across Studio, Bulk, and CLI use cases.
+Keeping the instruction on the backend reduces prompt drift and ensures that Studio, Bulk, and CLI requests follow the same rules.
 
 ### Component Responsibilities
 
@@ -644,7 +644,7 @@ The optimized output is written to `frontend/dist/`.
 ## Environment Configuration
 
 <details open>
-<summary><strong>Backend — <code>backend/.env</code></strong></summary>
+<summary><strong>Backend: <code>backend/.env</code></strong></summary>
 
 | Variable | Repository default | Description |
 |---|---|---|
@@ -664,7 +664,7 @@ The optimized output is written to `frontend/dist/`.
 </details>
 
 <details>
-<summary><strong>Frontend — <code>frontend/.env</code></strong></summary>
+<summary><strong>Frontend: <code>frontend/.env</code></strong></summary>
 
 | Variable | Default | Description |
 |---|---|---|
@@ -874,7 +874,7 @@ python cli.py \
   --description "Noise-cancelling earbuds with a 30-hour battery" \
   --platform instagram \
   --tone energetic \
-  +verbose
+  --verbose
 ```
 
 ### Write JSON to a File
@@ -942,13 +942,13 @@ erDiagram
     }
 ```
 
-Workspace payloads are serialized as JSON while ownership is enforced through `user_id`. Foreign-key cascade deletion removes private records when an account is deleted.
+Workspace payloads are stored as JSON, with ownership enforced through `user_id`. Foreign-key cascade deletion removes the related private records when an account is deleted.
 
 ---
 
 ## Security & Privacy
 
-Lexora includes practical security controls appropriate for an internship evaluation build:
+Lexora includes the following security and privacy controls:
 
 - Gemini credentials remain on the backend and are loaded from `.env`.
 - Passwords are salted and hashed with **PBKDF2-HMAC-SHA256 using 260,000 rounds**.
@@ -997,8 +997,8 @@ npm run build
 
 `.github/workflows/ci.yml` runs on every push and pull request:
 
-1. **Backend tests** — Python 3.12, dependency installation, and Pytest.
-2. **Frontend build** — Node.js 22, clean npm installation, and Vite production build.
+1. **Backend tests:** Python 3.12, dependency installation, and Pytest.
+2. **Frontend build:** Node.js 22, clean npm installation, and Vite production build.
 
 ---
 
@@ -1040,9 +1040,9 @@ The frontend and backend must be configured consistently because authentication 
 
 ## Production Hardening Considerations
 
-The repository is complete for local demonstration and internship evaluation. Before a public multi-user launch, prioritize:
+The repository is ready for local demonstration and internship evaluation. A public multi-user release would still require the following work:
 
-1. **Secure cookies:** set the session cookie to `secure=True` under HTTPS and make the behavior environment-driven.
+1. **Secure cookies:** set the session cookie to `secure=True` under HTTPS and make the behaviour environment-driven.
 2. **Password-reset delivery:** send one-time reset links through an email provider and never return the token in a production API response.
 3. **Distributed rate limiting:** replace process-local buckets with Redis or gateway-level limits for multi-instance deployments.
 4. **Database scale:** migrate from SQLite to PostgreSQL with schema migrations for horizontal scaling.
@@ -1072,22 +1072,20 @@ The repository is complete for local demonstration and internship evaluation. Be
 
 ---
 
-## Evaluation Highlights
-
-For an internship review, Lexora demonstrates end-to-end ownership across:
+## What I Worked On
 
 <table>
   <tr>
-    <td><strong>Product & UX</strong><br/><sub>Information architecture, responsive UI, interaction states, editable output, and a consistent visual system.</sub></td>
-    <td><strong>AI Engineering</strong><br/><sub>Prompt compilation, model controls, structured JSON, schema validation, and controlled variation strategy.</sub></td>
+    <td><strong>Product Design</strong><br/><sub>Information architecture, responsive layouts, interaction states, editable outputs, and a consistent visual system.</sub></td>
+    <td><strong>AI Integration</strong><br/><sub>Prompt compilation, model controls, structured JSON responses, schema validation, and the Safe, Creative, and Bold variation strategy.</sub></td>
   </tr>
   <tr>
-    <td><strong>Backend Engineering</strong><br/><sub>Async REST APIs, validation, authentication, persistence, uploads, bulk processing, and error handling.</sub></td>
-    <td><strong>Reliability</strong><br/><sub>Rate limits, request guards, concurrency control, retry classification, CI, and automated tests.</sub></td>
+    <td><strong>Backend Engineering</strong><br/><sub>Async REST APIs, typed validation, authentication, persistence, file uploads, bulk processing, and error handling.</sub></td>
+    <td><strong>Reliability</strong><br/><sub>Rate limits, request guards, concurrency control, retry classification, automated tests, and CI checks.</sub></td>
   </tr>
   <tr>
-    <td><strong>Scalability Thinking</strong><br/><sub>Reusable pipelines across UI, CSV, and CLI with a documented path toward queues, PostgreSQL, and distributed limits.</sub></td>
-    <td><strong>Professional Delivery</strong><br/><sub>Environment templates, API docs, architecture diagrams, deployment notes, security notes, and complete visual documentation.</sub></td>
+    <td><strong>Reusable Workflows</strong><br/><sub>One generation pipeline shared by the web interface, CSV processing, and the command-line client.</sub></td>
+    <td><strong>Documentation</strong><br/><sub>Environment setup, API examples, architecture diagrams, deployment notes, security notes, and a complete product tour.</sub></td>
   </tr>
 </table>
 
@@ -1095,21 +1093,21 @@ For an internship review, Lexora demonstrates end-to-end ownership across:
 
 ## Author & Internship Context
 
-**Developed by Muhammad Saad Jadoon** as a DecodeLabs internship project.
+**Developed by Muhammad Saad Jadoon** for the DecodeLabs internship project **Automated Copywriting Tone Transformer**.
+
+I was responsible for shaping the original task into a full product workflow, including the interface, FastAPI backend, Gemini integration, authentication, workspace persistence, CSV automation, testing, and project documentation.
 
 | | |
 |---|---|
 | **Internship project** | Automated Copywriting Tone Transformer |
 | **Product name** | Lexora |
-| **Focus** | Full-stack AI product engineering, controlled copy generation, tone transformation, secure workspace persistence, and bulk automation |
+| **Primary focus** | Full-stack AI product engineering, controlled copy generation, tone transformation, account-based persistence, and bulk campaign automation |
 
 ---
 
 <div align="center">
 
-### Lexora turns unstructured ideas into controlled communication.
-
-**Safe enough to trust. Creative enough to stand out. Bold enough to perform.**
+### Lexora turns a creative brief into copy that can be reviewed, edited, reused, and shipped.
 
 <br/>
 
