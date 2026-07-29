@@ -1,115 +1,257 @@
+<a id="top"></a>
+
 <div align="center">
-  <img src="frontend/src/assets/lexora-logo.png" alt="Lexora logo" width="112" />
+  <img src="frontend/src/assets/lexora-logo.png" alt="Lexora logo" width="108" />
 
 # Lexora — AI Tone Studio
 
-### Automated Copywriting & Tone Transformation, engineered as a complete AI workspace
+### Controlled AI copywriting, tone transformation, and campaign automation in one private workspace
 
 <p>
-  Lexora converts raw product facts and existing text into controlled, platform-ready copy through advanced creative controls, structured Gemini output, secure user workspaces, and production-minded full-stack engineering.
+  Lexora turns raw product facts or existing text into polished, platform-ready copy through a deeply controlled creative brief, structured Gemini output, editable variations, secure account workspaces, and scalable CSV automation.
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/Internship%20Project-DecodeLabs-20D9F2?style=for-the-badge" alt="DecodeLabs Internship Project" />
-  <img src="https://img.shields.io/badge/Status-Complete-0FE6D2?style=for-the-badge" alt="Project status" />
-  <img src="https://img.shields.io/badge/API-v2.1.0-087BFF?style=for-the-badge" alt="API version" />
+  <img src="https://img.shields.io/badge/Internship%20Project-DecodeLabs-22D3EE?style=for-the-badge" alt="DecodeLabs internship project" />
+  <img src="https://img.shields.io/badge/Product-Full--Stack%20AI%20Workspace-0EA5E9?style=for-the-badge" alt="Full-stack AI workspace" />
+  <img src="https://img.shields.io/badge/API-v2.1.0-2563EB?style=for-the-badge" alt="API version 2.1.0" />
+  <img src="https://img.shields.io/badge/Status-Complete-14B8A6?style=for-the-badge" alt="Project complete" />
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-5.4-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/Pydantic-2.9+-E92063?style=flat-square&logo=pydantic&logoColor=white" alt="Pydantic" />
-  <img src="https://img.shields.io/badge/Gemini-AI-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini" />
-  <img src="https://img.shields.io/badge/SQLite-Persistence-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite" />
-  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React 18.3" />
+  <img src="https://img.shields.io/badge/Vite-5.4-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite 5.4" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 3.4" />
+  <img src="https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI 0.115 or later" />
+  <img src="https://img.shields.io/badge/Pydantic-2.9+-E92063?style=flat-square&logo=pydantic&logoColor=white" alt="Pydantic 2.9 or later" />
+  <img src="https://img.shields.io/badge/Gemini-Structured%20AI-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" alt="Google Gemini structured AI" />
+  <img src="https://img.shields.io/badge/SQLite-Private%20Workspace-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite persistence" />
+  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.12 or later" />
+</p>
+
+<p>
+  <a href="#product-tour"><strong>Product Tour</strong></a>
+  · <a href="#feature-system"><strong>Feature System</strong></a>
+  · <a href="#architecture"><strong>Architecture</strong></a>
+  · <a href="#quick-start"><strong>Quick Start</strong></a>
+  · <a href="#api-reference"><strong>API</strong></a>
+  · <a href="#testing--continuous-integration"><strong>Testing</strong></a>
 </p>
 </div>
 
 ---
 
-<p align="center">
+<a href="docs/screenshots/01-home.png">
   <img src="docs/screenshots/01-home.png" alt="Lexora premium home screen" width="100%" />
-</p>
+</a>
 
-## Overview
-
-**Lexora** is a full-stack AI copywriting platform created for the DecodeLabs internship project **Automated Copywriting Tone Transformer**. It goes beyond a basic prompt form by treating AI copy generation as a controlled product workflow:
-
-1. Capture a detailed creative brief.
-2. Compile the brief into a server-owned instruction template.
-3. Generate structured **Safe**, **Creative**, and **Bold** variations.
-4. Validate output against a typed schema and platform limits.
-5. Refine the copy in an editable output studio.
-6. Save history, favourites, and reusable templates in a private account workspace.
-7. Scale the same pipeline through CSV batch processing or the command line.
-
-The result is a polished, responsive application that combines product design, prompt engineering, backend reliability, authentication, persistence, bulk automation, testing, and CI in one cohesive system.
-
-> **Core principle:** creative freedom should remain measurable, repeatable, platform-aware, and safe enough for real marketing workflows.
+<p align="center"><sub>Lexora home experience — a premium entry point into Studio, Bulk, Workspace, and Profile.</sub></p>
 
 ---
 
-## Table of Contents
+## Executive Overview
 
-- [Why Lexora Stands Out](#why-lexora-stands-out)
-- [Feature Set](#feature-set)
-- [Product Walkthrough](#product-walkthrough)
-- [System Architecture](#system-architecture)
-- [Generation Lifecycle](#generation-lifecycle)
-- [Technology Stack](#technology-stack)
-- [Repository Structure](#repository-structure)
-- [Getting Started](#getting-started)
-- [Environment Configuration](#environment-configuration)
-- [API Reference](#api-reference)
-- [Generation Request Example](#generation-request-example)
-- [Bulk CSV Workflow](#bulk-csv-workflow)
-- [Command-Line Interface](#command-line-interface)
-- [Persistence Model](#persistence-model)
-- [Security & Privacy](#security--privacy)
-- [Testing & Continuous Integration](#testing--continuous-integration)
-- [Production Deployment Notes](#production-deployment-notes)
-- [Known Production Considerations](#known-production-considerations)
-- [Roadmap](#roadmap)
-- [Author & Internship Context](#author--internship-context)
+**Lexora** is a full-stack AI copywriting and tone-transformation platform developed for the DecodeLabs internship project **Automated Copywriting Tone Transformer**.
+
+Instead of wrapping a language model in a single prompt box, Lexora treats copy generation as a complete product workflow: a user defines the audience, objective, language, length, platform, tone, formality, CTA, keywords, brand voice, variation count, temperature, and top-p; the backend compiles those controls into a server-owned instruction template; Gemini returns structured JSON; Pydantic validates it; and the interface presents editable **Safe**, **Creative**, and **Bold** variations with platform-budget feedback.
+
+The same controlled generation pipeline is reused across the interactive Studio, authenticated Workspace, CSV batch processor, and standalone command-line interface.
+
+> **Product principle:** creative freedom should remain controlled, measurable, reusable, platform-aware, and safe enough for real marketing workflows.
+
+### Project at a Glance
+
+<table>
+  <tr>
+    <td align="center"><strong>13</strong><br/><sub>generation & transformation modes</sub></td>
+    <td align="center"><strong>8</strong><br/><sub>platform-aware presets</sub></td>
+    <td align="center"><strong>9</strong><br/><sub>tone profiles</sub></td>
+    <td align="center"><strong>1–5</strong><br/><sub>structured variations per request</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>200</strong><br/><sub>CSV rows per bulk job</sub></td>
+    <td align="center"><strong>3</strong><br/><sub>private workspace collections</sub></td>
+    <td align="center"><strong>20+</strong><br/><sub>documented REST operations</sub></td>
+    <td align="center"><strong>2</strong><br/><sub>CI verification jobs</sub></td>
+  </tr>
+</table>
+
+---
+
+## From Internship Brief to Complete Product
+
+| Core challenge | Lexora’s extended implementation |
+|---|---|
+| Transform copy into a selected tone | A 13-mode transformation suite supporting generation, rewrite, shortening, expansion, improvement, simplification, humanization, grammar correction, professionalization, tone change, headlines, hashtags, and translation. |
+| Produce useful marketing text | Platform-specific character budgets, content structures, hashtag policies, CTA controls, formality, emoji level, audience, objective, language, keywords, and copy length. |
+| Integrate an AI model | Async Gemini integration with schema-constrained JSON, Pydantic validation, output normalization, concurrency control, and retry classification. |
+| Present results | A premium editable output studio with variation switching, counts, compliance feedback, copy, save, favourite, regenerate, download, and clear actions. |
+| Handle one request at a time | A CSV bulk system with preview, required-column checks, typed backend validation, row-level results, counters, client-side cancellation, and export. |
+| Build a demonstration interface | A complete responsive product with authentication, profile management, history, favourites, reusable templates, private persistence, tests, CI, CLI access, and deployment guidance. |
 
 ---
 
 ## Why Lexora Stands Out
 
-| Area | Implementation |
+| Engineering area | What is implemented |
 |---|---|
-| **Controlled generation** | Audience, objective, language, length, keywords, platform, tone, formality, emoji level, CTA, brand voice, variation count, temperature, and top-p are all first-class controls. |
-| **Transformation suite** | The same workspace supports fresh generation plus rewrite, shorten, expand, improve, simplify, humanize, grammar correction, professionalization, tone change, headline generation, hashtag generation, and translation. |
-| **Structured AI output** | Gemini is instructed to return schema-constrained JSON, then Pydantic validates and normalizes it before the frontend receives anything. |
-| **Platform intelligence** | Each platform has its own character budget, formatting guidance, hashtag support, and content structure. |
-| **Three-level creative strategy** | Safe, Creative, and Bold outputs provide controlled risk/creativity choices instead of one unpredictable answer. |
-| **Real workspace** | Authenticated users receive server-side history, favourites, templates, profile data, and profile-image persistence—without permanent browser storage. |
-| **Bulk automation** | CSV upload, preview, validation, progress, cancellation, row-level results, retry control, and results export reuse the same generation pipeline. |
-| **Reliability engineering** | Request guards, rate limiting, concurrency limits, transient/permanent Gemini error classification, exponential retry, typed validation, and friendly API errors. |
-| **Professional UX** | Responsive dark SaaS interface, mobile navigation, reduced-motion support, keyboard focus states, progress feedback, toasts, confirmation dialogs, and editable outputs. |
-| **Developer readiness** | FastAPI docs, standalone CLI, environment templates, backend tests, frontend production build command, and GitHub Actions CI. |
+| **Controlled generation** | The creative brief exposes model, copy, audience, platform, brand, and business controls as first-class product inputs rather than hiding everything inside one free-form prompt. |
+| **Structured AI contract** | Gemini is instructed to return a strict JSON object; the backend validates and normalizes the payload before the frontend receives it. |
+| **Three-level creative strategy** | Safe, Creative, and Bold variations give users deliberate creative positions instead of one unpredictable output. |
+| **Platform intelligence** | Each supported platform carries a character budget, formatting instruction, and hashtag policy. |
+| **Private workspace** | Authenticated history, favourites, templates, profile data, and profile images are persisted on the backend rather than permanently stored in the browser. |
+| **Bulk automation** | The same generation engine scales to UTF-8 CSV uploads of up to 200 usable rows, preserving validation and row-level error reporting. |
+| **Reliability layer** | Request-size guards, rate limits, login throttling, Gemini concurrency control, transient/permanent error classification, exponential retry, and friendly API errors. |
+| **Developer readiness** | Typed models, environment templates, OpenAPI docs, a standalone CLI, backend tests, and GitHub Actions for tests and production-build verification. |
+| **Production awareness** | The repository documents cookie hardening, distributed rate limiting, PostgreSQL migration, durable job queues, email reset delivery, observability, and AI evaluation. |
 
 ---
 
-## Feature Set
+<a id="product-tour"></a>
 
-### 1. Advanced AI Studio
+## Product Tour
 
-Lexora exposes a deep brief instead of relying on a single prompt field.
+> Every screenshot below uses a repository-relative path and is clickable for full-resolution viewing on GitHub.
+
+### 1. Studio — Brief, Control, Generate
+
+The Studio converts a marketing task into a structured creative brief. Users can select an operation mode, define product facts and audience intent, choose a platform and tone, control formality and CTA behavior, save a brand voice, and tune temperature/top-p before generation.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/08-studio-advanced-brief.png"><img src="docs/screenshots/08-studio-advanced-brief.png" alt="Lexora advanced brief" width="100%" /></a>
+      <br/><sub><strong>Advanced Brief:</strong> operation mode, product facts, and audience controls.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/09-studio-controls.png"><img src="docs/screenshots/09-studio-controls.png" alt="Lexora platform tone and model controls" width="100%" /></a>
+      <br/><sub><strong>Precision Controls:</strong> platform, tone, formality, variations, brand voice, temperature, and top-p.</sub>
+    </td>
+  </tr>
+</table>
+
+### 2. Output Lifecycle — Empty, Processing, Editable
+
+Lexora communicates generation state clearly: a focused empty state, a live compilation sequence, and an editable result editor rather than a static response card.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/10-output-empty-state.png"><img src="docs/screenshots/10-output-empty-state.png" alt="Lexora output empty state" width="100%" /></a>
+      <br/><sub><strong>Empty State:</strong> clear guidance before a brief is generated.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/13-generation-progress.png"><img src="docs/screenshots/13-generation-progress.png" alt="Lexora generation progress console" width="100%" /></a>
+      <br/><sub><strong>Generation Progress:</strong> a transparent, staged processing experience.</sub>
+    </td>
+  </tr>
+</table>
+
+### 3. Controlled Variations — Safe, Creative, Bold
+
+Each variation remains editable and shows its word count, character count, platform budget, compliance status, hashtags, CTA, sampling controls, and output actions.
+
+<table>
+  <tr>
+    <td width="33.33%" valign="top">
+      <a href="docs/screenshots/14-output-safe.png"><img src="docs/screenshots/14-output-safe.png" alt="Lexora Safe variation" width="100%" /></a>
+      <br/><sub><strong>Safe:</strong> polished, reliable, and low-risk.</sub>
+    </td>
+    <td width="33.33%" valign="top">
+      <a href="docs/screenshots/16-output-creative.png"><img src="docs/screenshots/16-output-creative.png" alt="Lexora Creative variation" width="100%" /></a>
+      <br/><sub><strong>Creative:</strong> distinctive while remaining accurate.</sub>
+    </td>
+    <td width="33.33%" valign="top">
+      <a href="docs/screenshots/15-output-bold.png"><img src="docs/screenshots/15-output-bold.png" alt="Lexora Bold variation" width="100%" /></a>
+      <br/><sub><strong>Bold:</strong> stronger and more confident without unsupported claims.</sub>
+    </td>
+  </tr>
+</table>
+
+### 4. Workspace — History, Favourites, Templates
+
+Signed-in users can search and filter generation history, duplicate previous briefs, save templates, reuse favourite outputs, and independently manage each workspace collection.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/03-workspace-history.png"><img src="docs/screenshots/03-workspace-history.png" alt="Lexora history and favourite outputs" width="100%" /></a>
+      <br/><sub><strong>History & Favourites:</strong> searchable, filterable, reusable content.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/04-workspace-saved-template.png"><img src="docs/screenshots/04-workspace-saved-template.png" alt="Lexora saved template" width="100%" /></a>
+      <br/><sub><strong>Saved Templates:</strong> reusable campaign briefs persisted per account.</sub>
+    </td>
+  </tr>
+</table>
+
+### 5. Bulk CSV — Upload, Validate, Run, Export
+
+Bulk mode reuses Lexora’s typed generation pipeline for campaign-scale work. It supports a downloadable template, drag-and-drop upload, client-side preview, required-field checks, backend validation, progress feedback, row-level outcomes, and results export.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/05-bulk-upload.png"><img src="docs/screenshots/05-bulk-upload.png" alt="Lexora bulk CSV upload" width="100%" /></a>
+      <br/><sub><strong>Upload & Preview:</strong> template download, file selection, preview, and validation state.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/06-bulk-results.png"><img src="docs/screenshots/06-bulk-results.png" alt="Lexora completed bulk results" width="100%" /></a>
+      <br/><sub><strong>Batch Results:</strong> success/failure counters and row-level generated headlines.</sub>
+    </td>
+  </tr>
+</table>
+
+<a href="docs/screenshots/07-exported-results-csv.png">
+  <img src="docs/screenshots/07-exported-results-csv.png" alt="Lexora exported results CSV" width="100%" />
+</a>
+<p align="center"><sub><strong>Exported CSV:</strong> row ID, product, platform, tone, status, headline, body, CTA, and error fields.</sub></p>
+
+### 6. Account Experience — Sign In, Recovery, Profile
+
+Lexora includes account creation and sign-in, remembered sessions, local-development password recovery, profile editing, profile image management, password updates, sign-out, and permanent account deletion.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/12-sign-in.png"><img src="docs/screenshots/12-sign-in.png" alt="Lexora sign-in screen" width="100%" /></a>
+      <br/><sub><strong>Sign In:</strong> credentialed access and optional remembered session.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/screenshots/11-password-reset.png"><img src="docs/screenshots/11-password-reset.png" alt="Lexora password reset screen" width="100%" /></a>
+      <br/><sub><strong>Password Recovery:</strong> local-development reset preparation flow.</sub>
+    </td>
+  </tr>
+</table>
+
+<a href="docs/screenshots/02-profile-dashboard.png">
+  <img src="docs/screenshots/02-profile-dashboard.png" alt="Lexora account and profile dashboard" width="100%" />
+</a>
+<p align="center"><sub><strong>Profile Dashboard:</strong> identity, workspace status, image controls, password management, logout, and danger zone.</sub></p>
+
+<p align="right"><a href="#top">Back to top ↑</a></p>
+
+---
+
+<a id="feature-system"></a>
+
+## Feature System
+
+### Advanced AI Studio
+
+Lexora exposes a deep brief instead of depending on one free-form prompt.
 
 - **13 operation modes:** Generate, Rewrite, Shorten, Expand, Improve, Simplify, Humanize, Grammar Fix, Professional, Change Tone, Headlines, Hashtags, and Translate.
 - **8 platform presets:** LinkedIn, Instagram, Facebook, Email, X/Twitter, Google Ads, YouTube, and TikTok.
 - **9 tone profiles:** Witty, Professional, Bold, Friendly, Luxury, Urgent, Energetic, Empathetic, and Confident.
 - **7 objectives:** Sales, Awareness, Engagement, Lead Generation, Education, Launch, and Retention.
 - **Copy controls:** target audience, language, short/medium/long length, keywords, emoji level, formality, CTA type, and optional custom CTA.
-- **Sampling controls:** temperature from `0.0–2.0` and top-p from `0.0–1.0`.
-- **Variation control:** request between `1–5` versions.
+- **Model controls:** temperature from `0.0–2.0` and top-p from `0.0–1.0`.
+- **Variation control:** request between `1–5` structured outputs.
 
-### 2. Brand Voice Memory Fields
+### Brand Voice Profile
 
-A structured brand voice profile can guide every generated variation:
+A structured brand profile can guide every generated variation:
 
 - Brand description
 - Preferred tone
@@ -119,193 +261,83 @@ A structured brand voice profile can guide every generated variation:
 - CTA style
 - Example copy to emulate
 
-The complete brief can be retained through saved templates and generation history.
+The complete creative brief can be reused through saved templates and generation history.
 
-### 3. Safe · Creative · Bold Output System
+### Safe · Creative · Bold Strategy
 
-Each response can provide three distinct creative positions:
+| Variation | Purpose |
+|---|---|
+| **Safe** | Polished, dependable, low-risk, and immediately usable. |
+| **Creative** | More memorable and differentiated while remaining factual and platform-appropriate. |
+| **Bold** | Stronger, punchier, and more confident without inventing claims or guarantees. |
 
-- **Safe** — polished, dependable, low-risk, and immediately usable.
-- **Creative** — more memorable and differentiated while remaining accurate.
-- **Bold** — stronger, punchier, and more confident without unsupported claims.
+The output editor supports direct headline/body/CTA editing, variation switching, word and character counts, platform compliance, clipboard copy, save, favourite, regenerate, `.txt` download, and clear.
 
-The output editor supports:
+### Platform-Aware Rules
 
-- Direct headline, body, and CTA editing
-- Variation switching
-- Word and character counts
-- Platform budget/compliance feedback
-- Copy to clipboard
-- Save/favourite
-- Regenerate
-- Download as `.txt`
-- Clear output
-
-### 4. Platform-Aware Rules
-
-| Platform | Character Budget | Intended Structure | Hashtags |
+| Platform | Character budget | Intended structure | Hashtags |
 |---|---:|---|---|
-| X / Twitter | 280 | Single concise post | Supported |
-| Google Ads | 450 | Benefit-led headline and compact description | Disabled |
+| X / Twitter | 280 | Single concise post with strict character discipline | Supported |
+| Google Ads | 450 | Benefit-led ad headline and compact description | Disabled |
 | Email | 1,500 | Subject-style headline, skimmable body, one CTA | Disabled |
-| Instagram | 2,200 | Visual hook, caption, CTA, hashtag set | Supported |
+| Instagram | 2,200 | Visual hook, caption, CTA, and hashtag set | Supported |
 | TikTok | 2,200 | Strong hook, short caption, social-native CTA | Supported |
-| LinkedIn | 3,000 | Professional hook, context, value, CTA | Supported |
-| Facebook | 3,000 | Conversational post and natural CTA | Supported |
-| YouTube | 5,000 | Title-style headline, description, discoverability tags | Supported |
+| LinkedIn | 3,000 | Professional hook, short paragraphs, insight, CTA | Supported |
+| Facebook | 3,000 | Conversational post with a natural CTA | Supported |
+| YouTube | 5,000 | Title, description, and tags-friendly copy | Supported |
 
-### 5. Private User Workspace
+### Private Workspace
 
-Authenticated users receive a backend-persisted workspace containing:
+Authenticated users receive server-persisted collections for:
 
 - Searchable generation history
 - Platform and tone filters
 - Duplicate/reuse workflow
 - Save-as-template workflow
-- Favourite output collection
+- Favourite outputs
 - Reusable templates
-- Individual deletion and history clearing
-- Limits that retain the newest `80` history items, `80` favourites, and `40` templates per account
+- Individual deletion and section clearing
+- Automatic retention of the newest `80` history items, `80` favourites, and `40` templates per account
 
-### 6. Account & Profile Management
+### Account & Profile Management
 
 - Account creation and sign-in
 - “Remember me” sessions
-- HTTP-only session cookie authentication
+- HTTP-only session-cookie authentication
 - Sign-out
-- Local-development password reset flow
+- Local-development password-reset flow
 - Profile name update
 - JPG, PNG, and WebP profile image upload
 - Profile image removal
 - Password change with session invalidation
 - Permanent account and workspace deletion
 
-### 7. Bulk CSV System
+### Bulk CSV System
 
 - Downloadable extended CSV template
 - Drag-and-drop or file-browser upload
-- Client-side preview before submission
+- Client-side CSV preview
 - Required-column checks
-- Row-level empty-field highlighting
-- UTF-8 CSV validation on the backend
+- Row-level missing-field feedback
+- UTF-8 backend parsing
 - Enum and numeric validation
 - Duplicate-row warnings in backend logs
 - Up to `200` usable rows per job
-- Concurrent asynchronous processing with a configured Gemini semaphore
+- Concurrent async generation under the configured Gemini semaphore
+- Client-side request cancellation with `AbortController`
 - Success, failed, and pending counters
-- Batch cancellation from the UI
-- Row-level headline/error table
-- CSV export containing the primary generated variation
+- Row-level result/error records
+- CSV export of the primary generated variation
 
-### 8. Standalone CLI
+### Standalone CLI
 
-The backend can be used without the React interface. The CLI provides validated platform/tone arguments, temperature and top-p controls, verbose prompt inspection, JSON output, and optional file export.
-
----
-
-## Product Walkthrough
-
-All screenshots below are stored as repository-relative assets so they render correctly on GitHub after the project is pushed.
-
-### Home — Premium Product Entry Point
-
-The home view communicates the product value immediately and provides direct navigation into Studio and Workspace.
-
-<p align="center">
-  <img src="docs/screenshots/01-home.png" alt="Lexora home page" width="100%" />
-</p>
-
-### Authentication — Sign In and Password Reset
-
-<p align="center">
-  <img src="docs/screenshots/12-sign-in.png" alt="Lexora sign-in screen" width="100%" />
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/11-password-reset.png" alt="Lexora password reset screen" width="100%" />
-</p>
-
-### Profile — Account, Security, and Personal Workspace
-
-The profile dashboard combines identity, plan information, account status, profile editing, image management, password updates, logout, and account deletion.
-
-<p align="center">
-  <img src="docs/screenshots/02-profile-dashboard.png" alt="Lexora profile dashboard" width="100%" />
-</p>
-
-### Workspace — History, Favourites, and Templates
-
-History includes search and filtering, while favourites and templates remain independently scrollable and reusable.
-
-<p align="center">
-  <img src="docs/screenshots/03-workspace-history.png" alt="Lexora workspace history and favourite outputs" width="100%" />
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/04-workspace-saved-template.png" alt="Lexora workspace with a saved template" width="100%" />
-</p>
-
-### Bulk Mode — Upload, Validate, Generate, Export
-
-The bulk interface presents instructions, CSV controls, preview status, generation results, and exports in a focused two-panel layout.
-
-<p align="center">
-  <img src="docs/screenshots/05-bulk-upload.png" alt="Lexora bulk CSV upload screen" width="100%" />
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/06-bulk-results.png" alt="Lexora completed bulk results" width="100%" />
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/07-exported-results-csv.png" alt="Lexora exported bulk results CSV" width="100%" />
-</p>
-
-### Studio — Advanced Brief and Precision Controls
-
-The Studio is divided into a three-step workflow: Brief, Generate, and Refine. It provides both business-level content controls and lower-level model sampling controls.
-
-<p align="center">
-  <img src="docs/screenshots/08-studio-advanced-brief.png" alt="Lexora advanced creative brief" width="100%" />
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/09-studio-controls.png" alt="Lexora platform tone and model controls" width="100%" />
-</p>
-
-### Output — Empty, Processing, and Completed States
-
-The output panel communicates each stage clearly: initial empty state, live generation progress, and editable results.
-
-<p align="center">
-  <img src="docs/screenshots/10-output-empty-state.png" alt="Lexora output empty state" width="100%" />
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/13-generation-progress.png" alt="Lexora generation progress console" width="100%" />
-</p>
-
-#### Safe Variation
-
-<p align="center">
-  <img src="docs/screenshots/14-output-safe.png" alt="Lexora Safe generated variation" width="100%" />
-</p>
-
-#### Bold Variation
-
-<p align="center">
-  <img src="docs/screenshots/15-output-bold.png" alt="Lexora Bold generated variation" width="100%" />
-</p>
-
-#### Creative Variation
-
-<p align="center">
-  <img src="docs/screenshots/16-output-creative.png" alt="Lexora Creative generated variation" width="100%" />
-</p>
+The backend can be used without the React interface. The CLI validates platform/tone arguments, exposes temperature and top-p, supports compiled-prompt inspection, prints JSON, and can write results to a file.
 
 ---
 
-## System Architecture
+<a id="architecture"></a>
+
+## Architecture
 
 ```mermaid
 flowchart LR
@@ -315,57 +347,38 @@ flowchart LR
       UI --> ST[Advanced Studio]
       UI --> BP[Bulk CSV Panel]
       UI --> WS[Workspace & Profile]
-      UI --> APIJS[Central API Client]
+      UI --> CLIENT[Central API Client]
     end
 
-    APIJS -->|JSON / multipart + credentials| API[FastAPI Application]
+    CLIENT -->|JSON / multipart + credentials| API[FastAPI Application]
 
     subgraph Backend
       API --> META[Metadata & Validation]
-      API --> AUTH[Auth / Profile Routes]
-      API --> WORK[Workspace Routes]
-      API --> GEN[Generation Route]
+      API --> AUTH[Auth & Profile]
+      API --> WORK[Workspace Persistence]
+      API --> GEN[Generation Endpoint]
       API --> BULK[Bulk Pipeline]
 
       AUTH --> DB[(SQLite)]
       WORK --> DB
       AUTH --> FILES[(Profile Uploads)]
 
-      GEN --> PROMPT[Server-side Prompt Compiler]
+      GEN --> PROMPT[Server-owned Prompt Compiler]
       BULK --> PROMPT
       PROMPT --> GEM[Async Gemini Client]
-      GEM --> RETRY[Semaphore + Retry + Error Classification]
-      RETRY --> VALIDATE[Pydantic Output Validation]
+      GEM --> RESILIENCE[Semaphore + Retry + Error Classification]
+      RESILIENCE --> VALIDATE[Pydantic Output Validation]
     end
 
-    RETRY -->|Structured generation request| GAI[Google Gemini API]
-    GAI -->|JSON response| RETRY
+    RESILIENCE -->|Structured generation request| GAI[Google Gemini API]
+    GAI -->|JSON response| RESILIENCE
     VALIDATE --> API
-    API --> APIJS
+    API --> CLIENT
 
     CLI[Python CLI] --> PROMPT
 ```
 
-### Architectural Responsibilities
-
-| Layer | Responsibility |
-|---|---|
-| `frontend/src/App.jsx` | Route state, user session state, workspace orchestration, generation workflow, confirmation dialogs, and toast feedback. |
-| `frontend/src/components/ConsolePanel.jsx` | Advanced brief, brand voice, platform, tone, variation, temperature, and top-p controls. |
-| `frontend/src/components/PressPanel.jsx` | Loading/error/empty states, variation editor, counts, compliance display, and output actions. |
-| `frontend/src/components/BulkPanel.jsx` | CSV preview, validation feedback, batch control, result table, and result export. |
-| `frontend/src/api.js` | Single frontend HTTP boundary with credentials, normalized users/assets, and friendly error handling. |
-| `backend/app/main.py` | FastAPI application, middleware, auth/profile/workspace/generation/bulk endpoints, CORS, request guards, and metadata. |
-| `backend/app/prompt_engine.py` | Server-owned prompt composition, platform instructions, tone rules, transformation rules, safety guidance, and output schema instruction. |
-| `backend/app/gemini_client.py` | Async Gemini integration, concurrency control, retries, error classification, structured response parsing, and style normalization. |
-| `backend/app/bulk_pipeline.py` | UTF-8 CSV parsing, validation, typed row conversion, concurrent generation, and row-level error capture. |
-| `backend/app/db.py` | SQLite schema, PBKDF2 password hashing, sessions, password reset records, profiles, history, favourites, and templates. |
-| `backend/app/models.py` | Pydantic request/response models, enums, platform constraints, generated copy models, and bulk models. |
-| `backend/cli.py` | Standalone command-line access to the same prompt and Gemini pipeline. |
-
----
-
-## Generation Lifecycle
+### Generation Lifecycle
 
 ```mermaid
 sequenceDiagram
@@ -375,31 +388,32 @@ sequenceDiagram
     participant PE as Prompt Engine
     participant GC as Gemini Client
     participant Gemini as Gemini API
-    participant PV as Pydantic Validation
+    participant PV as Pydantic
     participant DB as SQLite Workspace
 
-    User->>UI: Complete advanced brief
+    User->>UI: Complete controlled creative brief
     UI->>API: POST /api/generate
-    API->>PE: Compile controlled master template
-    PE-->>API: Platform + tone + safety instruction
+    API->>PE: Compile server-owned instruction
+    PE-->>API: Platform + tone + safety rules
     API->>GC: Generate with temperature and top-p
     GC->>Gemini: Structured JSON request
     Gemini-->>GC: Variations JSON
-    GC->>PV: Parse and validate schema
-    PV-->>API: Normalized variations
+    GC->>PV: Parse, validate, normalize
+    PV-->>API: Typed output variations
     API-->>UI: GenerationResponse
-    UI-->>User: Editable Safe / Creative / Bold output
+    UI-->>User: Editable Safe / Creative / Bold copy
     opt Signed-in user
-      UI->>DB: Save generation history through API
+      UI->>API: Save generation history
+      API->>DB: Persist account-owned payload
     end
 ```
 
 ### Server-Side Prompt Strategy
 
-The prompt compiler deliberately keeps the core instruction on the backend. It combines:
+The core instruction stays on the backend and combines:
 
-- Task mode guidance
-- Product/offer facts
+- Task-mode guidance
+- Product or offer facts
 - Audience and objective
 - Language and copy length
 - Keywords and emoji level
@@ -407,12 +421,30 @@ The prompt compiler deliberately keeps the core instruction on the backend. It c
 - Brand voice profile
 - Tone-specific writing guidance
 - Platform-specific formatting rules
-- Character budget
-- Hashtag policy
-- Safety constraints
+- Character budget and hashtag policy
+- Brand-safety constraints
 - Exact JSON schema requirements
 
-This reduces prompt drift and keeps behavior consistent across the web Studio, bulk pipeline, and CLI.
+This design reduces prompt drift and keeps behavior consistent across Studio, Bulk, and CLI use cases.
+
+### Component Responsibilities
+
+| Layer | Responsibility |
+|---|---|
+| `frontend/src/App.jsx` | Route state, user session, workspace orchestration, generation flow, dialogs, and toast feedback. |
+| `frontend/src/components/ConsolePanel.jsx` | Creative brief, brand voice, platform, tone, variation, temperature, and top-p controls. |
+| `frontend/src/components/PressPanel.jsx` | Empty/loading/error states, variation editor, counts, compliance, and output actions. |
+| `frontend/src/components/BulkPanel.jsx` | CSV preview, validation feedback, batch controls, result table, and export. |
+| `frontend/src/api.js` | Credentialed HTTP boundary, user/asset normalization, and friendly network errors. |
+| `backend/app/main.py` | FastAPI app, middleware, auth/profile/workspace/generation/bulk routes, CORS, and request guards. |
+| `backend/app/prompt_engine.py` | Controlled master prompt, platform/tone/mode rules, safety guidance, and output-schema instruction. |
+| `backend/app/gemini_client.py` | Async Gemini integration, semaphore, retries, error classification, JSON parsing, and style normalization. |
+| `backend/app/bulk_pipeline.py` | UTF-8 CSV parsing, row validation, typed conversion, concurrent generation, and row-level errors. |
+| `backend/app/db.py` | SQLite schema, PBKDF2 password hashing, sessions, reset records, profiles, history, favourites, and templates. |
+| `backend/app/models.py` | Pydantic models, enums, platform constraints, output models, and bulk models. |
+| `backend/cli.py` | Command-line access to the same prompt and generation pipeline. |
+
+<p align="right"><a href="#top">Back to top ↑</a></p>
 
 ---
 
@@ -422,26 +454,26 @@ This reduces prompt drift and keeps behavior consistent across the web Studio, b
 
 | Technology | Purpose |
 |---|---|
-| React 18 | Component-based interface and application state |
-| Vite 5 | Development server and production bundling |
-| Tailwind CSS 3 | Responsive design system and utility styling |
+| React 18.3 | Component-based interface and application state |
+| Vite 5.4 | Development server and production bundling |
+| Tailwind CSS 3.4 | Responsive design system and utility styling |
 | Native Fetch API | Credentialed backend communication |
-| Browser APIs | Clipboard, file upload, drag/drop, downloads, hash navigation, and reduced-motion handling |
+| Browser APIs | Clipboard, file upload, drag/drop, downloads, hash navigation, `AbortController`, and reduced-motion detection |
 
 ### Backend
 
 | Technology | Purpose |
 |---|---|
 | FastAPI | Async REST API and automatic OpenAPI documentation |
-| Uvicorn | ASGI development/production server |
-| Pydantic 2 | Typed validation and structured response models |
+| Uvicorn | ASGI server |
+| Pydantic 2 | Typed request/response validation |
 | Pydantic Settings | Environment-driven configuration |
 | Google Generative AI SDK | Gemini model integration |
 | Tenacity | Exponential retry for transient AI failures |
-| SQLite | Local account and workspace persistence |
-| Python Multipart | Profile image and CSV uploads |
-| HTTPX | FastAPI testing support |
-| Pytest | Backend unit/integration tests |
+| SQLite | Local account and private-workspace persistence |
+| Python Multipart | CSV and profile-image uploads |
+| HTTPX / TestClient | API testing support |
+| Pytest | Backend tests |
 
 ---
 
@@ -473,7 +505,7 @@ DecodeLabs - Automated Copywriting Tone Transformer/
 │   ├── cli.py
 │   └── requirements.txt
 ├── docs/
-│   └── screenshots/                  # GitHub product gallery used by this README
+│   └── screenshots/                  # Product gallery used by this README
 ├── frontend/
 │   ├── src/
 │   │   ├── assets/
@@ -504,26 +536,29 @@ DecodeLabs - Automated Copywriting Tone Transformer/
 
 ---
 
-## Getting Started
+<a id="quick-start"></a>
+
+## Quick Start
 
 ### Prerequisites
 
-- **Python 3.12+** recommended
-- **Node.js 20+**; CI currently uses Node.js 22
-- **npm**
-- A valid **Gemini API key**
+- Python `3.12+` recommended
+- Node.js `20+` (`22` is used in CI)
+- npm
+- A Gemini API key
 - Git
 
-### 1. Clone the Repository
+### 1. Clone
 
 ```bash
 git clone <your-repository-url>
 cd "DecodeLabs - Automated Copywriting Tone Transformer"
 ```
 
-### 2. Configure and Run the Backend
+### 2. Start the Backend
 
-#### Windows PowerShell
+<details open>
+<summary><strong>Windows PowerShell</strong></summary>
 
 ```powershell
 cd backend
@@ -533,7 +568,16 @@ pip install -r requirements.txt
 Copy-Item .env.example .env
 ```
 
-#### macOS / Linux
+Set the API key in `backend/.env`, then run:
+
+```powershell
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+</details>
+
+<details>
+<summary><strong>macOS / Linux</strong></summary>
 
 ```bash
 cd backend
@@ -543,17 +587,13 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Open `backend/.env` and replace the placeholder key:
-
-```env
-GEMINI_API_KEY=your_real_gemini_api_key
-```
-
-Start the API:
+Set the API key in `backend/.env`, then run:
 
 ```bash
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
+
+</details>
 
 Backend services:
 
@@ -562,7 +602,7 @@ Backend services:
 - ReDoc: `http://localhost:8000/redoc`
 - Health check: `http://localhost:8000/api/health`
 
-### 3. Configure and Run the Frontend
+### 3. Start the Frontend
 
 Open a second terminal:
 
@@ -571,31 +611,23 @@ cd frontend
 npm install
 ```
 
-Create the local environment file:
+Create the frontend environment file:
 
-#### Windows PowerShell
+```bash
+# macOS / Linux
+cp .env.example .env
 
-```powershell
+# Windows PowerShell
 Copy-Item .env.example .env
 ```
 
-#### macOS / Linux
-
-```bash
-cp .env.example .env
-```
-
-Run the development server:
+Run the application:
 
 ```bash
 npm run dev
 ```
 
-Open:
-
-```text
-http://localhost:5173
-```
+Open `http://localhost:5173`.
 
 ### 4. Production Frontend Build
 
@@ -611,41 +643,56 @@ The optimized output is written to `frontend/dist/`.
 
 ## Environment Configuration
 
-### Backend — `backend/.env`
+<details open>
+<summary><strong>Backend — <code>backend/.env</code></strong></summary>
 
-| Variable | Default | Description |
+| Variable | Repository default | Description |
 |---|---|---|
-| `GEMINI_API_KEY` | empty | Required for live AI generation. Keep it server-side and never commit it. |
-| `GEMINI_MODEL` | `gemini-3.1-flash-lite` | Configured model name. Change it to a model available to your Gemini account when required. |
-| `DATABASE_PATH` | `data/lexora.sqlite3` | SQLite database location, relative to the backend working directory. |
-| `UPLOAD_DIR` | `data/uploads` | Directory used for profile images. |
-| `SESSION_COOKIE_NAME` | `lexora_session` | HTTP-only session cookie name. |
-| `MAX_CONCURRENT_REQUESTS` | `10` | Maximum concurrent Gemini requests inside one backend process. |
-| `FRONTEND_ORIGIN` | `http://localhost:5173` | Allowed production frontend origin for credentialed CORS. |
+| `GEMINI_API_KEY` | empty | Required for live generation. Keep it server-side and never commit it. |
+| `GEMINI_MODEL` | `gemini-3.1-flash-lite` | Model configured by this repository; set a model enabled for your Gemini account when required. |
+| `DATABASE_PATH` | `data/lexora.sqlite3` | SQLite database path relative to the backend working directory. |
+| `UPLOAD_DIR` | `data/uploads` | Profile-image directory. |
+| `SESSION_COOKIE_NAME` | `lexora_session` | HTTP-only session-cookie name. |
+| `MAX_CONCURRENT_REQUESTS` | `10` | Maximum concurrent Gemini calls inside one backend process. |
+| `FRONTEND_ORIGIN` | `http://localhost:5173` | Allowed credentialed CORS origin. |
 | `MAX_REQUEST_BYTES` | `1000000` | General request-size guard. |
-| `MAX_BULK_FILE_BYTES` | `2000000` | Bulk endpoint CSV-size limit. |
+| `MAX_BULK_FILE_BYTES` | `2000000` | Bulk CSV file-size limit. |
 | `RATE_LIMIT_PER_MINUTE` | `60` | Per-client in-memory request limit. |
 
-> **Bulk size note:** the general request guard is evaluated before the bulk endpoint. To accept CSV files larger than `MAX_REQUEST_BYTES`, raise that value to at least the intended `MAX_BULK_FILE_BYTES` plus multipart overhead.
+> **Bulk-size note:** the general request middleware is evaluated before the bulk endpoint. To accept multipart CSV requests larger than `MAX_REQUEST_BYTES`, raise that value above the intended CSV size plus multipart overhead.
 
-### Frontend — `frontend/.env`
+</details>
+
+<details>
+<summary><strong>Frontend — <code>frontend/.env</code></strong></summary>
 
 | Variable | Default | Description |
 |---|---|---|
-| `VITE_API_BASE_URL` | `http://localhost:8000` | FastAPI base URL used by the frontend. |
+| `VITE_API_BASE_URL` | `http://localhost:8000` | FastAPI base URL used by the React frontend. |
+
+</details>
 
 ---
 
+<a id="api-reference"></a>
+
 ## API Reference
 
-### System & Metadata
+<details open>
+<summary><strong>System, metadata, and AI generation</strong></summary>
 
 | Method | Endpoint | Purpose | Authentication |
 |---|---|---|---|
 | `GET` | `/api/health` | Service status and API version | Public |
-| `GET` | `/api/meta` | Platforms, tones, objectives, lengths, CTAs, modes, and bulk limits | Public |
+| `GET` | `/api/meta` | Platforms, tones, objectives, lengths, CTA types, modes, and bulk limit | Public |
+| `POST` | `/api/generate` | Generate or transform controlled copy | Public |
+| `POST` | `/api/bulk/generate` | Process a CSV batch | Public |
+| `GET` | `/api/bulk/template` | Download the extended starter CSV | Public |
 
-### Authentication
+</details>
+
+<details>
+<summary><strong>Authentication and profile</strong></summary>
 
 | Method | Endpoint | Purpose | Authentication |
 |---|---|---|---|
@@ -653,20 +700,18 @@ The optimized output is written to `frontend/dist/`.
 | `POST` | `/api/auth/signin` | Validate credentials and create a session | Public |
 | `GET` | `/api/auth/me` | Return the current session user | Optional |
 | `POST` | `/api/auth/logout` | Delete the current session | Session |
-| `POST` | `/api/auth/forgot` | Prepare a password-reset token | Public |
+| `POST` | `/api/auth/forgot` | Prepare a local-development reset token | Public |
 | `POST` | `/api/auth/reset` | Reset a password with a valid token | Public |
-
-### Profile
-
-| Method | Endpoint | Purpose | Authentication |
-|---|---|---|---|
 | `PATCH` | `/api/profile` | Update account name | Required |
 | `POST` | `/api/profile/photo` | Upload JPG, PNG, or WebP profile image | Required |
-| `DELETE` | `/api/profile/photo` | Remove the active profile image reference | Required |
+| `DELETE` | `/api/profile/photo` | Remove the active profile-image reference | Required |
 | `POST` | `/api/profile/password` | Change password and invalidate sessions | Required |
 | `DELETE` | `/api/profile` | Permanently delete account and private records | Required |
 
-### Workspace
+</details>
+
+<details>
+<summary><strong>Workspace</strong></summary>
 
 | Method | Endpoint | Purpose | Authentication |
 |---|---|---|---|
@@ -674,20 +719,12 @@ The optimized output is written to `frontend/dist/`.
 | `POST` | `/api/workspace/history` | Save a generation | Required |
 | `POST` | `/api/workspace/favourites` | Save an output variation | Required |
 | `POST` | `/api/workspace/templates` | Save a reusable brief | Required |
-| `DELETE` | `/api/workspace/{table}/{item_id}` | Delete one history/favourite/template item | Required |
-| `DELETE` | `/api/workspace/{table}` | Clear one workspace section | Required |
+| `DELETE` | `/api/workspace/{table}/{item_id}` | Delete one workspace item | Required |
+| `DELETE` | `/api/workspace/{table}` | Clear one workspace collection | Required |
 
-### AI Generation & Bulk
+</details>
 
-| Method | Endpoint | Purpose | Authentication |
-|---|---|---|---|
-| `POST` | `/api/generate` | Generate or transform controlled copy | Public |
-| `POST` | `/api/bulk/generate` | Process a CSV batch | Public |
-| `GET` | `/api/bulk/template` | Download the extended starter CSV | Public |
-
----
-
-## Generation Request Example
+### Generation Request Example
 
 ```bash
 curl -X POST "http://localhost:8000/api/generate" \
@@ -751,7 +788,7 @@ curl -X POST "http://localhost:8000/api/generate" \
 }
 ```
 
-`copy` is a backward-compatible alias of the primary variation, while `variations` contains the full controlled output set.
+`copy` is a backward-compatible alias of the primary variation; `variations` contains the controlled output set.
 
 ---
 
@@ -768,14 +805,14 @@ curl -X POST "http://localhost:8000/api/generate" \
 
 ### Optional Columns
 
-| Column | Accepted Values / Purpose |
+| Column | Accepted values / purpose |
 |---|---|
 | `target_audience` | Free text |
 | `content_objective` | `sales`, `awareness`, `engagement`, `lead_generation`, `education`, `launch`, `retention` |
-| `language` | Free text language name |
+| `language` | Free-text language name |
 | `copy_length` | `short`, `medium`, `long` |
-| `keywords` | Comma-separated text within one CSV cell |
-| `brand_voice` | Free text voice guidance |
+| `keywords` | Comma-separated text inside one CSV cell |
+| `brand_voice` | Free-text voice guidance |
 | `emoji_level` | `none`, `low`, `medium`, `high` |
 | `number_of_variations` | Integer from `1–5` |
 | `formality_level` | `casual`, `balanced`, `formal` |
@@ -783,7 +820,7 @@ curl -X POST "http://localhost:8000/api/generate" \
 | `temperature` | Float from `0.0–2.0` |
 | `top_p` | Float from `0.0–1.0` |
 
-### Minimal CSV Example
+### Minimal CSV
 
 ```csv
 product_name,product_description,platform,tone
@@ -791,7 +828,7 @@ Aurora Wireless Earbuds,"Noise-cancelling earbuds with 30-hour battery life",ins
 FlowState Project Manager,"Project management software for distributed engineering teams",linkedin,professional
 ```
 
-### Extended CSV Example
+### Extended CSV
 
 ```csv
 product_name,product_description,target_audience,content_objective,language,copy_length,keywords,brand_voice,emoji_level,number_of_variations,formality_level,cta_type,platform,tone,temperature,top_p
@@ -840,7 +877,7 @@ python cli.py \
   +verbose
 ```
 
-### Write the Result to a File
+### Write JSON to a File
 
 ```bash
 python cli.py \
@@ -905,31 +942,31 @@ erDiagram
     }
 ```
 
-Workspace payloads are serialized as JSON while ownership remains enforced through `user_id`. Foreign-key cascade deletion removes private records when an account is deleted.
+Workspace payloads are serialized as JSON while ownership is enforced through `user_id`. Foreign-key cascade deletion removes private records when an account is deleted.
 
 ---
 
 ## Security & Privacy
 
-Lexora includes practical security controls suitable for an internship evaluation build:
+Lexora includes practical security controls appropriate for an internship evaluation build:
 
-- Gemini API keys remain on the backend and are loaded from `.env`.
+- Gemini credentials remain on the backend and are loaded from `.env`.
 - Passwords are salted and hashed with **PBKDF2-HMAC-SHA256 using 260,000 rounds**.
 - Password comparison uses constant-time `hmac.compare_digest`.
 - Session identifiers use cryptographically secure random tokens.
 - Session cookies are **HTTP-only** and `SameSite=Lax`.
 - Remembered sessions expire after 30 days; non-remembered sessions expire after one day.
-- Changing a password invalidates all existing sessions for that user.
+- Password changes invalidate existing sessions for the account.
 - Sign-in attempts receive a dedicated per-client throttle.
 - General requests receive a configurable per-minute rate limit.
 - Request and bulk-upload sizes are guarded.
 - CSV files must be UTF-8 and pass typed row validation.
-- Profile images are restricted to JPG, PNG, and WebP and limited to 1.5 MB.
-- Workspace endpoints require an authenticated session.
-- User workspace rows are scoped by `user_id`.
+- Profile images are limited to JPG, PNG, or WebP and `1.5 MB`.
+- Workspace routes require an authenticated session.
+- User-owned workspace rows are scoped by `user_id`.
 - The frontend does not use `localStorage`, `sessionStorage`, or IndexedDB for permanent account/workspace persistence.
-- `.gitignore` excludes real environment files, virtual environments, dependencies, builds, databases, runtime uploads, caches, and logs.
-- Prompt safety rules prohibit invented claims, unsupported statistics, fabricated awards/certifications, false guarantees, named competitor attacks, discriminatory content, explicit content, and profanity.
+- `.gitignore` excludes secrets, virtual environments, dependencies, builds, databases, runtime uploads, caches, logs, and temporary files.
+- Prompt safety rules prohibit invented claims, fabricated awards/certifications, false guarantees, competitor attacks, discriminatory content, explicit content, and profanity.
 
 ---
 
@@ -942,7 +979,7 @@ pip install -r backend/requirements.txt
 pytest backend/tests
 ```
 
-The included test suite covers:
+The included suite verifies:
 
 - Account creation, session sign-in/sign-out, and password hashing
 - Gemini error classification
@@ -958,14 +995,14 @@ npm run build
 
 ### GitHub Actions
 
-The workflow in `.github/workflows/ci.yml` runs on every push and pull request:
+`.github/workflows/ci.yml` runs on every push and pull request:
 
-1. **Backend job** — Python 3.12, dependency installation, and Pytest.
-2. **Frontend job** — Node.js 22, clean npm installation, and Vite production build.
+1. **Backend tests** — Python 3.12, dependency installation, and Pytest.
+2. **Frontend build** — Node.js 22, clean npm installation, and Vite production build.
 
 ---
 
-## Production Deployment Notes
+## Production Deployment
 
 ### Backend
 
@@ -974,14 +1011,14 @@ cd backend
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-For deployment:
+Production requirements:
 
-- Set `GEMINI_API_KEY` through the hosting provider’s secret manager.
-- Set `GEMINI_MODEL` to an enabled model for the deployed account.
+- Inject `GEMINI_API_KEY` through the hosting provider’s secret manager.
+- Set `GEMINI_MODEL` to a model enabled for the deployed Gemini account.
 - Set `FRONTEND_ORIGIN` to the exact HTTPS frontend origin.
 - Mount persistent storage for `DATABASE_PATH` and `UPLOAD_DIR`.
-- Place the API behind HTTPS and a reverse proxy/load balancer.
-- Use a process manager appropriate to the hosting environment.
+- Place the API behind HTTPS and an appropriate reverse proxy or load balancer.
+- Use a process manager suitable for the hosting environment.
 
 ### Frontend
 
@@ -1001,20 +1038,20 @@ The frontend and backend must be configured consistently because authentication 
 
 ---
 
-## Known Production Considerations
+## Production Hardening Considerations
 
-The repository is intentionally complete for local demonstration and internship evaluation. Before a public multi-user production launch, complete the following hardening work:
+The repository is complete for local demonstration and internship evaluation. Before a public multi-user launch, prioritize:
 
-1. **Secure cookies:** change the session cookie to `secure=True` under HTTPS and make the setting environment-driven.
-2. **Password reset delivery:** the local build returns the reset token for testing. Production must send a one-time link through an email provider and never expose the token in the API response.
-3. **Distributed rate limiting:** the current limiter is in-memory and process-local. Use Redis or an API gateway when running multiple workers/instances.
-4. **Database scale:** SQLite is excellent for local and small single-instance deployments. Use PostgreSQL plus migrations for horizontal scaling.
-5. **Upload lifecycle:** add object storage, antivirus/content scanning where required, and automatic cleanup for replaced images.
+1. **Secure cookies:** set the session cookie to `secure=True` under HTTPS and make the behavior environment-driven.
+2. **Password-reset delivery:** send one-time reset links through an email provider and never return the token in a production API response.
+3. **Distributed rate limiting:** replace process-local buckets with Redis or gateway-level limits for multi-instance deployments.
+4. **Database scale:** migrate from SQLite to PostgreSQL with schema migrations for horizontal scaling.
+5. **Upload lifecycle:** add object storage, file scanning where required, and cleanup for replaced/removed images.
 6. **Observability:** add structured logs, request IDs, metrics, error tracking, and alerting.
-7. **AI evaluation:** add automated quality scoring, prompt regression tests, safety evaluation, and cost/latency monitoring.
-8. **Bulk job architecture:** move long batches to a durable queue for resumability, job status polling, and worker isolation.
-9. **Authentication expansion:** add email verification, CSRF strategy appropriate to the deployment topology, and optional OAuth/SSO.
-10. **Licensing:** add a repository `LICENSE` file before distributing the project under a formal open-source license.
+7. **AI evaluation:** add quality scoring, prompt regression tests, safety evaluation, and cost/latency monitoring.
+8. **Durable bulk jobs:** move long batches to a queue for resumability, status polling, and worker isolation.
+9. **Authentication expansion:** add email verification, a deployment-appropriate CSRF strategy, and optional OAuth/SSO.
+10. **Repository licensing:** add a `LICENSE` file before publishing under a formal open-source license.
 
 ---
 
@@ -1022,8 +1059,8 @@ The repository is intentionally complete for local demonstration and internship 
 
 - [ ] PostgreSQL persistence and migration tooling
 - [ ] Redis-backed rate limiting and session options
-- [ ] Background job queue for large bulk campaigns
-- [ ] Real email verification and password-reset delivery
+- [ ] Background queue for durable bulk campaigns
+- [ ] Production email verification and reset delivery
 - [ ] Global reusable brand profiles per account
 - [ ] Team workspaces, roles, and shared templates
 - [ ] Streaming generation progress
@@ -1037,25 +1074,22 @@ The repository is intentionally complete for local demonstration and internship 
 
 ## Evaluation Highlights
 
-Lexora demonstrates more than interface polish. The project shows end-to-end ownership across:
+For an internship review, Lexora demonstrates end-to-end ownership across:
 
-- Product thinking and information architecture
-- Responsive UI/UX design
-- Frontend state and workflow orchestration
-- REST API design
-- Typed domain modeling
-- Prompt engineering
-- Structured AI output validation
-- Async concurrency and retry behavior
-- Authentication and session management
-- Password security
-- Database design and per-user persistence
-- File upload handling
-- Bulk data processing
-- CLI engineering
-- Automated testing
-- CI workflow design
-- Security and deployment awareness
+<table>
+  <tr>
+    <td><strong>Product & UX</strong><br/><sub>Information architecture, responsive UI, interaction states, editable output, and a consistent visual system.</sub></td>
+    <td><strong>AI Engineering</strong><br/><sub>Prompt compilation, model controls, structured JSON, schema validation, and controlled variation strategy.</sub></td>
+  </tr>
+  <tr>
+    <td><strong>Backend Engineering</strong><br/><sub>Async REST APIs, validation, authentication, persistence, uploads, bulk processing, and error handling.</sub></td>
+    <td><strong>Reliability</strong><br/><sub>Rate limits, request guards, concurrency control, retry classification, CI, and automated tests.</sub></td>
+  </tr>
+  <tr>
+    <td><strong>Scalability Thinking</strong><br/><sub>Reusable pipelines across UI, CSV, and CLI with a documented path toward queues, PostgreSQL, and distributed limits.</sub></td>
+    <td><strong>Professional Delivery</strong><br/><sub>Environment templates, API docs, architecture diagrams, deployment notes, security notes, and complete visual documentation.</sub></td>
+  </tr>
+</table>
 
 ---
 
@@ -1063,9 +1097,11 @@ Lexora demonstrates more than interface polish. The project shows end-to-end own
 
 **Developed by Muhammad Saad Jadoon** as a DecodeLabs internship project.
 
-**Project:** Automated Copywriting Tone Transformer  
-**Product name:** Lexora — AI Tone Studio  
-**Focus:** Full-stack AI product engineering, controlled copy generation, tone transformation, secure workspace persistence, and bulk automation.
+| | |
+|---|---|
+| **Internship project** | Automated Copywriting Tone Transformer |
+| **Product name** | Lexora — AI Tone Studio |
+| **Focus** | Full-stack AI product engineering, controlled copy generation, tone transformation, secure workspace persistence, and bulk automation |
 
 ---
 
@@ -1074,5 +1110,9 @@ Lexora demonstrates more than interface polish. The project shows end-to-end own
 ### Lexora turns unstructured ideas into controlled communication.
 
 **Safe enough to trust. Creative enough to stand out. Bold enough to perform.**
+
+<br/>
+
+<a href="#top"><strong>Back to top ↑</strong></a>
 
 </div>
