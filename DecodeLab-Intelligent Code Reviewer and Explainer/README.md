@@ -1,411 +1,434 @@
+<a id="top"></a>
+
 <div align="center">
-  <a href="#codefix-ai">
-    <img src="./frontend/public/codefix-logo.png" alt="CodeFix AI logo" width="118" />
-  </a>
+<img src="./frontend/public/codefix-logo.png" alt="CodeFix AI logo" width="96" />
+<h1>CodeFix AI</h1>
+<h3>Intelligent Code Reviewer &amp; Explainer</h3>
 
-  # CodeFix AI
+<p>
+  Evidence-grounded code review, validated corrections, clean-code verification, and structured explanation in one private engineering workspace.
+</p>
 
-  ### Intelligent Code Reviewer & Explainer
+<p>
+  <a href="#getting-started"><img src="https://img.shields.io/badge/Quick%20Start-Run%20CodeFix%20AI-2563EB?style=for-the-badge" alt="Quick Start" /></a>
+  <a href="#product-experience"><img src="https://img.shields.io/badge/Product%20Tour-Explore%20Workspace-7C3AED?style=for-the-badge" alt="Product Tour" /></a>
+  <a href="#system-architecture"><img src="https://img.shields.io/badge/Architecture-Review%20Pipeline-111827?style=for-the-badge" alt="System Architecture" /></a>
+</p>
 
-  **A full-stack code intelligence workspace for reliable defect detection, validated corrections, clean-code verification, and structured code explanation.**
+<p>
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React 18" />
+  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite 5" />
+  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/Google%20Gemini-AI%20Review-4285F4?style=flat-square&logo=googlegemini&logoColor=white" alt="Google Gemini" />
+  <img src="https://img.shields.io/badge/Tree--sitter-Validation-111827?style=flat-square" alt="Tree-sitter" />
+  <img src="https://img.shields.io/badge/SQLite-Persistence-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite" />
+</p>
 
-  <br />
+<p><sub><strong>DecodeLabs Generative AI Internship · Project 4</strong><br/>Designed and developed by Muhammad Saad Jadoon</sub></p>
 
-  <img src="https://img.shields.io/badge/Frontend-React%2018-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React 18" />
-  <img src="https://img.shields.io/badge/Build-Vite%205-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 5" />
-  <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/AI-Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini" />
-  <img src="https://img.shields.io/badge/Validation-Tree--sitter-111827?style=for-the-badge" alt="Tree-sitter" />
-  <img src="https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
-
-  <br />
-  <br />
-
-  **DecodeLabs Generative AI Internship Project · Project 4**  
-  **Designed and developed by Muhammad Saad Jadoon**
+<p>
+  <a href="#project-overview">Overview</a> ·
+  <a href="#version-40-engineering-upgrade">Engineering Upgrade</a> ·
+  <a href="#product-experience">Product Experience</a> ·
+  <a href="#intelligence-and-validation-pipeline">Review Pipeline</a> ·
+  <a href="#api-reference">API</a> ·
+  <a href="#getting-started">Installation</a>
+</p>
 </div>
 
-<br />
+---
 
-<p align="center">
-  <a href="./docs/screenshots/01-dark-workspace.png">
-    <img src="./docs/screenshots/01-dark-workspace.png" alt="CodeFix AI dark code-review workspace" width="100%" />
-  </a>
-</p>
+<a href="./docs/screenshots/01-dark-workspace.png">
+  <img src="./docs/screenshots/01-dark-workspace.png" alt="CodeFix AI dark review workspace" width="100%" />
+</a>
+
+<p align="center"><sub><strong>CodeFix AI Workspace:</strong> source submission, review history, findings, corrected code, quality evidence, and explanations in one focused interface.</sub></p>
 
 ---
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [What I Built Beyond the Internship Brief](#what-i-built-beyond-the-internship-brief)
-- [Product Gallery](#product-gallery)
-- [Core Features](#core-features)
+- [Project Overview](#project-overview)
+- [Version 4.0 Engineering Upgrade](#version-40-engineering-upgrade)
+- [Why CodeFix AI Stands Out](#why-codefix-ai-stands-out)
+- [Product Experience](#product-experience)
+- [Core Capabilities](#core-capabilities)
 - [Supported Languages](#supported-languages)
-- [Review and Validation Pipeline](#review-and-validation-pipeline)
-- [Large-Source Review](#large-source-review)
-- [Architecture](#architecture)
-- [Persistence, Privacy, and Security](#persistence-privacy-and-security)
+- [Intelligence and Validation Pipeline](#intelligence-and-validation-pipeline)
+- [Large-Source Review Architecture](#large-source-review-architecture)
+- [System Architecture](#system-architecture)
+- [Data Persistence and Privacy](#data-persistence-and-privacy)
 - [API Reference](#api-reference)
+- [Database Model](#database-model)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
-- [Configuration](#configuration)
-- [Usage Guide](#usage-guide)
-- [Error Handling](#error-handling)
+- [Environment Configuration](#environment-configuration)
+- [Using CodeFix AI](#using-codefix-ai)
+- [Professional Error Handling](#professional-error-handling)
 - [Engineering Decisions](#engineering-decisions)
-- [What This Project Demonstrates](#what-this-project-demonstrates)
-- [Limitations](#limitations)
-- [Roadmap](#roadmap)
+- [Evaluation Highlights](#evaluation-highlights)
+- [Limitations and Responsible Use](#limitations-and-responsible-use)
+- [Future Enhancements](#future-enhancements)
 - [Author](#author)
 
 ---
 
-## Overview
+## Project Overview
 
-I built **CodeFix AI** as a complete code-review workspace rather than a basic prompt-and-response demo. A developer can paste source code or upload a file, let the application identify the language, run deterministic checks, receive an AI-assisted review, inspect confirmed findings, download corrected code, and request a structured explanation.
+**CodeFix AI** is a full-stack AI-assisted code review platform built as an advanced implementation of an intelligent code reviewer and explainer. It accepts source code through direct paste or file upload, identifies the programming language, validates syntax using deterministic tooling, performs a multi-stage AI audit, returns evidence-grounded findings, produces complete corrected source code, and can generate a structured line-by-line walkthrough.
 
-The project combines a React workspace, a FastAPI backend, Google Gemini, Tree-sitter, language-specific validators, and SQLite persistence. The interface is designed around a real review workflow, with saved sessions, search, user preferences, profile settings, dark and light themes, file handling, and repeat-review consistency.
+The platform is intentionally designed as a **code intelligence studio**, not a simple prompt box. It combines:
 
-### Project Summary
+- a polished chatbot-style review workspace;
+- content-first language detection;
+- deterministic syntax and structure validation;
+- multi-stage Gemini review and verification;
+- complete corrected-file generation;
+- repeat-review consistency safeguards;
+- searchable server-backed review history;
+- backend-persisted profile and workspace preferences;
+- premium dark and light interfaces;
+- large-source handling up to **100,000 characters**.
+
+### At a Glance
 
 | Area | Implementation |
 |---|---|
-| **Input** | Paste code or upload UTF-8 source files |
-| **Language detection** | Source-content analysis, extension matching, and language-family checks |
-| **Validation** | Tree-sitter, Python AST, built-in validators, and optional compiler or parser integrations |
-| **AI review** | Google Gemini with audit, verification, grounding, correction, and explanation stages |
-| **Results** | Confirmed findings, corrected source, syntax highlighting, copy, download, diff, and explanation |
-| **Persistence** | SQLite-backed workspaces, preferences, profile data, and review history |
-| **Session isolation** | Anonymous HTTP-only workspace cookie with backend-managed data |
-| **Interface** | React 18, Vite, responsive layout, custom selectors, and dark or light appearance |
-| **Source limit** | Up to 100,000 characters with a separate path for large submissions |
-
-> [!IMPORTANT]
-> Submitted source code is sent to the FastAPI backend and then to the configured Gemini model for analysis. Do not submit private keys, passwords, production credentials, or code that you are not authorized to process through an external AI service.
+| **Submission** | Paste code or upload UTF-8 source files |
+| **Language intelligence** | Content-first detection, filename extension synchronization, language-family checks |
+| **Validation** | Tree-sitter, built-in validators, AST checks, and optional compiler/parser integrations |
+| **AI review** | Google Gemini with audit, verification, challenge, grounding, repair, and explanation stages |
+| **Output** | Verified findings, complete corrected source, syntax highlighting, copy, download, explanation |
+| **Persistence** | SQLite-backed workspaces, review history, preferences, profile details, and profile images |
+| **Session isolation** | Anonymous HTTP-only workspace cookie; no review content stored in browser local storage |
+| **UI** | React 18, Vite, responsive sidebar, premium selectors, dark/light themes |
+| **Scale** | Compact review path for normal submissions and dedicated large-source review path |
 
 ---
 
-## What I Built Beyond the Internship Brief
+## Version 4.0 Engineering Upgrade
 
-The internship task focused on an intelligent code reviewer and explainer. I extended that idea into a more complete engineering product with validation, persistence, traceability, and production-oriented delivery support.
+The current release moves CodeFix AI beyond a polished AI interface into an **auditable engineering review platform**. Every new review now produces a traceable quality profile rather than only a model-generated answer.
 
-| Addition | Purpose |
+| Production capability | What it adds |
 |---|---|
-| **Evidence quality gate** | Combines language confidence, deterministic validation, correction validation, verification state, and repeat-source stability |
-| **Risk summary** | Marks clean reviews as verified and classifies confirmed issues by practical severity |
-| **Change intelligence** | Shows additions, removals, and change blocks through an original-versus-corrected diff |
-| **Review metadata** | Records source hash, validation engines, diagnostics, issue counts, processing time, line count, character count, and verification state |
-| **Report export** | Produces Markdown or JSON reports containing findings, validation evidence, corrected code, diff, and explanation |
-| **Repeat-review consistency** | Uses SHA-256 source fingerprints to identify byte-identical submissions and reduce contradictory results |
-| **Observability** | Adds request identifiers, processing-time headers, structured logs, and detailed health information |
-| **Security baseline** | Uses server-side workspace isolation, strict file handling, privacy-aware logging, and browser security headers |
-| **Continuous integration** | Checks Python compilation, deterministic tests, Ruff validation, and the production frontend build |
-| **Container support** | Includes Dockerfiles, Nginx serving, persistent backend storage, and Docker Compose startup |
+| **Evidence quality gate** | A confidence score derived from language detection, deterministic source validation, correction validation, verification status, and repeat-source stability |
+| **Risk classification** | Verified, low, medium, high, or critical risk classification based on confirmed issue severity and parser/compiler evidence |
+| **Unified change intelligence** | A dedicated diff workspace with additions, removals, change blocks, and a readable original-versus-corrected view |
+| **Auditable review metadata** | Source hash, integrity signature, validation engines, diagnostics, issue breakdown, processing time, line count, character count, and verification state |
+| **Professional report export** | Downloadable Markdown or JSON engineering reports containing findings, quality-gate evidence, corrected code, diff, and explanation |
+| **Repeat-review integrity** | SHA-256 indexed source fingerprints make byte-identical verified code stable and efficiently reusable |
+| **Production observability** | Request IDs, processing-time headers, structured server logs, and detailed health reporting |
+| **Security baseline** | Browser security headers, privacy-preserving logging, strict file handling, and server-side workspace isolation |
+| **Continuous integration** | GitHub Actions validates Python compilation, deterministic tests, Ruff checks, and the production frontend build |
+| **Container delivery** | Dockerfiles, Nginx production serving, persistent backend storage, and one-command Docker Compose startup |
 
-These additions make the review result easier to inspect. A reviewer can see what was detected, which validators ran, what changed, and whether the corrected output passed the final validation step.
+This quality layer is intentionally visible in the product. Reviewers can inspect **why** a result is trusted, which engines validated it, what changed, and how the corrected output passed the final gate.
 
 ---
 
-## Product Gallery
+## Why CodeFix AI Stands Out
 
-> [!NOTE]
-> All screenshots use repository-relative paths. Keep the complete `docs/screenshots/` directory in the repository root so every image renders correctly on GitHub.
+| Evidence over guesses | Correction over commentary | Stability over randomness | Product over prototype |
+|---|---|---|---|
+| Findings must be tied to concrete source evidence, deterministic diagnostics, exact lines, symbols, or execution paths. | The platform returns the **complete corrected source file**, not only suggestions or a partial diff. | Previously verified byte-identical code is recognized to reduce contradictory repeat-review results. | The project includes history, profiles, themes, preferences, file handling, validation, persistence, and polished result workflows. |
 
-### Dark Workspace
+### Key Differentiators
 
-The main workspace brings together review history, profile controls, code input, file upload, language selection, and review preferences.
+1. **Polyglot review pipeline**: every supported language enters the same evidence-focused review architecture.
+2. **Deterministic validation before AI judgment**: parser and compiler evidence is treated as authoritative.
+3. **Independent verification**: a second review pass validates the first pass instead of trusting it blindly.
+4. **Grounded findings**: unsupported line references and source claims are filtered before presentation.
+5. **Final correction validation**: proposed corrected code is parsed again before it is returned.
+6. **Clean-code preservation**: valid code is preserved unchanged rather than unnecessarily rewritten.
+7. **Large-file strategy**: long submissions use compact findings, verification, and targeted repair to avoid fragile oversized responses.
+8. **Backend-first persistence**: review history and preferences remain available without storing sensitive source content in browser storage.
 
-<p align="center">
-  <a href="./docs/screenshots/01-dark-workspace.png">
-    <img src="./docs/screenshots/01-dark-workspace.png" alt="CodeFix AI dark workspace" width="100%" />
-  </a>
-</p>
+---
 
-<br />
+## Product Experience
 
-### Light Workspace
+> Every preview is clickable and opens the original screenshot at full resolution. Key screens are shown at full width, while related views are paired only where both remain easy to read.
 
-The light theme keeps the same layout and functionality while providing a brighter visual system.
+### 1. Dark and light engineering workspaces
 
-<p align="center">
-  <a href="./docs/screenshots/03-light-workspace.png">
-    <img src="./docs/screenshots/03-light-workspace.png" alt="CodeFix AI light workspace" width="100%" />
-  </a>
-</p>
+The complete workspace is available in both themes without changing the review flow or reducing information density.
 
-<br />
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/01-dark-workspace.png">
+        <img src="./docs/screenshots/01-dark-workspace.png" alt="CodeFix AI dark workspace" width="100%" />
+      </a>
+      <br /><sub><strong>Dark workspace</strong></sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/03-light-workspace.png">
+        <img src="./docs/screenshots/03-light-workspace.png" alt="CodeFix AI light workspace" width="100%" />
+      </a>
+      <br /><sub><strong>Light workspace</strong></sub>
+    </td>
+  </tr>
+</table>
 
-### Workspace Settings
+### 2. Review conversation
 
-The settings panel manages the profile, appearance, review focus, analysis depth, and automatic explanation preference.
+Submitted source and AI output are presented as an engineering conversation with filename, detected language, line count, developer identity, review state, and a structured result workspace.
+
+<a href="./docs/screenshots/04-review-conversation.png">
+  <img src="./docs/screenshots/04-review-conversation.png" alt="CodeFix AI review conversation" width="100%" />
+</a>
+
+<p align="center"><sub><strong>Review Conversation:</strong> source context and the completed analysis stay connected in one thread.</sub></p>
+
+### 3. Findings and corrected implementation
+
+The overview summarizes the result, while detailed findings explain the evidence, severity, impact, and correction behind each confirmed issue.
+
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/05-overview-corrected-output.png">
+        <img src="./docs/screenshots/05-overview-corrected-output.png" alt="CodeFix AI findings overview and corrected output" width="100%" />
+      </a>
+      <br /><sub><strong>Review overview and corrected implementation</strong></sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/06-evidence-grounded-finding.png">
+        <img src="./docs/screenshots/06-evidence-grounded-finding.png" alt="CodeFix AI evidence-grounded finding" width="100%" />
+      </a>
+      <br /><sub><strong>Evidence-grounded defect detail</strong></sub>
+    </td>
+  </tr>
+</table>
+
+### 4. Complete corrected code and walkthrough
+
+CodeFix AI returns the complete corrected file, then provides a structured explanation of how the source works and why the changes were required.
+
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/07-corrected-code.png">
+        <img src="./docs/screenshots/07-corrected-code.png" alt="Complete corrected source code in CodeFix AI" width="100%" />
+      </a>
+      <br /><sub><strong>Complete corrected source</strong></sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/08-line-by-line-explanation.png">
+        <img src="./docs/screenshots/08-line-by-line-explanation.png" alt="CodeFix AI line-by-line explanation" width="100%" />
+      </a>
+      <br /><sub><strong>Structured line-by-line walkthrough</strong></sub>
+    </td>
+  </tr>
+</table>
+
+### 5. Clean-code verification
+
+When no confirmed defect exists, the platform shows a clear verified state and preserves the submitted source instead of creating an unnecessary rewrite.
+
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/09-clean-code-verification.png">
+        <img src="./docs/screenshots/09-clean-code-verification.png" alt="CodeFix AI clean-code verification in light theme" width="100%" />
+      </a>
+      <br /><sub><strong>Verified clean result in light theme</strong></sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/11-dark-clean-review.png">
+        <img src="./docs/screenshots/11-dark-clean-review.png" alt="CodeFix AI clean-code verification in dark theme" width="100%" />
+      </a>
+      <br /><sub><strong>Verified clean result in dark theme</strong></sub>
+    </td>
+  </tr>
+</table>
+
+### 6. Language intelligence
+
+Language resolution uses source content, filename information, and the selected option. The interface keeps the detected language and filename extension synchronized.
+
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/10-language-auto-detection.png">
+        <img src="./docs/screenshots/10-language-auto-detection.png" alt="CodeFix AI automatic language detection" width="100%" />
+      </a>
+      <br /><sub><strong>Content-first automatic detection</strong></sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/12-premium-language-selector.png">
+        <img src="./docs/screenshots/12-premium-language-selector.png" alt="CodeFix AI programming-language selector" width="100%" />
+      </a>
+      <br /><sub><strong>Programming-language selector</strong></sub>
+    </td>
+  </tr>
+</table>
+
+### 7. Preferences and source-file upload
+
+Workspace identity, appearance, review behavior, and explanation preferences are persisted on the backend. Source files can be added through a dedicated drag-and-drop flow.
+
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/13-workspace-preferences.png">
+        <img src="./docs/screenshots/13-workspace-preferences.png" alt="CodeFix AI workspace preferences" width="100%" />
+      </a>
+      <br /><sub><strong>Profile, appearance, and review intelligence</strong></sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="./docs/screenshots/14-file-upload.png">
+        <img src="./docs/screenshots/14-file-upload.png" alt="CodeFix AI source-file upload" width="100%" />
+      </a>
+      <br /><sub><strong>Drag-and-drop source upload</strong></sub>
+    </td>
+  </tr>
+</table>
+
+### 8. Settings interface
+
+The full settings surface keeps profile controls, workspace appearance, and review-intelligence preferences in one focused panel.
 
 <p align="center">
   <a href="./docs/screenshots/02-settings-dark.png">
-    <img src="./docs/screenshots/02-settings-dark.png" alt="CodeFix AI workspace settings" width="72%" />
+    <img src="./docs/screenshots/02-settings-dark.png" alt="CodeFix AI settings panel" width="72%" />
   </a>
 </p>
 
-<br />
+<p align="center"><sub><strong>Settings:</strong> profile, theme, review focus, analysis depth, and automatic explanation controls.</sub></p>
 
-### Review Conversation
-
-Each review is shown as a structured conversation containing the submitted code, filename, language, line count, developer profile, and generated result.
-
-<p align="center">
-  <a href="./docs/screenshots/04-review-conversation.png">
-    <img src="./docs/screenshots/04-review-conversation.png" alt="CodeFix AI review conversation" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Findings and Corrected Output
-
-The overview presents review status, metadata, confirmed issues, and the corrected implementation in one focused workspace.
-
-<p align="center">
-  <a href="./docs/screenshots/05-overview-corrected-output.png">
-    <img src="./docs/screenshots/05-overview-corrected-output.png" alt="CodeFix AI overview and corrected output" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Evidence-Grounded Finding
-
-Each confirmed issue includes severity, source location, affected symbol, technical cause, likely impact, and correction guidance.
-
-<p align="center">
-  <a href="./docs/screenshots/06-evidence-grounded-finding.png">
-    <img src="./docs/screenshots/06-evidence-grounded-finding.png" alt="CodeFix AI evidence-grounded finding" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Complete Corrected Source
-
-The corrected-code view returns the full file with syntax highlighting, line numbers, copy support, and download support.
-
-<p align="center">
-  <a href="./docs/screenshots/07-corrected-code.png">
-    <img src="./docs/screenshots/07-corrected-code.png" alt="CodeFix AI corrected source code" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Line-by-Line Explanation
-
-The explanation view documents the code summary, execution flow, meaningful line ranges, language concepts, and the relationship between a defect and its correction.
-
-<p align="center">
-  <a href="./docs/screenshots/08-line-by-line-explanation.png">
-    <img src="./docs/screenshots/08-line-by-line-explanation.png" alt="CodeFix AI line-by-line explanation" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Clean-Code Verification in Light Mode
-
-When no confirmed issue is found, CodeFix AI displays a verified result and preserves the submitted source unchanged.
-
-<p align="center">
-  <a href="./docs/screenshots/09-clean-code-verification.png">
-    <img src="./docs/screenshots/09-clean-code-verification.png" alt="CodeFix AI clean-code verification in light mode" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Automatic Language Detection
-
-For pasted source, the application can detect the programming language and synchronize the filename extension automatically.
-
-<p align="center">
-  <a href="./docs/screenshots/10-language-auto-detection.png">
-    <img src="./docs/screenshots/10-language-auto-detection.png" alt="CodeFix AI automatic language detection" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Clean-Code Verification in Dark Mode
-
-The verified review state remains consistent in the dark theme, including metadata, history, output controls, and continued code input.
-
-<p align="center">
-  <a href="./docs/screenshots/11-dark-clean-review.png">
-    <img src="./docs/screenshots/11-dark-clean-review.png" alt="CodeFix AI clean-code verification in dark mode" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Programming-Language Selector
-
-The custom selector provides a scrollable language list, selected-state feedback, keyboard interaction, and theme-aware styling.
-
-<p align="center">
-  <a href="./docs/screenshots/12-premium-language-selector.png">
-    <img src="./docs/screenshots/12-premium-language-selector.png" alt="CodeFix AI programming-language selector" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### Profile and Review Preferences
-
-Profile information, appearance, review focus, analysis depth, and explanation preferences are managed from one settings experience.
-
-<p align="center">
-  <a href="./docs/screenshots/13-workspace-preferences.png">
-    <img src="./docs/screenshots/13-workspace-preferences.png" alt="CodeFix AI profile and review preferences" width="100%" />
-  </a>
-</p>
-
-<br />
-
-### File Upload
-
-Source files can be selected from the device or added through drag and drop.
-
-<p align="center">
-  <a href="./docs/screenshots/14-file-upload.png">
-    <img src="./docs/screenshots/14-file-upload.png" alt="CodeFix AI source file upload" width="100%" />
-  </a>
-</p>
+<p align="right"><a href="#top">Back to top ↑</a></p>
 
 ---
 
-## Core Features
+## Core Capabilities
 
 ### Source Input
 
-- Paste source code into an auto-growing editor.
-- Upload files through browsing or drag and drop.
-- Read uploaded source as UTF-8 text.
-- Sanitize filenames before persistence.
+- Paste source code directly into an auto-growing editor.
+- Upload source files through click-to-browse or drag-and-drop.
+- Decode uploaded source as UTF-8 text.
+- Sanitize submitted filenames before persistence.
 - Enforce configurable source-size limits.
-- Preserve the submitted code inside the review conversation after the composer is cleared.
+- Clear and compact the composer after review submission while preserving the submitted source in the conversation.
 
 ### Language Detection
 
-- Detect language from source content instead of relying only on the selected option.
-- Recognize strong patterns such as JSX, TSX, HTML documents, PHP tags, and shell shebangs.
-- Score language-specific syntax across the complete submission.
+- Detect language from source content rather than trusting only the selected option.
+- Use high-confidence hard matches for structures such as JSX, TSX, HTML documents, PHP tags, and shell shebangs.
+- Score language-specific syntax signatures across the complete submission.
 - Synchronize the filename extension with the detected language.
-- Compare uploaded-file extensions with detected content.
-- Reject unsupported language selections before review processing.
+- Validate uploaded-file extension against detected content.
+- Prevent unsupported language selections from reaching the review engine.
 
 ### Review Intelligence
 
-CodeFix AI supports different review goals and levels of detail:
-
-- balanced engineering review;
-- correctness and reliability;
-- security and defensive coding;
-- performance and efficiency;
-- concise, standard, or deep technical analysis.
-
-Confirmed findings can include severity, exact source references, cause, impact, and correction guidance.
+- Balanced engineering review.
+- Correctness and reliability focus.
+- Security and defensive-coding focus.
+- Performance and efficiency focus.
+- Concise, professional, or deep technical analysis.
+- Concrete severity classification using **Critical**, **Warning**, and **Info**.
+- Exact source references where available.
+- Cause, impact, and correction guidance for confirmed findings.
 
 ### Corrected Output
 
-- Returns the complete corrected source instead of only a partial patch.
-- Uses syntax highlighting and line numbers.
-- Supports copy and filename-aware download.
-- Preserves valid source when no change is required.
-- Runs additional repair passes when generated code does not pass deterministic validation.
+- Complete corrected source rather than a partial patch in the UI.
+- Syntax-highlighted code rendering.
+- Filename-aware download.
+- Copy-to-clipboard action.
+- Preservation of valid source when no changes are required.
+- Additional repair passes when a model-generated correction fails deterministic validation.
 
 ### Explanation
 
-- Short code summary.
+- Code summary.
 - Numbered execution flow.
-- Line-by-line or block-by-block walkthrough.
-- Important language concepts, APIs, edge cases, and engineering choices.
-- Optional automatic explanation after a completed review.
-- Saved explanations inside the selected review session.
+- Line-by-line or block-by-block explanation.
+- Key language concepts, APIs, edge cases, and engineering decisions.
+- Optional automatic explanation after each completed review.
+- Persistence of generated explanations in the selected review session.
 
 ### Workspace Experience
 
-- New-review action with keyboard shortcut support.
+- New review action with keyboard shortcut support.
 - Searchable review history.
 - Filename-based session titles.
 - Active-session restoration.
 - User profile with name, professional role, and profile image.
-- Dark and light themes.
+- Premium dark and light themes.
 - Responsive desktop, tablet, and mobile layouts.
-- Clear loading, success, clean, and failure states.
+- Professional success, clean, loading, and failure states.
 
 ---
 
 ## Supported Languages
 
-| Category | Languages and File Types |
+| Category | Languages / File Types |
 |---|---|
 | **Python** | Python (`.py`) |
 | **JavaScript ecosystem** | JavaScript (`.js`), JSX (`.jsx`), TypeScript (`.ts`), TSX (`.tsx`) |
 | **JVM** | Java (`.java`), Kotlin (`.kt`) |
-| **C family** | C (`.c`), C++ (`.cpp`, `.cc`), headers (`.h`, `.hpp`), C# (`.cs`) |
+| **C family** | C (`.c`), C++ (`.cpp`, `.cc`), C/C++ headers (`.h`, `.hpp`), C# (`.cs`) |
 | **Systems and compiled** | Go (`.go`), Rust (`.rs`), Swift (`.swift`) |
-| **Scripting** | Ruby (`.rb`), PHP (`.php`), Shell or Bash (`.sh`) |
+| **Scripting** | Ruby (`.rb`), PHP (`.php`), Shell/Bash (`.sh`) |
 | **Web and data** | HTML (`.html`), CSS (`.css`), SQL (`.sql`) |
 | **Fallback** | Plain text (`.txt`) |
 
-> Deterministic validation depth depends on the parser and compiler tools installed on the backend host. Tree-sitter and built-in structural checks provide the baseline, while optional local toolchains add deeper validation for their languages.
+> Deterministic compiler/parser depth depends on which optional language toolchains are installed on the backend host. Tree-sitter and built-in structural validators provide a consistent baseline across supported languages.
 
 ---
 
-## Review and Validation Pipeline
+## Intelligence and Validation Pipeline
 
-CodeFix AI does not forward source code to the model and display the first response. The backend uses a staged pipeline that combines deterministic evidence with AI-assisted reasoning.
+CodeFix AI does not send raw code directly to a model and blindly display the answer. The review route uses a layered quality pipeline.
 
 ### Review Lifecycle
 
 1. **Input ingestion**  
-   The backend accepts pasted source or an uploaded file, then enforces encoding and size requirements.
+   Accept pasted code or a source file and enforce UTF-8 and size requirements.
 
 2. **Language resolution**  
-   The selected language, filename extension, and content-based detection result are compared.
+   Compare the selected language, filename extension, and content-based detection evidence.
 
 3. **Deterministic validation**  
-   The source is checked with Tree-sitter, built-in validators, delimiter analysis, AST parsing, or available compiler and parser tools.
+   Run Tree-sitter, built-in language validators, delimiter scanning, AST parsing, or available compiler/parser tools.
 
-4. **Primary audit**  
-   Gemini receives the source and deterministic context, then returns structured candidate findings.
+4. **Primary AI audit**  
+   Generate compact, structured, evidence-bound findings without mixing large corrected code into the same structured payload.
 
 5. **Source grounding**  
-   Findings without support in the submitted source are removed or corrected before presentation.
+   Remove unsupported findings whose symbols, tokens, or line references cannot be tied to the submitted source.
 
 6. **Independent verification**  
-   A separate pass reviews the full source and checks the candidate findings.
+   Reinspect the full source and validate the candidate findings.
 
-7. **Disagreement handling**  
-   When the audit and verification stages disagree, the backend can run a focused tie-break review.
+7. **Disagreement resolution**  
+   Run a correctness-focused tie-break audit when the primary and verification stages disagree.
 
-8. **Deterministic diagnostics merge**  
-   Parser or compiler diagnostics remain part of the result even when the model attempts to classify the source as clean.
+8. **Deterministic evidence injection**  
+   Preserve parser/compiler diagnostics even if an AI response attempts to classify the source as clean.
 
-9. **Targeted correction**  
-   The complete corrected source is generated only after confirmed findings are available.
+9. **Targeted repair**  
+   Generate the complete corrected source only after findings have been verified.
 
 10. **Correction validation**  
-    The corrected source is parsed again. Focused repair passes can run when validation still fails.
+    Parse the proposed corrected source again. Up to two focused repair passes can be attempted if deterministic validation still fails.
 
-11. **Result persistence**  
-    The original source, review report, corrected source, status, model metadata, diff, and explanation are stored in SQLite.
+11. **Safe result persistence**  
+    Store the original source, verified report, corrected source, status, model metadata, and explanation in SQLite.
 
 ### Deterministic Validation Matrix
 
-| Language or Family | Validation Used by the Backend |
+| Language / Family | Validation engines used by the backend |
 |---|---|
-| **Supported grammars** | Tree-sitter language pack where available |
+| **All supported grammars** | Tree-sitter language pack where available |
 | **Python** | Python `ast.parse` |
 | **JavaScript** | Node.js `--check` when installed |
-| **JSX, TypeScript, TSX** | TypeScript compiler parser when installed |
-| **C, C++, headers** | `clang`, `clang++`, `gcc`, or `g++` syntax-only checks when installed |
+| **JSX / TypeScript / TSX** | TypeScript compiler parser when installed |
+| **C / C++ / headers** | `clang`, `clang++`, `gcc`, or `g++` syntax-only checks when installed |
 | **Go** | `gofmt -e` when installed |
 | **Ruby** | `ruby -c` when installed |
 | **PHP** | `php -l` when installed |
@@ -415,47 +438,57 @@ CodeFix AI does not forward source code to the model and display the first respo
 | **Kotlin** | `kotlinc` syntax checks when installed |
 | **Rust** | `rustc` metadata compilation when installed |
 | **C#** | `csc` or `mcs` when installed |
-| **CSS** | Built-in declaration and rule validation |
-| **HTML** | Built-in tag and nesting validation |
-| **SQL** | Built-in statement and delimiter validation |
+| **CSS** | Built-in declaration and rule validator |
+| **HTML** | Built-in tag and nesting validator |
+| **SQL** | Built-in statement and delimiter validator |
 
-### Prompt and Response Controls
+### Strict Review Contracts
 
-The AI layer uses separate instructions for audit, verification, clean-result challenge, correction, large-source review, patch-based repair, and explanation. Model responses are parsed and validated by the backend before they are returned to the frontend. A malformed response is treated as a failure, not as proof that the submitted code is clean.
+The AI service is constrained through dedicated system instructions for:
+
+- audit;
+- independent verification;
+- clean-result challenge;
+- correction repair;
+- large-source analysis;
+- patch-based large-source repair;
+- structured explanation.
+
+The backend parses and validates every response before exposing it to the frontend. Malformed or unverified responses are not silently treated as clean results.
 
 ---
 
-## Large-Source Review
+## Large-Source Review Architecture
 
-CodeFix AI accepts submissions up to **100,000 characters**. Long files use a dedicated path to reduce truncated responses and unreliable large JSON payloads.
+CodeFix AI supports submissions up to **100,000 characters** by using a dedicated path for long source files.
 
 | Control | Default |
 |---|---:|
 | Maximum source size | `100000` characters |
 | Large-source threshold | `24000` characters |
-| Maximum configured Gemini output | `65536` tokens |
+| Maximum Gemini output tokens | `65536` |
 
 ### Large-Source Strategy
 
-- Analyze the full source with a compact findings schema.
-- Verify candidate findings independently.
-- Split source into overlapping chunks when a complete response cannot be validated.
-- Convert chunk-level line references back to original source positions.
-- Deduplicate repeated findings.
-- Request line-based edits instead of repeatedly returning the full file inside structured JSON.
+- Analyze the complete source with a compact findings-only schema.
+- Independently verify the findings.
+- Split the source into overlapping chunks when a complete analysis response cannot be validated.
+- Shift chunk-level line references back to original source coordinates.
+- Deduplicate confirmed findings.
+- Request line-based repair edits instead of repeatedly returning the whole file in structured JSON.
 - Apply non-overlapping edits to the original source on the backend.
 - Preserve unrelated lines.
-- Validate the final corrected source before returning it.
+- Validate the final source before presenting it.
 
-This approach keeps the downloadable output complete while reducing the chance of oversized or malformed model responses.
+This architecture reduces failures caused by oversized model responses while keeping the final downloadable code complete.
 
 ---
 
-## Architecture
+## System Architecture
 
 ```mermaid
 flowchart LR
-    U[Developer] --> UI[React 18 and Vite Workspace]
+    U[Developer] --> UI[React 18 + Vite Workspace]
 
     subgraph Frontend
       UI --> C[Review Composer]
@@ -465,21 +498,21 @@ flowchart LR
     end
 
     C -->|multipart/form-data| API[FastAPI API]
-    S -->|JSON or image upload| API
+    S -->|JSON / image upload| API
     H -->|workspace session| API
 
     subgraph Backend
       API --> L[Language Resolution]
-      L --> V[Deterministic Validators]
+      L --> V[Deterministic Validator Mesh]
       V --> P{Source Size}
-      P -->|Normal| A[Structured Audit]
+      P -->|Normal| A[Compact Polyglot Audit]
       P -->|Large| G[Large-Source Audit]
       A --> Q[Independent Verification]
       G --> Q
       Q --> E[Evidence Grounding]
-      E --> F[Correction and Repair]
+      E --> F[Correction / Repair]
       F --> Z[Final Syntax Validation]
-      API --> X[Code Explanation]
+      API --> X[Line-by-Line Explanation]
       API --> W[Workspace Service]
     end
 
@@ -502,70 +535,70 @@ sequenceDiagram
     participant Dev as Developer
     participant UI as React Workspace
     participant API as FastAPI
-    participant Val as Validators
+    participant Val as Validator Mesh
     participant AI as Gemini Pipeline
     participant DB as SQLite
 
-    Dev->>UI: Paste code or attach a file
+    Dev->>UI: Paste code or attach file
     UI->>API: POST /api/review
     API->>API: Resolve language and filename
-    API->>Val: Parse source and collect diagnostics
-    Val-->>API: Validation status and evidence
-    API->>AI: Run structured audit
+    API->>Val: Parse and collect deterministic evidence
+    Val-->>API: Status, diagnostics, engines
+    API->>AI: Evidence-grounded audit
     AI-->>API: Candidate findings
-    API->>AI: Verify candidate findings
-    AI-->>API: Verified result
+    API->>AI: Independent verification
+    AI-->>API: Verified findings
     alt Confirmed issues
         API->>AI: Generate corrected source
         AI-->>API: Complete corrected source
         API->>Val: Validate corrected source
-    else No confirmed issue
-        API->>API: Preserve original source
+    else Clean source
+        API->>API: Preserve source unchanged
     end
-    API->>DB: Save review session
-    DB-->>API: Stored session
+    API->>DB: Persist review session
+    DB-->>API: Saved session
     API-->>UI: Structured review result
-    UI-->>Dev: Findings, code, diff, download, and explanation
+    UI-->>Dev: Findings, corrected code, download, explanation
 ```
 
 ---
 
-## Persistence, Privacy, and Security
+## Data Persistence and Privacy
 
-CodeFix AI uses a backend-managed workspace model. Review history and preferences are stored in SQLite rather than browser storage.
+CodeFix AI uses a backend-managed workspace model.
 
-### Stored Workspace Data
+### What is stored in SQLite
 
 - anonymous workspace identifier;
-- display name and professional role;
+- display name;
+- professional role;
 - profile image bytes and MIME type;
-- review focus and analysis depth;
+- review focus;
+- analysis depth;
 - automatic explanation preference;
-- dark or light theme preference;
+- dark/light theme preference;
+- review sessions;
 - original source code;
-- verified review report;
+- verified bug report;
 - corrected source code;
-- diff and review metadata;
-- generated explanation;
-- creation and update timestamps.
+- explanation;
+- timestamps and model metadata.
 
 ### Session Isolation
 
-- Each browser receives an anonymous UUID workspace identifier.
-- The identifier is stored in an HTTP-only cookie with `SameSite=Lax`.
+- Each browser/device receives an anonymous UUID workspace identifier.
+- The identifier is stored in an **HTTP-only**, `SameSite=Lax` cookie.
 - Secure-cookie mode can be enabled for HTTPS deployments.
-- Review content is not stored in `localStorage`, `sessionStorage`, or IndexedDB.
-- Backend queries are scoped to the current workspace identifier.
+- Review content is not persisted through `localStorage`, `sessionStorage`, or IndexedDB.
+- Workspace data remains separated by the backend-issued client identifier.
 
 ### File and Profile Controls
 
-- Submitted filenames are sanitized.
-- Uploaded source must be valid UTF-8 text.
-- Source length is checked before analysis.
-- Profile images are limited to PNG, JPG, or WebP.
+- Source filenames are sanitized.
+- Uploaded source must be readable UTF-8 text.
+- Profile images are restricted to PNG, JPG, or WebP.
 - Profile images are limited to 5 MB.
-- API keys and environment secrets remain in backend environment files excluded by `.gitignore`.
-- The frontend does not require a Gemini API key.
+- Secrets are loaded from environment files excluded through `.gitignore`.
 
 ---
 
@@ -573,16 +606,16 @@ CodeFix AI uses a backend-managed workspace model. Review history and preference
 
 | Method | Endpoint | Purpose |
 |---|---|---|
-| `GET` | `/api/health` | Return service readiness and capability information |
-| `GET` | `/api/workspace` | Load workspace settings and recent review sessions |
-| `PUT` | `/api/settings` | Save profile, review, explanation, and appearance preferences |
+| `GET` | `/api/health` | Return service readiness and capability metadata |
+| `GET` | `/api/workspace` | Load settings and the latest saved review sessions |
+| `PUT` | `/api/settings` | Save profile, review intelligence, explanation, and theme preferences |
 | `POST` | `/api/profile/avatar` | Upload a profile image |
-| `GET` | `/api/profile/avatar` | Read the current workspace profile image |
+| `GET` | `/api/profile/avatar` | Read the workspace profile image |
 | `DELETE` | `/api/reviews` | Clear review history for the current workspace |
-| `POST` | `/api/review` | Review pasted code or an uploaded file |
-| `GET` | `/api/reviews/{review_id}/report?format=markdown` | Export a review report as Markdown |
-| `GET` | `/api/reviews/{review_id}/report?format=json` | Export a review report as JSON |
-| `POST` | `/api/explain` | Generate and optionally save a structured code explanation |
+| `POST` | `/api/review` | Review pasted code or an uploaded source file and return quality-gate metadata plus a unified diff |
+| `GET` | `/api/reviews/{review_id}/report?format=markdown` | Export a complete engineering review report as Markdown |
+| `GET` | `/api/reviews/{review_id}/report?format=json` | Export the auditable review session as JSON |
+| `POST` | `/api/explain` | Generate and optionally persist a structured code walkthrough |
 
 ### Example Review Request
 
@@ -654,24 +687,24 @@ erDiagram
     }
 ```
 
-The workspace endpoint returns a configurable history window, with the most recently updated review listed first.
+The workspace endpoint returns a configurable history window (default **100** review sessions) ordered by most recent update.
 
 ---
 
 ## Project Structure
 
 ```text
-CodeFix-AI/
+DecodeLab-Intelligent Code Reviewer and Explainer/
 ├── backend/
 │   ├── app/
-│   │   ├── config.py              # Environment-backed configuration
-│   │   ├── gemini_service.py      # Audit, verification, repair, and explanation
-│   │   ├── prompts.py             # Model instructions and prompt builders
-│   │   ├── schemas.py             # Pydantic request and response models
+│   │   ├── config.py              # Environment-backed runtime configuration
+│   │   ├── gemini_service.py      # Audit, verification, grounding, repair, large-source, explanation
+│   │   ├── prompts.py             # Strict model instructions and prompt builders
+│   │   ├── schemas.py             # Pydantic request and response contracts
 │   │   └── __init__.py
+│   ├── main.py                    # FastAPI routes, SQLite, language detection, validators
 │   ├── tests/
 │   │   └── test_review_quality.py # Language, diff, metadata, and report tests
-│   ├── main.py                    # FastAPI routes, SQLite, detection, and validation
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   ├── requirements-dev.txt
@@ -692,10 +725,11 @@ CodeFix-AI/
 │   │   │   ├── ReviewComposer.jsx
 │   │   │   ├── ReviewWorkspace.jsx
 │   │   │   ├── SettingsModal.jsx
-│   │   │   └── Sidebar.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── ...
 │   │   ├── utils/
-│   │   │   ├── api.js             # API client and user-facing error mapping
-│   │   │   └── language.js        # Language metadata and frontend detection
+│   │   │   ├── api.js             # Backend API client and professional error mapping
+│   │   │   └── language.js        # Frontend language metadata and detection
 │   │   ├── App.jsx
 │   │   ├── index.css
 │   │   └── main.jsx
@@ -704,122 +738,92 @@ CodeFix-AI/
 │   ├── package.json
 │   ├── vite.config.js
 │   └── .env.example
-├── .github/
-│   └── workflows/
-│       └── ci.yml                 # Backend and frontend checks
+├── .github/workflows/ci.yml       # Backend and frontend continuous integration
 ├── docs/
-│   ├── screenshots/
 │   ├── ARCHITECTURE.md
-│   └── REVIEW_GUARANTEES.md
+│   ├── REVIEW_GUARANTEES.md
+│   └── screenshots/               # Repository-relative README visuals
 ├── docker-compose.yml
 ├── Makefile
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
-├── IMPLEMENTATION_NOTES.md
 ├── SECURITY.md
 ├── .gitignore
+├── IMPLEMENTATION_NOTES.md
 └── README.md
 ```
-
-Generated and private directories such as `frontend/node_modules/`, `frontend/dist/`, `backend/.venv/`, `backend/.env`, and `backend/storage/` should not be committed.
 
 ---
 
 ## Getting Started
 
-### Prerequisites
-
-- Python 3.10 or newer
-- Node.js 18 or newer
-- npm
-- Git
-- A Google Gemini API key
-- Docker Desktop, only when using Docker Compose
-
-Optional language toolchains improve deterministic validation for their corresponding languages, but they are not required to start the application.
-
-### Option 1: Run with Docker Compose
-
-Clone the repository and enter the project directory:
+### Fastest production-style start: Docker Compose
 
 ```bash
+# 1. Clone the repository
 git clone <your-repository-url>
-cd CodeFix-AI
-```
+cd <repository-directory>
 
-Provide the Gemini API key.
+# 2. Provide the model key
+export GEMINI_API_KEY=your_real_key
 
-#### macOS or Linux
-
-```bash
-export GEMINI_API_KEY=your_real_gemini_api_key
+# 3. Build and launch the complete stack
 docker compose up --build
 ```
 
-#### Windows PowerShell
-
-```powershell
-$env:GEMINI_API_KEY="your_real_gemini_api_key"
-docker compose up --build
-```
-
-Open the services:
+Open:
 
 - Frontend: `http://localhost:8080`
 - Backend API: `http://localhost:8000`
-- API documentation: `http://localhost:8000/docs`
+- Interactive API documentation: `http://localhost:8000/docs`
 
-The SQLite database is stored in the `codefix_storage` Docker volume so review history can survive container restarts.
+The SQLite workspace database is stored in the named Docker volume `codefix_storage`, so review history survives container restarts.
 
-### Option 2: Local Development
+### Local Development
 
-#### 1. Clone the Repository
+#### Prerequisites
+
+- Python 3.10 or newer recommended
+- Node.js 18 or newer recommended
+- npm
+- A Google Gemini API key
+- Optional local parser/compiler toolchains for deeper deterministic validation
+
+### 1. Clone the Repository
 
 ```bash
 git clone <your-repository-url>
-cd CodeFix-AI
+cd "DecodeLab-Intelligent Code Reviewer and Explainer"
 ```
 
-#### 2. Configure the Backend
+### 2. Configure and Run the Backend
 
 ```bash
 cd backend
 python -m venv .venv
 ```
 
-##### Windows PowerShell
+#### Windows PowerShell
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
 pip install -r requirements.txt
 Copy-Item .env.example .env
-python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
+uvicorn main:app --reload --port 8000
 ```
 
-##### Windows Command Prompt
-
-```bat
-.venv\Scripts\activate.bat
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-copy .env.example .env
-python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
-```
-
-##### macOS or Linux
+#### macOS / Linux
 
 ```bash
 source .venv/bin/activate
-python -m pip install --upgrade pip
 pip install -r requirements.txt
 cp .env.example .env
-python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
+uvicorn main:app --reload --port 8000
 ```
 
-Before starting the backend, open `backend/.env` and replace the placeholder Gemini key.
+Open `backend/.env` and replace the placeholder API key before starting the server.
 
-#### 3. Configure the Frontend
+### 3. Configure and Run the Frontend
 
 Open a second terminal:
 
@@ -828,31 +832,30 @@ cd frontend
 npm install
 ```
 
-##### Windows PowerShell
+#### Windows PowerShell
 
 ```powershell
 Copy-Item .env.example .env
 npm run dev
 ```
 
-##### Windows Command Prompt
-
-```bat
-copy .env.example .env
-npm run dev
-```
-
-##### macOS or Linux
+#### macOS / Linux
 
 ```bash
 cp .env.example .env
 npm run dev
 ```
 
-Open the application at:
+### 4. Open the Application
 
 ```text
 http://localhost:5173
+```
+
+The FastAPI service runs by default at:
+
+```text
+http://localhost:8000
 ```
 
 ### Production Frontend Build
@@ -867,26 +870,26 @@ npm run preview
 
 ```bash
 cd backend
-python -m uvicorn main:app --host 0.0.0.0 --port 8000
+uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
 ---
 
-## Configuration
+## Environment Configuration
 
 ### Backend: `backend/.env`
 
-| Variable | Required | Default or Example | Purpose |
+| Variable | Required | Default / Example | Purpose |
 |---|---|---|---|
 | `GEMINI_API_KEY` | Yes | `your_gemini_api_key_here` | Authenticates Gemini requests |
-| `GEMINI_MODEL` | Recommended | A model enabled for your account | Selects the Gemini model used by review and explanation routes |
+| `GEMINI_MODEL` | Recommended | Set to a model available to your account | Selects the Gemini model used for review and explanation |
 | `MAX_CODE_CHARS` | No | `100000` | Maximum accepted source length |
-| `LARGE_SOURCE_THRESHOLD` | No | `24000` | Routes long source to the large-source pipeline |
+| `LARGE_SOURCE_THRESHOLD` | No | `24000` | Routes long source into the large-source pipeline |
 | `GEMINI_MAX_OUTPUT_TOKENS` | No | `65536` | Maximum configured model output capacity |
-| `FRONTEND_ORIGIN` | No | `http://localhost:5173` | Allowed frontend origin for CORS |
-| `COOKIE_SECURE` | No | `false` | Set to `true` when the application is served over HTTPS |
+| `FRONTEND_ORIGIN` | No | `http://localhost:5173` | CORS origin allowed by FastAPI |
+| `COOKIE_SECURE` | No | `false` | Set to `true` when served over HTTPS |
 
-> Use a Gemini model that is available in your Google AI Studio account. Model availability can vary by account and region.
+> The sample `.env.example` includes a model value. Use a Gemini model that is enabled for your Google AI Studio account.
 
 ### Frontend: `frontend/.env`
 
@@ -896,168 +899,170 @@ python -m uvicorn main:app --host 0.0.0.0 --port 8000
 
 ---
 
-## Usage Guide
+## Using CodeFix AI
 
 ### Paste-Code Workflow
 
 1. Select **Paste code**.
-2. Enter or paste the source.
-3. Review the detected language and filename extension.
-4. Change the language manually when required.
-5. Choose review preferences from **Settings**.
+2. Enter or paste source code.
+3. CodeFix AI detects the language and updates the filename extension when confidence is sufficient.
+4. Optionally select a language manually.
+5. Select review preferences from **Settings**.
 6. Click **Review code**.
-7. Inspect the result through **Overview**, **Findings**, **Corrected code**, and **Line by line**.
+7. Inspect the structured result through:
+   - **Overview**
+   - **Findings**
+   - **Corrected code**
+   - **Line by line**
 8. Copy or download the corrected source.
 
 ### File-Upload Workflow
 
 1. Select **Attach file**.
-2. Drop a supported UTF-8 source file into the upload area or browse for it.
-3. Review the detected language and filename.
-4. Start the review.
-5. Reopen the saved session later from review history.
+2. Drop a supported UTF-8 source file into the upload area or browse for a file.
+3. The backend checks the extension and source content.
+4. Run the review.
+5. Open the saved session later from searchable history.
 
 ### Clean-Code Workflow
 
-When deterministic checks pass and no confirmed defect is found:
+When the source passes deterministic validation and the evidence-grounded review finds no confirmed issue:
 
-- the review is marked **Verified**;
-- the original source is preserved;
-- the session is saved in history;
-- an identical previously verified source can use the repeat-review consistency path.
+- the result is marked **Verified**;
+- the original source is returned unchanged;
+- the review is stored in history;
+- submitting the identical previously verified source can use the trusted repeat-review path.
 
 ### Explanation Workflow
 
-Open **Line by line** and select **Explain line by line**, or enable automatic explanation in Settings.
+- Open **Line by line** and click **Explain line by line**; or
+- enable **Generate line-by-line explanation automatically** in Settings.
 
-A generated walkthrough can include:
+The explanation contains:
 
 1. code summary;
 2. execution flow;
-3. line-by-line or block-by-block explanation;
-4. important concepts and APIs.
+3. line-by-line or block-by-block walkthrough;
+4. key concepts.
 
 ---
 
-## Error Handling
+## Professional Error Handling
 
-The frontend converts backend and AI-service failures into clear messages instead of exposing raw stack traces.
+The frontend converts API failures into user-facing engineering messages rather than exposing raw service traces.
 
 | Status | Typical Meaning |
 |---:|---|
-| `400` | The review request could not be processed |
-| `401` | The workspace session is no longer valid |
-| `403` | The current workspace is not allowed to perform the action |
-| `404` | The requested workspace resource does not exist |
-| `413` | The source file or profile image exceeds the supported limit |
+| `400` | Review request could not be processed |
+| `401` | Workspace session is no longer valid |
+| `403` | Workspace is not authorized for the action |
+| `404` | Workspace resource does not exist |
+| `413` | Source or profile image exceeds the supported limit |
 | `422` | Source, file type, language, settings, or payload validation failed |
-| `429` | The analysis service reached a quota or capacity limit |
-| `500` | An unexpected backend error occurred |
-| `502` | The AI response or explanation could not be verified |
-| `503` | The analysis engine is temporarily unavailable |
+| `429` | Analysis service quota or capacity limit |
+| `500` | Unexpected backend error |
+| `502` | AI output or walkthrough could not be verified |
+| `503` | Analysis engine is temporarily unavailable |
 
-Quota, timeout, API-key, network, validation, and large-source failures are translated into practical retry guidance.
+The backend also translates quota, timeout, API-key, network, and large-source failures into professional retry guidance.
 
 ---
 
 ## Engineering Decisions
 
-### Why are findings and corrected source requested separately?
+### Why separate findings from corrected source?
 
-Code can contain quotes, braces, markup, JSX, CSS, and very long text. Mixing findings and a complete source file inside one large structured response increases the chance of malformed output. CodeFix AI first verifies the findings, then requests the corrected source.
+Code containing braces, quotes, Markdown-like tokens, JSX, CSS, or very long text can corrupt a single oversized structured response. CodeFix AI first requests compact findings, verifies them, and only then requests corrected source.
 
-### Why run deterministic validation before AI review?
+### Why deterministic validation before AI?
 
-A language model can miss syntax errors or report issues that are not present. Parser and compiler diagnostics provide concrete evidence and give the review pipeline a reliable starting point.
+Models can miss syntax errors or invent issues. Parser/compiler diagnostics provide concrete evidence that cannot be erased by a clean AI verdict.
 
-### Why validate the corrected code again?
+### Why verify corrected code again?
 
-A correct diagnosis does not guarantee a correct repair. The backend parses the proposed correction and can request a focused repair when deterministic validation still fails.
+A correct finding does not guarantee a correct model-generated repair. The backend re-runs validation and can request focused repair passes.
 
-### Why preserve clean code unchanged?
+### Why preserve clean source unchanged?
 
-A reviewer should not create unnecessary changes. When no confirmed issue exists, CodeFix AI returns the submitted source instead of rewriting it for style alone.
+A code reviewer should not create unnecessary diffs. The strict prompts and repeat-review path protect already-correct code from speculative rewriting.
 
 ### Why store sessions on the backend?
 
-Backend persistence keeps review history, profile data, and preferences available without storing source code in browser local storage. It also provides a clearer path to authenticated accounts and managed databases later.
+Server-backed persistence gives the application durable history, preferences, profile identity, and device-specific isolation without keeping review source in browser local storage.
 
 ---
 
-## What This Project Demonstrates
+## Evaluation Highlights
 
-CodeFix AI brings together several areas of software engineering and applied AI:
+This project demonstrates work across multiple software-engineering and AI disciplines:
 
-- structured Gemini integration for audit, verification, correction, and explanation;
-- prompt design for normal and large-source workflows;
-- React and Vite frontend development;
-- FastAPI backend development;
-- programming-language detection and extension synchronization;
-- Tree-sitter, AST, parser, and compiler integration;
-- evidence grounding and repeat-review consistency;
-- SQLite workspace and review persistence;
-- HTTP-only session isolation and input controls;
-- responsive dark and light user interfaces;
-- Docker, Nginx, Docker Compose, and CI support;
-- large-input review through chunking and targeted line edits.
+- **Generative AI integration**: structured Gemini audit, verification, repair, and explanation.
+- **Prompt engineering**: specialized system contracts for normal and large-source workflows.
+- **Full-stack development**: React/Vite frontend and FastAPI backend.
+- **Programming-language intelligence**: content detection, extension synchronization, language families.
+- **Compiler and parser integration**: AST, Tree-sitter, and optional language toolchains.
+- **Reliability engineering**: grounding, retries, independent verification, repair validation, repeat-source consistency.
+- **Database architecture**: workspace and review persistence in SQLite.
+- **Security and privacy design**: environment secrets, HTTP-only cookies, input limits, filename sanitization.
+- **UI/UX engineering**: responsive review conversation, themes, premium selectors, history, profile, settings.
+- **Large-input design**: chunked analysis and line-edit repair for source near 100,000 characters.
 
-### Recommended Reviewer Walkthrough
+### Suggested Demonstration Flow for Reviewers
 
-1. Open the application in dark mode.
-2. Paste a short valid Python program and show the verified result.
-3. Submit the same source again to demonstrate repeat-review consistency.
-4. Paste malformed CSS, JavaScript, or HTML and show deterministic diagnostics.
-5. Open the corrected-code view, copy the output, and download the fixed file.
-6. Generate the line-by-line explanation.
-7. Upload a source file and show language detection.
-8. Switch to the light theme.
-9. Search and reopen a saved review.
-10. Refresh the application and show that the workspace state remains available.
+1. Open the application in dark theme.
+2. Paste a short valid Python program and show **Verified** output.
+3. Resubmit the same code to demonstrate stable repeat verification.
+4. Paste malformed CSS, JavaScript, or HTML and show deterministic findings.
+5. Open **Corrected code**, copy it, and download the fixed file.
+6. Open **Line by line** and generate the walkthrough.
+7. Upload a source file and show automatic language resolution.
+8. Switch to light theme from Settings.
+9. Search and reopen the saved review from history.
+10. Show backend persistence by refreshing the application.
 
 ---
 
-## Limitations
+## Limitations and Responsible Use
 
-- AI-assisted review supports engineering judgment but does not replace testing or human review.
-- Important corrections should be tested before deployment.
-- Compiler-level validation is strongest when the corresponding language toolchain is installed on the backend machine.
-- SQLite is suitable for local and internship-scale deployment. A managed relational database is more appropriate for high-concurrency production use.
-- Anonymous workspace isolation is browser-based and is not a replacement for a complete authenticated multi-user system.
-- The application does not execute submitted source code. Deterministic checks focus on syntax and structure.
-- Model quality, quota, and availability depend on the Gemini model configured for the deployment.
+- AI-assisted review should complement, not replace, human engineering judgment.
+- Critical corrections should be tested before deployment.
+- Compiler-level validation is deepest when the relevant language toolchain is installed on the backend machine.
+- The current persistence layer is SQLite, which is ideal for local and internship-scale deployment; a managed relational database would be more appropriate for high-concurrency production deployment.
+- Anonymous workspace isolation is device/browser based and is not a replacement for a complete authenticated multi-user account system.
+- The project does not execute submitted source code; deterministic checks are syntax- and structure-focused.
 
 ---
 
-## Roadmap
+## Future Enhancements
 
-- Authenticated accounts and secure cross-device synchronization.
-- PostgreSQL support for higher-concurrency deployments.
-- Repository-level and multi-file review with dependency context.
+- Authenticated accounts and cross-device workspace synchronization.
+- PostgreSQL migration for production-scale concurrency.
+- Repository-level multi-file review with dependency context.
 - GitHub pull-request integration.
-- Inline patch application.
+- Inline diff viewer and one-click patch application.
 - Test generation and regression validation.
-- Integrations with ESLint, Ruff, Bandit, Semgrep, and language-specific linters.
-- Streaming progress through Server-Sent Events or WebSockets.
-- Team workspaces and shared review sessions.
-- Review analytics and code-quality trends.
+- Static-analysis integrations such as ESLint, Ruff, Bandit, Semgrep, and language-specific linters.
+- Streaming review progress through Server-Sent Events or WebSockets.
+- Organization accounts, authenticated cross-device workspace synchronization, and team review sharing.
+- Review analytics, quality trends, and team workspaces.
 
 ---
 
 ## Author
 
 <div align="center">
-  <img src="./frontend/public/codefix-logo.png" alt="CodeFix AI logo" width="76" />
+  <img src="./frontend/public/codefix-logo.png" alt="CodeFix AI" width="76" />
 
   ### Muhammad Saad Jadoon
 
-  **Developer of CodeFix AI, Intelligent Code Reviewer & Explainer**
+  **Developer of CodeFix AI: Intelligent Code Reviewer & Explainer**
 
-  I built CodeFix AI as an advanced DecodeLabs Generative AI internship project, with a focus on reliable AI-assisted review, practical validation, full-stack engineering, and a polished developer experience.
+  Built as an advanced DecodeLabs Generative AI internship project with a focus on reliable AI engineering, full-stack product development, language intelligence, and premium user experience.
 </div>
 
 ---
 
 <div align="center">
   <strong>CodeFix AI</strong><br />
-  Review, understand, and improve code with confidence.
+  Review code with senior-level precision.
 </div>
