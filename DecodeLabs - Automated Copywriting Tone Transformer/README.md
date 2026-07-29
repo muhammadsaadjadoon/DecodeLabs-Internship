@@ -215,6 +215,16 @@ The home view communicates the product value immediately and provides direct nav
   <img src="docs/screenshots/01-home.png" alt="Lexora home page" width="100%" />
 </p>
 
+### Authentication — Sign In and Password Reset
+
+<p align="center">
+  <img src="docs/screenshots/12-sign-in.png" alt="Lexora sign-in screen" width="100%" />
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/11-password-reset.png" alt="Lexora password reset screen" width="100%" />
+</p>
+
 ### Profile — Account, Security, and Personal Workspace
 
 The profile dashboard combines identity, plan information, account status, profile editing, image management, password updates, logout, and account deletion.
@@ -291,16 +301,6 @@ The output panel communicates each stage clearly: initial empty state, live gene
 
 <p align="center">
   <img src="docs/screenshots/16-output-creative.png" alt="Lexora Creative generated variation" width="100%" />
-</p>
-
-### Authentication — Sign In and Password Reset
-
-<p align="center">
-  <img src="docs/screenshots/12-sign-in.png" alt="Lexora sign-in screen" width="100%" />
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/11-password-reset.png" alt="Lexora password reset screen" width="100%" />
 </p>
 
 ---
