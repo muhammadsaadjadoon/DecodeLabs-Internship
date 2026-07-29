@@ -1100,7 +1100,7 @@ For an internship review, Lexora demonstrates end-to-end ownership across:
 | | |
 |---|---|
 | **Internship project** | Automated Copywriting Tone Transformer |
-| **Product name** | Lexora — AI Tone Studio |
+| **Product name** | Lexora |
 | **Focus** | Full-stack AI product engineering, controlled copy generation, tone transformation, secure workspace persistence, and bulk automation |
 
 ---
