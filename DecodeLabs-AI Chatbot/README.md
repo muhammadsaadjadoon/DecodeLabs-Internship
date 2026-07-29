@@ -1,37 +1,51 @@
+<a id="top"></a>
+
 <div align="center">
+  <img src="./frontend/assets/zorex-oryn-logo.svg" alt="Oryn by Zorex AI logo" width="86" />
+  <h1>Oryn</h1>
+  <h3>Zorex AI Workspace</h3>
 
-<img src="frontend/assets/zorex-oryn-logo.svg" alt="Oryn by Zorex AI logo" width="112" />
+  <p><strong>A focused, local-first AI workspace for planning, learning, writing, coding, and context-aware conversations.</strong></p>
 
-# Oryn — Zorex AI Workspace
+  <p>
+    Built as a <strong>DecodeLabs internship project</strong> and developed into a complete full-stack product with persistent conversations, bounded context, profile personalization, productivity modes, responsive themes, and a FastAPI backend powered by Google Gemini.
+  </p>
 
-### A premium, local-first, full-stack AI assistant powered by Google Gemini
+  <p>
+    <a href="#getting-started"><img src="https://img.shields.io/badge/Quick%20Start-Run%20Oryn-06B6D4?style=for-the-badge" alt="Quick Start" /></a>
+    <a href="#product-tour"><img src="https://img.shields.io/badge/Product%20Tour-13%20Screens-7C3AED?style=for-the-badge" alt="Product Tour" /></a>
+    <a href="#architecture"><img src="https://img.shields.io/badge/Architecture-Full%20Stack-111827?style=for-the-badge" alt="Architecture" /></a>
+  </p>
 
-Built as a **DecodeLabs internship project** and expanded beyond a basic chatbot into a polished AI workspace with persistent conversations, intelligent context handling, personalized profiles, productivity modes, responsive design, and a complete FastAPI backend.
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.10+" />
+    <img src="https://img.shields.io/badge/FastAPI-0.140-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
+    <img src="https://img.shields.io/badge/Gemini-google--genai-4285F4?style=flat-square&logo=googlegemini&logoColor=white" alt="Google Gemini" />
+    <img src="https://img.shields.io/badge/Frontend-Vanilla%20JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111" alt="Vanilla JavaScript" />
+    <img src="https://img.shields.io/badge/Storage-Local%20JSON-111827?style=flat-square" alt="Local JSON storage" />
+    <img src="https://img.shields.io/badge/Themes-Dark%20%2B%20Light-0F172A?style=flat-square" alt="Dark and light themes" />
+    <img src="https://img.shields.io/badge/Layout-Responsive-06B6D4?style=flat-square" alt="Responsive layout" />
+  </p>
 
-<p>
-  <img src="https://img.shields.io/badge/Project-DecodeLabs%20Internship-7C3AED?style=for-the-badge" alt="DecodeLabs Internship Project" />
-  <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/AI-Google%20Gemini-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Google Gemini" />
-  <img src="https://img.shields.io/badge/Frontend-Vanilla%20JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111" alt="Vanilla JavaScript" />
-</p>
+  <p><strong>Plan · Learn · Write · Code</strong></p>
 
-<p>
-  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.10+" />
-  <img src="https://img.shields.io/badge/Storage-Local%20JSON-111827?style=flat-square" alt="Local JSON storage" />
-  <img src="https://img.shields.io/badge/Theme-Dark%20%2B%20Light-0F172A?style=flat-square" alt="Dark and light themes" />
-  <img src="https://img.shields.io/badge/Layout-Responsive-06B6D4?style=flat-square" alt="Responsive layout" />
-  <img src="https://img.shields.io/badge/API-RESTful-8B5CF6?style=flat-square" alt="REST API" />
-</p>
-
-**Plan · Learn · Write · Code — inside one focused workspace.**
-
+  <p>
+    <a href="#overview">Overview</a> ·
+    <a href="#product-tour">Product Tour</a> ·
+    <a href="#ai-and-context-engine">AI Engine</a> ·
+    <a href="#architecture">Architecture</a> ·
+    <a href="#rest-api-reference">API</a> ·
+    <a href="#getting-started">Installation</a>
+  </p>
 </div>
 
 ---
 
-![Oryn dark workspace](docs/screenshots/02-dark-workspace-home.png)
+<a href="./docs/screenshots/02-dark-workspace-home.png">
+  <img src="./docs/screenshots/02-dark-workspace-home.png" alt="Oryn dark workspace" width="100%" />
+</a>
 
-<p align="center"><sub>Oryn's primary dark workspace with chat management, quick-start actions, AI status, profile access, and a focused composer.</sub></p>
+<p align="center"><sub><strong>Oryn Workspace:</strong> conversation management, guided actions, AI status, profile access, and a focused message composer.</sub></p>
 
 ---
 
@@ -40,7 +54,7 @@ Built as a **DecodeLabs internship project** and expanded beyond a basic chatbot
 - [Overview](#overview)
 - [Project Vision](#project-vision)
 - [Why Oryn Stands Out](#why-oryn-stands-out)
-- [Visual Product Tour](#visual-product-tour)
+- [Product Tour](#product-tour)
 - [Core Features](#core-features)
 - [AI and Context Engine](#ai-and-context-engine)
 - [Architecture](#architecture)
@@ -114,89 +128,144 @@ The result is a workspace that supports the complete conversation lifecycle:
 
 ---
 
-# Visual Product Tour
+## Product Tour
 
-## 1. Premium Dark Workspace
+> The gallery uses repository-relative paths. Every preview is clickable and opens the original full-resolution image on GitHub.
 
-The dark interface is the primary visual experience. It uses a high-contrast, low-distraction layout with a fixed navigation hierarchy, clear actions, and a centered productivity flow.
+### 1. Complete Light Theme
 
-![Dark workspace home](docs/screenshots/02-dark-workspace-home.png)
+The light experience uses dedicated surfaces, borders, shadows, text contrast, and background treatment rather than a basic color inversion.
 
-## 2. Complete Light Theme
+<a href="./docs/screenshots/03-light-workspace-home.png">
+  <img src="./docs/screenshots/03-light-workspace-home.png" alt="Oryn light workspace" width="100%" />
+</a>
 
-The interface is not a simple color inversion. The light theme includes dedicated surfaces, borders, shadows, text contrast, and background treatment while preserving the same layout and interaction model.
+<p align="center"><sub><strong>Light Workspace:</strong> the same focused experience with a purpose-built light visual system.</sub></p>
 
-![Light workspace home](docs/screenshots/03-light-workspace-home.png)
+### 2. Conversation and Assistant Context
 
-## 3. Workspace Settings
+The conversation workspace combines speaker identity, timestamps, copy controls, assistant actions, persistent previews, and message/token feedback. System behavior keeps creator and company information limited to relevant questions.
 
-The settings panel provides theme control, backend health refresh, keyboard-shortcut guidance, and a transparent explanation of what is stored locally.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/05-conversation-experience.png">
+        <img src="./docs/screenshots/05-conversation-experience.png" alt="Oryn conversation experience" width="100%" />
+      </a>
+      <br /><sub><strong>Conversation Experience:</strong> structured, readable, and action-oriented messaging.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/06-context-aware-identity.png">
+        <img src="./docs/screenshots/06-context-aware-identity.png" alt="Oryn context-aware identity response" width="100%" />
+      </a>
+      <br /><sub><strong>Context-Aware Identity:</strong> product information appears only when it is relevant.</sub>
+    </td>
+  </tr>
+</table>
 
-![Workspace settings](docs/screenshots/04-workspace-settings.png)
+### 3. Profile Personalization
 
-## 4. Real Conversation Experience
+Oryn begins with a clean default identity and allows each user to add a profile image, display name, professional role, and short note without creating an online account.
 
-Messages include speaker identity, timestamps, avatars, copy controls, assistant actions, persistent chat previews, and a live message/token indicator.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/08-profile-default.png">
+        <img src="./docs/screenshots/08-profile-default.png" alt="Oryn default profile panel" width="100%" />
+      </a>
+      <br /><sub><strong>Default Profile:</strong> a clean starting point with no forced setup.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/09-profile-customized.png">
+        <img src="./docs/screenshots/09-profile-customized.png" alt="Oryn customized profile panel" width="100%" />
+      </a>
+      <br /><sub><strong>Customized Profile:</strong> a consistent personal identity across the workspace.</sub>
+    </td>
+  </tr>
+</table>
 
-![Conversation experience](docs/screenshots/05-conversation-experience.png)
+### 4. Personalized Chat and Focus Mode
 
-## 5. Controlled Assistant Identity
+The saved avatar appears beside user messages and in the sidebar profile card. The sidebar can also collapse to create a wider reading and writing surface without losing conversation controls.
 
-Oryn uses system-level behavior rules so creator and company information appears only when the user explicitly asks about Oryn, Zorex, or the developer.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/10-creator-response.png">
+        <img src="./docs/screenshots/10-creator-response.png" alt="Oryn personalized chat identity" width="100%" />
+      </a>
+      <br /><sub><strong>Personalized Chat Identity</strong></sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/11-focus-mode-collapsed-sidebar.png">
+        <img src="./docs/screenshots/11-focus-mode-collapsed-sidebar.png" alt="Oryn collapsed sidebar focus mode" width="100%" />
+      </a>
+      <br /><sub><strong>Collapsed Sidebar Focus Mode</strong></sub>
+    </td>
+  </tr>
+</table>
 
-![Context-aware identity response](docs/screenshots/06-context-aware-identity.png)
+### 5. Multilingual and Code Assistance
 
-## 6. Safe Destructive Actions
+Oryn supports natural multilingual conversations while preserving the same interaction model. Code-focused replies use readable fenced blocks and retain normal conversation actions.
 
-Clearing a conversation requires confirmation, reducing accidental data loss while keeping the action immediately accessible.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/12-multilingual-urdu-chat.png">
+        <img src="./docs/screenshots/12-multilingual-urdu-chat.png" alt="Oryn Roman Urdu conversation" width="100%" />
+      </a>
+      <br /><sub><strong>Multilingual Interaction:</strong> a natural Roman Urdu conversation.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/13-code-assistance.png">
+        <img src="./docs/screenshots/13-code-assistance.png" alt="Oryn Python code assistance" width="100%" />
+      </a>
+      <br /><sub><strong>Code Assistance:</strong> formatted code with clear supporting explanation.</sub>
+    </td>
+  </tr>
+</table>
 
-![Clear chat confirmation](docs/screenshots/07-clear-chat-confirmation.png)
+### 6. Settings and Keyboard-First Productivity
 
-## 7. Profile Personalization
+Settings bring together theme selection, backend health refresh, storage transparency, and workspace shortcuts. Related controls are presented side by side for easier comparison.
 
-Users begin with a clean default profile and can add a custom identity without creating an online account.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/04-workspace-settings.png">
+        <img src="./docs/screenshots/04-workspace-settings.png" alt="Oryn workspace settings" width="100%" />
+      </a>
+      <br /><sub><strong>Workspace Settings</strong></sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./docs/screenshots/14-keyboard-shortcuts.png">
+        <img src="./docs/screenshots/14-keyboard-shortcuts.png" alt="Oryn keyboard shortcuts" width="100%" />
+      </a>
+      <br /><sub><strong>Keyboard Shortcuts</strong></sub>
+    </td>
+  </tr>
+</table>
 
-![Default profile panel](docs/screenshots/08-profile-default.png)
+### 7. Safe Destructive Actions
 
-The profile supports a custom image, display name, professional role, and optional note.
+Clearing a conversation requires confirmation, reducing accidental data loss while keeping the action easy to access.
 
-![Customized profile panel](docs/screenshots/09-profile-customized.png)
+<p align="center">
+  <a href="./docs/screenshots/07-clear-chat-confirmation.png">
+    <img src="./docs/screenshots/07-clear-chat-confirmation.png" alt="Oryn clear chat confirmation" width="760" />
+  </a>
+</p>
 
-## 8. Personalized Chat Identity
+<p align="center"><sub><strong>Clear Conversation:</strong> an explicit confirmation step before stored messages are removed.</sub></p>
 
-The saved profile image is displayed beside user messages and in the sidebar profile card, creating a consistent workspace identity.
-
-![Creator information response](docs/screenshots/10-creator-response.png)
-
-## 9. Focus Mode with Collapsed Sidebar
-
-The desktop sidebar can be collapsed to create a wider reading and writing canvas while preserving all conversation controls.
-
-![Collapsed sidebar focus mode](docs/screenshots/11-focus-mode-collapsed-sidebar.png)
-
-## 10. Multilingual Interaction
-
-Oryn can maintain natural conversations beyond English. The interface example below demonstrates Roman Urdu interaction while keeping the same conversation experience.
-
-![Multilingual Urdu conversation](docs/screenshots/12-multilingual-urdu-chat.png)
-
-## 11. Code Assistance
-
-Code-oriented prompts are rendered in readable code blocks with preserved formatting and conversation actions.
-
-![Python code assistance](docs/screenshots/13-code-assistance.png)
-
-## 12. Keyboard-First Productivity
-
-The settings interface documents shortcuts for search, new chats, message sending, line breaks, and panel dismissal.
-
-![Keyboard shortcuts](docs/screenshots/14-keyboard-shortcuts.png)
+<p align="right"><a href="#top">Back to top ↑</a></p>
 
 ---
 
-# Core Features
+## Core Features
 
-## Conversation Management
+### Conversation Management
 
 - Create unlimited local conversations.
 - Automatically name a new chat from the first user message.
@@ -209,7 +278,7 @@ The settings interface documents shortcuts for search, new chats, message sendin
 - Display message counts, recent timestamps, previews, and pin status.
 - Preserve active-chat content through backend storage.
 
-## Messaging Experience
+### Messaging Experience
 
 - Send with `Enter`.
 - Insert a new line with `Shift + Enter`.
@@ -222,7 +291,7 @@ The settings interface documents shortcuts for search, new chats, message sendin
 - Show readable message timestamps.
 - Track approximate conversation tokens and message count.
 
-## Guided Productivity Modes
+### Guided Productivity Modes
 
 The welcome screen provides four complete starter actions:
 
@@ -235,12 +304,12 @@ The welcome screen provides four complete starter actions:
 
 The composer also provides lightweight prompt prefixes:
 
-- **Focus** — makes the request clear, focused, and practical.
-- **Draft** — asks for a professional draft.
-- **Code** — frames the request as code generation or improvement.
-- **Explain** — asks for a simple explanation with examples.
+- **Focus**: makes the request clear, focused, and practical.
+- **Draft**: asks for a professional draft.
+- **Code**: frames the request as code generation or improvement.
+- **Explain**: asks for a simple explanation with examples.
 
-## Content Rendering
+### Content Rendering
 
 Oryn safely escapes raw HTML before applying its lightweight Markdown renderer. The interface supports:
 
@@ -252,7 +321,7 @@ Oryn safely escapes raw HTML before applying its lightweight Markdown renderer. 
 - Paragraphs and line breaks
 - Scrollable code containers
 
-## Workspace Personalization
+### Workspace Personalization
 
 - Upload a profile image.
 - Save a custom display name.
@@ -262,7 +331,7 @@ Oryn safely escapes raw HTML before applying its lightweight Markdown renderer. 
 - Reuse the saved avatar across the sidebar and messages.
 - Keep profile data in the current browser through `localStorage`.
 
-## Theme and Layout
+### Theme and Layout
 
 - Dedicated dark theme.
 - Dedicated light theme.
@@ -273,7 +342,7 @@ Oryn safely escapes raw HTML before applying its lightweight Markdown renderer. 
 - Compact handling for short-height screens.
 - Safe-area-aware composer spacing on mobile devices.
 
-## Operational Feedback
+### Operational Feedback
 
 - Live backend health indicator.
 - Connected-model display.
@@ -285,9 +354,9 @@ Oryn safely escapes raw HTML before applying its lightweight Markdown renderer. 
 
 ---
 
-# AI and Context Engine
+## AI and Context Engine
 
-## Gemini Integration
+### Gemini Integration
 
 The backend uses the official Google Gen AI SDK:
 
@@ -299,7 +368,7 @@ client = genai.Client(api_key=GEMINI_API_KEY, vertexai=False)
 
 Responses are generated with configurable model, temperature, output-token limit, system instruction, and bounded conversation history.
 
-## Context Construction
+### Context Construction
 
 Oryn does not send unlimited history to the model. The backend selects recent messages using two limits:
 
@@ -314,7 +383,7 @@ estimated_tokens = max(1, len(text) // 4)
 
 Messages are collected from newest to oldest until the configured history budget is reached, then restored to chronological order before the model call.
 
-## Role Mapping
+### Role Mapping
 
 Stored chat roles are converted into Gemini-compatible roles:
 
@@ -323,7 +392,7 @@ Stored chat roles are converted into Gemini-compatible roles:
 | `user` | `user` |
 | `assistant` | `model` |
 
-## Assistant Behavior Control
+### Assistant Behavior Control
 
 The system instruction is composed from the environment-defined base prompt plus application-level response rules. These rules are designed to:
 
@@ -334,7 +403,7 @@ The system instruction is composed from the environment-defined base prompt plus
 - Preserve a professional, useful, human-like tone.
 - Reveal creator or company context only when explicitly requested.
 
-## Demo Mode
+### Demo Mode
 
 When `GEMINI_API_KEY` is empty and `DEMO_MODE=true`, the complete chat flow remains testable. The backend saves the user's message and returns a clear response explaining how to enable real Gemini output.
 
@@ -342,9 +411,9 @@ This makes UI review, backend verification, and internship demonstrations possib
 
 ---
 
-# Architecture
+## Architecture
 
-## System Architecture
+### System Architecture
 
 ```mermaid
 flowchart LR
@@ -368,7 +437,7 @@ flowchart LR
     API --> F[Static Frontend Files]
 ```
 
-## Message Lifecycle
+### Message Lifecycle
 
 ```mermaid
 sequenceDiagram
@@ -391,7 +460,7 @@ sequenceDiagram
     UI->>UI: Render reply and refresh sidebar
 ```
 
-## Local Persistence Flow
+### Local Persistence Flow
 
 ```mermaid
 flowchart TD
@@ -408,9 +477,9 @@ flowchart TD
 
 ---
 
-# Technology Stack
+## Technology Stack
 
-## Backend
+### Backend
 
 | Technology | Version / Use |
 |---|---|
@@ -424,7 +493,7 @@ flowchart TD
 | **JSON** | Local persistent conversation storage |
 | **Threading RLock** | Thread-safe store operations inside one process |
 
-## Frontend
+### Frontend
 
 | Technology | Use |
 |---|---|
@@ -437,7 +506,7 @@ flowchart TD
 | **Blob API** | Markdown conversation export |
 | **FileReader API** | Local profile-image upload |
 
-## Dependency Versions
+### Dependency Versions
 
 ```text
 fastapi==0.140.0
@@ -449,7 +518,7 @@ pydantic==2.13.4
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 Zorex-Oryn-GitHub-Ready/
@@ -481,13 +550,13 @@ Zorex-Oryn-GitHub-Ready/
 
 ---
 
-# REST API Reference
+## REST API Reference
 
 The frontend communicates with the backend through a compact REST API.
 
-## Health
+### Health
 
-### `GET /api/health`
+#### `GET /api/health`
 
 Returns backend, model, key, and demo-mode status.
 
@@ -501,13 +570,13 @@ Returns backend, model, key, and demo-mode status.
 }
 ```
 
-## Chats
+### Chats
 
-### `GET /api/chats`
+#### `GET /api/chats`
 
 Returns lightweight chat summaries ordered with pinned chats first and recent chats second.
 
-### `POST /api/chats`
+#### `POST /api/chats`
 
 Creates a new conversation.
 
@@ -517,11 +586,11 @@ Creates a new conversation.
 }
 ```
 
-### `GET /api/chats/{chat_id}`
+#### `GET /api/chats/{chat_id}`
 
 Returns one complete chat, including messages and statistics.
 
-### `PATCH /api/chats/{chat_id}`
+#### `PATCH /api/chats/{chat_id}`
 
 Updates title, pin state, or both.
 
@@ -532,17 +601,17 @@ Updates title, pin state, or both.
 }
 ```
 
-### `DELETE /api/chats/{chat_id}`
+#### `DELETE /api/chats/{chat_id}`
 
 Deletes one conversation.
 
-### `POST /api/chats/{chat_id}/clear`
+#### `POST /api/chats/{chat_id}/clear`
 
 Removes all messages while preserving the chat record and title.
 
-## Messages
+### Messages
 
-### `POST /api/chats/{chat_id}/messages`
+#### `POST /api/chats/{chat_id}/messages`
 
 Stores a user message, generates an assistant response, stores the response, and returns the updated chat.
 
@@ -558,7 +627,7 @@ Validation rules:
 - Maximum message length: `30000`
 - Empty or whitespace-only messages are rejected
 
-### `POST /api/chats/{chat_id}/regenerate`
+#### `POST /api/chats/{chat_id}/regenerate`
 
 Removes the latest assistant response from the active context and generates a replacement. An optional message may also be supplied.
 
@@ -566,7 +635,7 @@ Removes the latest assistant response from the active context and generates a re
 {}
 ```
 
-## Core Response Shape
+### Core Response Shape
 
 ```json
 {
@@ -594,9 +663,9 @@ Removes the latest assistant response from the active context and generates a re
 
 ---
 
-# Data and Persistence
+## Data and Persistence
 
-## Chat Model
+### Chat Model
 
 Each chat stores:
 
@@ -620,7 +689,7 @@ messages[]
 └── timestamp
 ```
 
-## Storage Design
+### Storage Design
 
 The `ChatStore` is designed for a local portfolio and internship application:
 
@@ -633,7 +702,7 @@ The `ChatStore` is designed for a local portfolio and internship application:
 - Moves corrupted data to a timestamped backup.
 - Starts with a clean store after recovery.
 
-## Storage Locations
+### Storage Locations
 
 | Data | Location |
 |---|---|
@@ -647,25 +716,25 @@ The `ChatStore` is designed for a local portfolio and internship application:
 
 ---
 
-# Getting Started
+## Getting Started
 
-## Prerequisites
+### Prerequisites
 
 - Python `3.10+`
 - `pip`
 - A modern browser
 - A Gemini API key for real AI responses
 
-## 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/<your-repository>.git
 cd <your-repository>
 ```
 
-## 2. Create a Virtual Environment
+### 2. Create a Virtual Environment
 
-### Windows PowerShell
+#### Windows PowerShell
 
 ```powershell
 cd backend
@@ -673,7 +742,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-### Windows Command Prompt
+#### Windows Command Prompt
 
 ```bat
 cd backend
@@ -681,7 +750,7 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### macOS / Linux
+#### macOS / Linux
 
 ```bash
 cd backend
@@ -689,22 +758,22 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-## 3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 4. Create the Environment File
+### 4. Create the Environment File
 
-### Windows
+#### Windows
 
 ```bat
 copy .env.example .env
 ```
 
-### macOS / Linux
+#### macOS / Linux
 
 ```bash
 cp .env.example .env
@@ -716,7 +785,7 @@ Open `backend/.env` and add your Gemini API key:
 GEMINI_API_KEY=your_api_key_here
 ```
 
-## 5. Start Oryn
+### 5. Start Oryn
 
 Run this command from the `backend` directory:
 
@@ -730,7 +799,7 @@ Open:
 http://127.0.0.1:8000
 ```
 
-## Windows One-Click Start
+### Windows One-Click Start
 
 From the project root, run:
 
@@ -745,7 +814,7 @@ The launcher:
 3. Installs required packages.
 4. Starts FastAPI on port `8000`.
 
-## Demo Mode
+### Demo Mode
 
 To review the interface without a Gemini key:
 
@@ -758,17 +827,21 @@ The application will remain functional and return a setup-aware demonstration re
 
 ---
 
-## Gemini / Google Cloud Setup
+### Gemini / Google Cloud Setup
 
 Create or select a Google Cloud project, enable the required Gemini access for your account, generate an API key, and place the key only inside `backend/.env`.
 
-![Google Cloud Gemini project setup](docs/screenshots/01-google-cloud-gemini-setup.png)
+<a href="./docs/screenshots/01-google-cloud-gemini-setup.png">
+  <img src="./docs/screenshots/01-google-cloud-gemini-setup.png" alt="Google Cloud Gemini project setup" width="100%" />
+</a>
+
+<p align="center"><sub><strong>Provider Setup:</strong> Google Cloud project configuration for Gemini access.</sub></p>
 
 > Before publishing screenshots publicly, review visible cloud project identifiers and account details according to your own privacy requirements.
 
 ---
 
-# Environment Configuration
+## Environment Configuration
 
 The complete configuration template is located at `backend/.env.example`.
 
@@ -802,7 +875,7 @@ SYSTEM_PROMPT=You are Oryn, a clear, helpful, modern AI assistant by Zorex.
 
 ---
 
-# Keyboard Shortcuts
+## Keyboard Shortcuts
 
 | Shortcut | Action |
 |---|---|
@@ -814,7 +887,7 @@ SYSTEM_PROMPT=You are Oryn, a clear, helpful, modern AI assistant by Zorex.
 
 ---
 
-# Error Handling
+## Error Handling
 
 Oryn translates technical failures into readable user-facing feedback.
 
@@ -842,9 +915,9 @@ The frontend also:
 
 ---
 
-# Privacy and Security
+## Privacy and Security
 
-## Implemented Principles
+### Implemented Principles
 
 - The Gemini key is read by the backend only.
 - The frontend never requests or stores the Gemini key.
@@ -856,15 +929,15 @@ The frontend also:
 - Public model errors avoid exposing Python tracebacks to users.
 - Profile data remains inside the user's browser.
 
-## Local-First Privacy Model
+### Local-First Privacy Model
 
 The settings panel clearly communicates the application's data boundaries:
 
-- **Local profile** — browser-based identity and visual preferences.
-- **Saved chats** — local backend workspace data.
-- **No frontend API key** — credentials stay server-side.
+- **Local profile**: browser-based identity and visual preferences.
+- **Saved chats**: local backend workspace data.
+- **No frontend API key**: credentials stay server-side.
 
-## Deployment Hardening Checklist
+### Deployment Hardening Checklist
 
 Before public multi-user deployment:
 
@@ -880,11 +953,11 @@ Before public multi-user deployment:
 
 ---
 
-# Quality Assurance
+## Quality Assurance
 
 The GitHub-ready project was checked across the core local workflow.
 
-## Verified Checks
+### Verified Checks
 
 - Python source compilation
 - JavaScript syntax validation
@@ -902,7 +975,7 @@ The GitHub-ready project was checked across the core local workflow.
 - Screenshot path validation
 - Removal of the real `.env` file from the public package
 
-## Manual Review Checklist
+### Manual Review Checklist
 
 ```text
 [ ] Add a valid GEMINI_API_KEY to backend/.env
@@ -925,11 +998,11 @@ The GitHub-ready project was checked across the core local workflow.
 
 ---
 
-# Production Evolution
+## Production Evolution
 
 Oryn's current architecture is intentionally optimized for a local internship demonstration and portfolio review. The following roadmap shows how the same product can evolve without changing its core experience.
 
-## Near-Term
+### Near-Term
 
 - Streaming Gemini responses
 - Stop-generation control
@@ -941,7 +1014,7 @@ Oryn's current architecture is intentionally optimized for a local internship de
 - Richer Markdown tables and links
 - Automated backend and frontend tests
 
-## Product Expansion
+### Product Expansion
 
 - Secure user accounts
 - Cloud-synchronized conversations
@@ -954,7 +1027,7 @@ Oryn's current architecture is intentionally optimized for a local internship de
 - Search inside message content
 - Usage dashboard
 
-## Production Infrastructure
+### Production Infrastructure
 
 - PostgreSQL persistence
 - Database migrations
@@ -969,15 +1042,15 @@ Oryn's current architecture is intentionally optimized for a local internship de
 
 ---
 
-# Author
+## Author
 
 <div align="center">
 
-## Muhammad Saad Jadoon
+### Muhammad Saad Jadoon
 
 **AI Engineer · Artificial Intelligence Developer · Machine Learning Enthusiast · Full-Stack Web Developer · Technical SEO Strategist · Social Media Marketing Specialist**
 
-Student at the **University of Haripur** and creator of **Oryn — Zorex AI Workspace**.
+Student at the **University of Haripur** and creator of **Oryn: Zorex AI Workspace**.
 
 This project was developed as an internship submission and expanded into a complete full-stack AI workspace through independent product design, frontend engineering, backend development, AI integration, persistence, personalization, and quality refinement.
 
@@ -985,20 +1058,22 @@ This project was developed as an internship submission and expanded into a compl
 
 ---
 
-# Acknowledgements
+## Acknowledgements
 
-- **DecodeLabs** — internship project opportunity and evaluation platform.
-- **Google Gemini** — generative AI capabilities.
-- **FastAPI** — modern Python API framework.
-- **Uvicorn** — ASGI development server.
-- **Open-source web standards** — HTML, CSS, JavaScript, SVG, Fetch API, and LocalStorage.
+- **DecodeLabs:** internship project opportunity and evaluation platform.
+- **Google Gemini:** generative AI capabilities.
+- **FastAPI:** modern Python API framework.
+- **Uvicorn:** ASGI development server.
+- **Open-source web standards:** HTML, CSS, JavaScript, SVG, Fetch API, and LocalStorage.
 
 ---
 
 <div align="center">
 
-### Built beyond the internship brief — designed as a complete AI product experience.
+### Built beyond the internship brief and designed as a complete AI product experience.
 
 **Oryn by Zorex AI**
 
 </div>
+
+<p align="center"><a href="#top"><strong>Back to top ↑</strong></a></p>
