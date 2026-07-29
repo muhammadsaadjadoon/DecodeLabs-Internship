@@ -1,8 +1,8 @@
-<p align="center">
-  <img src="./backend/static/assets/prismora-logo.png" alt="Prismora logo" width="82" />
-</p>
-<h1 align="center">Prismora</h1>
+<div align="center">
+  <img src="./backend/static/assets/prismora-logo.png" alt="Prismora logo" width="100" height="100" />
 
+  # Prismora
+  
 <p align="center">
   <a href="#quick-start"><img src="https://img.shields.io/badge/Quick%20Start-Open%20Studio-2AC7F7?style=for-the-badge" alt="Quick Start" /></a>
   <a href="#product-tour"><img src="https://img.shields.io/badge/Product%20Tour-17%20Screens-6957FF?style=for-the-badge" alt="Product Tour" /></a>
